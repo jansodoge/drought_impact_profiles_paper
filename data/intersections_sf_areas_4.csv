@@ -1,0 +1,426 @@
+"","description","NUTS_ID","area_total","LEVL_CODE","CNTR_CODE","NAME_LATN","NUTS_NAME","MOUNT_TYPE","URBN_TYPE","COAST_TYPE","FID","area_size_total"
+"1","Coasta salth marshes","DE502",3652868.83345,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"2","Coasta salth marshes","DE600",2651139.98,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"3","Coasta salth marshes","DE80L",2766934.64845,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"4","Coasta salth marshes","DE80M",912898.35125,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"5","Coasta salth marshes","DE932",14987212.27835,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"6","Coasta salth marshes","DE939",15787380.5119,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"7","Coasta salth marshes","DE942",2304830.42445,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"8","Coasta salth marshes","DE945",4936110.2244,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"9","Coasta salth marshes","DE947",31969038.272,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"10","Coasta salth marshes","DE94A",19132255.3922,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"11","Coasta salth marshes","DE94C",9168160.869749,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"12","Coasta salth marshes","DE94G",16258943.99805,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"13","Coasta salth marshes","DE94H",8430886.603,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"14","Coasta salth marshes","DEF05",42772390.07825,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"15","Coasta salth marshes","DEF07",98716108.1378001,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"16","Coasta salth marshes","DEF0E",1158671.92505,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"17","Inland marshes","DE112",336389.355,3,"DE","Böblingen","Böblingen",4,1,3,"DE112",616706354.998487
+"18","Inland marshes","DE113",210570.7875,3,"DE","Esslingen","Esslingen",4,1,3,"DE113",639653087.634639
+"19","Inland marshes","DE114",54545.87875,3,"DE","Göppingen","Göppingen",3,1,3,"DE114",642175034.832007
+"20","Inland marshes","DE115",244750.7605,3,"DE","Ludwigsburg","Ludwigsburg",4,1,3,"DE115",685990294.660686
+"21","Inland marshes","DE118",109714.19595,3,"DE","Heilbronn, Landkreis","Heilbronn, Landkreis",4,2,3,"DE118",1098993992.80318
+"22","Inland marshes","DE11A",213670.15625,3,"DE","Schwäbisch Hall","Schwäbisch Hall",4,3,3,"DE11A",1484723816.9574
+"23","Inland marshes","DE11C",143980.00285,3,"DE","Heidenheim","Heidenheim",4,2,3,"DE11C",626943384.753197
+"24","Inland marshes","DE11D",543139.3275,3,"DE","Ostalbkreis","Ostalbkreis",4,2,3,"DE11D",1511168828.10402
+"25","Inland marshes","DE122",256276.735,3,"DE","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis",4,1,3,"DE122",174498748.643615
+"26","Inland marshes","DE123",3479947.3331,3,"DE","Karlsruhe, Landkreis","Karlsruhe, Landkreis",4,1,3,"DE123",1083742989.38858
+"27","Inland marshes","DE124",580363.7075,3,"DE","Rastatt","Rastatt",4,1,3,"DE124",739544382.998046
+"28","Inland marshes","DE126",82490.39125,3,"DE","Mannheim, Stadtkreis","Mannheim, Stadtkreis",4,1,3,"DE126",145121268.985362
+"29","Inland marshes","DE128",1030265.27315,3,"DE","Rhein-Neckar-Kreis","Rhein-Neckar-Kreis",4,1,3,"DE128",1060449184.94986
+"30","Inland marshes","DE12A",65243.63625,3,"DE","Calw","Calw",2,3,3,"DE12A",797563034.692163
+"31","Inland marshes","DE12B",152904.08375,3,"DE","Enzkreis","Enzkreis",4,2,3,"DE12B",573053894.384032
+"32","Inland marshes","DE131",51517.6,3,"DE","Freiburg im Breisgau, Stadtkreis","Freiburg im Breisgau, Stadtkreis",4,2,3,"DE131",154093476.898963
+"33","Inland marshes","DE132",338151.2475,3,"DE","Breisgau-Hochschwarzwald","Breisgau-Hochschwarzwald",2,2,3,"DE132",1376919977.57085
+"34","Inland marshes","DE133",137843.71875,3,"DE","Emmendingen","Emmendingen",2,2,3,"DE133",680111254.844883
+"35","Inland marshes","DE134",134058.1025,3,"DE","Ortenaukreis","Ortenaukreis",2,2,3,"DE134",1859698705.84385
+"36","Inland marshes","DE135",246052.63925,3,"DE","Rottweil","Rottweil",4,3,3,"DE135",769776098.745494
+"37","Inland marshes","DE136",500253.992,3,"DE","Schwarzwald-Baar-Kreis","Schwarzwald-Baar-Kreis",4,2,3,"DE136",1026381921.87872
+"38","Inland marshes","DE137",191471.50325,3,"DE","Tuttlingen","Tuttlingen",3,2,3,"DE137",733132549.453917
+"39","Inland marshes","DE138",8910186.1139,3,"DE","Konstanz","Konstanz",4,2,3,"DE138",863233863.937629
+"40","Inland marshes","DE13A",135483.8125,3,"DE","Waldshut","Waldshut",3,2,3,"DE13A",1131027190.77065
+"41","Inland marshes","DE141",71482.7262501,3,"DE","Reutlingen","Reutlingen",1,2,3,"DE141",1092928197.42345
+"42","Inland marshes","DE143",346600.777,3,"DE","Zollernalbkreis","Zollernalbkreis",3,2,3,"DE143",917334100.757974
+"43","Inland marshes","DE144",59500.24625,3,"DE","Ulm, Stadtkreis","Ulm, Stadtkreis",4,2,3,"DE144",119375741.619876
+"44","Inland marshes","DE145",627746.5772,3,"DE","Alb-Donau-Kreis","Alb-Donau-Kreis",4,2,3,"DE145",1357309263.38533
+"45","Inland marshes","DE146",1479893.32755,3,"DE","Biberach","Biberach",4,3,3,"DE146",1410291001.8721
+"46","Inland marshes","DE147",2815206.5706999,3,"DE","Bodenseekreis","Bodenseekreis",4,2,3,"DE147",881414111.057589
+"47","Inland marshes","DE148",6538927.84385,3,"DE","Ravensburg","Ravensburg",4,2,3,"DE148",1632852195.73125
+"48","Inland marshes","DE149",476950.6557,3,"DE","Sigmaringen","Sigmaringen",4,3,3,"DE149",1204748486.40452
+"49","Inland marshes","DE213",70734.8825,3,"DE","Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt",4,2,3,"DE213",36270134.4697756
+"50","Inland marshes","DE216",790884.1646,3,"DE","Bad Tölz-Wolfratshausen","Bad Tölz-Wolfratshausen",2,2,3,"DE216",1111738386.38701
+"51","Inland marshes","DE217",50917.80375,3,"DE","Dachau","Dachau",4,2,3,"DE217",579675207.43844
+"52","Inland marshes","DE219",76746.18875,3,"DE","Eichstätt","Eichstätt",4,2,3,"DE219",1214987684.53575
+"53","Inland marshes","DE21B",73793.255,3,"DE","Freising","Freising",4,2,3,"DE21B",799220968.906402
+"54","Inland marshes","DE21D",3822883.2261,3,"DE","Garmisch-Partenkirchen","Garmisch-Partenkirchen",3,2,3,"DE21D",1011621466.20587
+"55","Inland marshes","DE21E",2753635.46935,3,"DE","Landsberg am Lech","Landsberg am Lech",4,3,3,"DE21E",803187477.563865
+"56","Inland marshes","DE21F",198425.9695,3,"DE","Miesbach","Miesbach",3,2,3,"DE21F",867878819.720599
+"57","Inland marshes","DE21I",650044.7551,3,"DE","Neuburg-Schrobenhausen","Neuburg-Schrobenhausen",4,3,3,"DE21I",740797368.95015
+"58","Inland marshes","DE21J",76746.18875,3,"DE","Pfaffenhofen a. d. Ilm","Pfaffenhofen a. d. Ilm",4,2,3,"DE21J",760884170.082064
+"59","Inland marshes","DE21K",1331195.8587,3,"DE","Rosenheim, Landkreis","Rosenheim, Landkreis",4,2,3,"DE21K",1441126051.81986
+"60","Inland marshes","DE21L",1533637.5824,3,"DE","Starnberg","Starnberg",4,2,3,"DE21L",485962879.134515
+"61","Inland marshes","DE21M",1479813.1803,3,"DE","Traunstein","Traunstein",4,3,3,"DE21M",1533304184.32057
+"62","Inland marshes","DE21N",5362154.97295,3,"DE","Weilheim-Schongau","Weilheim-Schongau",4,2,3,"DE21N",967862689.399724
+"63","Inland marshes","DE223",136233.81375,3,"DE","Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt",4,3,3,"DE223",66970953.8555493
+"64","Inland marshes","DE224",434897.73005,3,"DE","Deggendorf","Deggendorf",4,3,3,"DE224",860830092.648876
+"65","Inland marshes","DE227",280047.3347501,3,"DE","Landshut, Landkreis","Landshut, Landkreis",4,3,3,"DE227",1347018653.24374
+"66","Inland marshes","DE228",123220.8553,3,"DE","Passau, Landkreis","Passau, Landkreis",4,3,3,"DE228",1528530882.03236
+"67","Inland marshes","DE229",148926.4038,3,"DE","Regen","Regen",3,3,3,"DE229",973760839.329393
+"68","Inland marshes","DE22A",584942.515,3,"DE","Rottal-Inn","Rottal-Inn",4,3,3,"DE22A",1281883718.03827
+"69","Inland marshes","DE22B",239422.3475,3,"DE","Straubing-Bogen","Straubing-Bogen",4,3,3,"DE22B",1202289544.38978
+"70","Inland marshes","DE22C",66043.22375,3,"DE","Dingolfing-Landau","Dingolfing-Landau",4,3,3,"DE22C",877603908.137835
+"71","Inland marshes","DE234",251667.3075999,3,"DE","Amberg-Sulzbach","Amberg-Sulzbach",4,2,3,"DE234",1254394217.66907
+"72","Inland marshes","DE235",660789.2,3,"DE","Cham","Cham",4,3,3,"DE235",1526051890.16244
+"73","Inland marshes","DE236",200655.33,3,"DE","Neumarkt i. d. OPf.","Neumarkt i. d. OPf.",4,3,3,"DE236",1344143011.79267
+"74","Inland marshes","DE237",914292.26345,3,"DE","Neustadt a. d. Waldnaab","Neustadt a. d. Waldnaab",4,3,3,"DE237",1427910653.4614
+"75","Inland marshes","DE238",82644.0225,3,"DE","Regensburg, Landkreis","Regensburg, Landkreis",4,2,3,"DE238",1392336652.46492
+"76","Inland marshes","DE239",611062.105,3,"DE","Schwandorf","Schwandorf",4,3,3,"DE239",1459187333.25126
+"77","Inland marshes","DE23A",988843.4044,3,"DE","Tirschenreuth","Tirschenreuth",4,3,3,"DE23A",1084422775.32253
+"78","Inland marshes","DE243",262828.23095,3,"DE","Coburg, Kreisfreie Stadt","Coburg, Kreisfreie Stadt",4,2,3,"DE243",48399162.5617278
+"79","Inland marshes","DE245",135890.69375,3,"DE","Bamberg, Landkreis","Bamberg, Landkreis",4,2,3,"DE245",1167414617.04728
+"80","Inland marshes","DE247",50006.11625,3,"DE","Coburg, Landkreis","Coburg, Landkreis",4,2,3,"DE247",591153790.812475
+"81","Inland marshes","DE24C",85810.875,3,"DE","Lichtenfels","Lichtenfels",4,3,3,"DE24C",519420213.691818
+"82","Inland marshes","DE24D",209085.895,3,"DE","Wunsiedel i. Fichtelgebirge","Wunsiedel i. Fichtelgebirge",4,3,3,"DE24D",606651486.074252
+"83","Inland marshes","DE256",451567.4469,3,"DE","Ansbach, Landkreis","Ansbach, Landkreis",4,3,3,"DE256",1971975510.503
+"84","Inland marshes","DE257",55564.5275,3,"DE","Erlangen-Höchstadt","Erlangen-Höchstadt",4,1,3,"DE257",565048291.834412
+"85","Inland marshes","DE25B",254766.34405,3,"DE","Roth","Roth",4,2,3,"DE25B",895869447.767299
+"86","Inland marshes","DE25C",788396.05125,3,"DE","Weißenburg-Gunzenhausen","Weißenburg-Gunzenhausen",4,3,3,"DE25C",969833051.721287
+"87","Inland marshes","DE265",88856.93375,3,"DE","Bad Kissingen","Bad Kissingen",4,3,3,"DE265",1137053515.01027
+"88","Inland marshes","DE26A",51418.5675,3,"DE","Main-Spessart","Main-Spessart",4,3,3,"DE26A",1322491608.33352
+"89","Inland marshes","DE26B",533514.30325,3,"DE","Schweinfurt, Landkreis","Schweinfurt, Landkreis",4,2,3,"DE26B",841574565.301676
+"90","Inland marshes","DE273",126711.84375,3,"DE","Kempten (Allgäu), Kreisfreie Stadt","Kempten (Allgäu), Kreisfreie Stadt",2,2,3,"DE273",63190327.2015361
+"91","Inland marshes","DE274",146135.37125,3,"DE","Memmingen, Kreisfreie Stadt","Memmingen, Kreisfreie Stadt",4,3,3,"DE274",69525845.2392632
+"92","Inland marshes","DE275",52214.33,3,"DE","Aichach-Friedberg","Aichach-Friedberg",4,2,3,"DE275",780056152.198697
+"93","Inland marshes","DE276",204789.7025,3,"DE","Augsburg, Landkreis","Augsburg, Landkreis",4,1,3,"DE276",1072378068.37977
+"94","Inland marshes","DE277",1608069.71625,3,"DE","Dillingen a.d. Donau","Dillingen a.d. Donau",4,3,3,"DE277",791598089.232373
+"95","Inland marshes","DE278",121178.3775,3,"DE","Günzburg","Günzburg",4,3,3,"DE278",763011483.609461
+"96","Inland marshes","DE27A",995949.3285,3,"DE","Lindau (Bodensee)","Lindau (Bodensee)",3,2,3,"DE27A",362199028.156974
+"97","Inland marshes","DE27B",2513532.68155,3,"DE","Ostallgäu","Ostallgäu",4,2,3,"DE27B",1394403948.35445
+"98","Inland marshes","DE27C",146135.37125,3,"DE","Unterallgäu","Unterallgäu",4,3,3,"DE27C",1230286007.8808
+"99","Inland marshes","DE27D",2755949.12425,3,"DE","Donau-Ries","Donau-Ries",4,3,3,"DE27D",1273243172.23197
+"100","Inland marshes","DE27E",1160195.0464,3,"DE","Oberallgäu","Oberallgäu",3,2,3,"DE27E",1527525608.89952
+"101","Inland marshes","DE300",1962315.2646501,3,"DE","Berlin","Berlin",4,1,3,"DE300",892632884.129363
+"102","Inland marshes","DE401",7150246.3371,3,"DE","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt",4,2,3,"DE401",228896031.438055
+"103","Inland marshes","DE402",143868.9875,3,"DE","Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt",4,2,3,"DE402",165271146.233965
+"104","Inland marshes","DE403",1104585.16095,3,"DE","Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt",4,2,3,"DE403",148317613.391826
+"105","Inland marshes","DE404",2376496.0015,3,"DE","Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt",4,2,3,"DE404",187267262.45604
+"106","Inland marshes","DE405",7811490.57535,3,"DE","Barnim","Barnim",4,2,3,"DE405",1481804299.65358
+"107","Inland marshes","DE406",17474527.05785,3,"DE","Dahme-Spreewald","Dahme-Spreewald",4,2,3,"DE406",2275022366.25851
+"108","Inland marshes","DE407",2280735.7046499,3,"DE","Elbe-Elster","Elbe-Elster",4,3,3,"DE407",1900211417.46318
+"109","Inland marshes","DE408",10508122.3498499,3,"DE","Havelland","Havelland",4,2,3,"DE408",1726899002.73072
+"110","Inland marshes","DE409",4624293.4797501,3,"DE","Märkisch-Oderland","Märkisch-Oderland",4,2,3,"DE409",2157811528.308
+"111","Inland marshes","DE40A",8052603.1454,3,"DE","Oberhavel","Oberhavel",4,2,3,"DE40A",1807252372.99428
+"112","Inland marshes","DE40B",9212995.3487,3,"DE","Oberspreewald-Lausitz","Oberspreewald-Lausitz",4,2,3,"DE40B",1222263381.86757
+"113","Inland marshes","DE40C",6796432.9495499,3,"DE","Oder-Spree","Oder-Spree",4,2,3,"DE40C",2256586794.17642
+"114","Inland marshes","DE40D",6629377.34995,3,"DE","Ostprignitz-Ruppin","Ostprignitz-Ruppin",4,3,3,"DE40D",2525912661.75807
+"115","Inland marshes","DE40E",15431039.8772999,3,"DE","Potsdam-Mittelmark","Potsdam-Mittelmark",4,2,3,"DE40E",2592887387.34177
+"116","Inland marshes","DE40F",2120046.79995,3,"DE","Prignitz","Prignitz",4,3,3,"DE40F",2138629029.18524
+"117","Inland marshes","DE40G",3462157.141,3,"DE","Spree-Neiße","Spree-Neiße",4,2,3,"DE40G",1657489773.15028
+"118","Inland marshes","DE40H",9949132.8925,3,"DE","Teltow-Fläming","Teltow-Fläming",4,2,3,"DE40H",2104570842.28913
+"119","Inland marshes","DE40I",32311490.4696995,3,"DE","Uckermark","Uckermark",4,3,3,"DE40I",3076623028.41344
+"120","Inland marshes","DE501",2009914.4625999,3,"DE","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt",4,1,1,"DE501",325592393.953141
+"121","Inland marshes","DE502",56007.3659,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"122","Inland marshes","DE600",1079367.70685,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"123","Inland marshes","DE715",511364.9058,3,"DE","Bergstraße","Bergstraße",4,1,3,"DE715",718282753.692553
+"124","Inland marshes","DE716",691302.5156,3,"DE","Darmstadt-Dieburg","Darmstadt-Dieburg",4,1,3,"DE716",658555696.868773
+"125","Inland marshes","DE717",498720.0069,3,"DE","Groß-Gerau","Groß-Gerau",4,1,3,"DE717",453685392.567884
+"126","Inland marshes","DE719",67981.5505,3,"DE","Main-Kinzig-Kreis","Main-Kinzig-Kreis",4,2,3,"DE719",1397135896.90246
+"127","Inland marshes","DE71C",50341.79375,3,"DE","Offenbach, Landkreis","Offenbach, Landkreis",4,1,3,"DE71C",355404592.600392
+"128","Inland marshes","DE71E",1055481.24845,3,"DE","Wetteraukreis","Wetteraukreis",4,2,3,"DE71E",1101267870.56871
+"129","Inland marshes","DE721",165240.9375,3,"DE","Gießen, Landkreis","Gießen, Landkreis",4,2,3,"DE721",855463709.872568
+"130","Inland marshes","DE732",111732.44875,3,"DE","Fulda","Fulda",4,2,3,"DE732",1381508604.63321
+"131","Inland marshes","DE733",106069.7665,3,"DE","Hersfeld-Rotenburg","Hersfeld-Rotenburg",4,3,3,"DE733",1097864927.76037
+"132","Inland marshes","DE735",340715.1382,3,"DE","Schwalm-Eder-Kreis","Schwalm-Eder-Kreis",4,3,3,"DE735",1538470342.63618
+"133","Inland marshes","DE736",766911.88975,3,"DE","Waldeck-Frankenberg","Waldeck-Frankenberg",4,3,3,"DE736",1848046275.6139
+"134","Inland marshes","DE803",6661240.4585,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"135","Inland marshes","DE804",142514.6497,3,"DE","Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt",4,3,2,"DE804",130550663.890612
+"136","Inland marshes","DE80J",69306063.0579999,3,"DE","Mecklenburgische Seenplatte","Mecklenburgische Seenplatte",4,3,3,"DE80J",5495764654.16188
+"137","Inland marshes","DE80K",19808369.73635,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"138","Inland marshes","DE80L",70359020.8848989,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"139","Inland marshes","DE80M",13476294.6175001,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"140","Inland marshes","DE80N",67752762.7796979,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"141","Inland marshes","DE80O",20404010.7643501,3,"DE","Ludwigslust-Parchim","Ludwigslust-Parchim",4,3,3,"DE80O",4767556761.67532
+"142","Inland marshes","DE911",107258.13625,3,"DE","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt",4,2,3,"DE911",192575054.406326
+"143","Inland marshes","DE913",1477788.63655,3,"DE","Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt",4,2,3,"DE913",204911779.620516
+"144","Inland marshes","DE914",225796.2366,3,"DE","Gifhorn","Gifhorn",4,2,3,"DE914",1568489671.94785
+"145","Inland marshes","DE916",95497.71,3,"DE","Goslar","Goslar",3,2,3,"DE916",968650105.346912
+"146","Inland marshes","DE917",139362.8925,3,"DE","Helmstedt","Helmstedt",4,3,3,"DE917",676165260.453927
+"147","Inland marshes","DE91A",71218.48,3,"DE","Peine","Peine",4,2,3,"DE91A",536510724.527694
+"148","Inland marshes","DE925",158515.07875,3,"DE","Hildesheim","Hildesheim",4,2,3,"DE925",1207711592.47233
+"149","Inland marshes","DE931",50837.7475,3,"DE","Celle","Celle",4,2,3,"DE931",1550266895.98411
+"150","Inland marshes","DE932",2254648.5901,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"151","Inland marshes","DE933",53165.1397002,3,"DE","Harburg","Harburg",4,2,3,"DE933",1249808737.9316
+"152","Inland marshes","DE934",168273.50375,3,"DE","Lüchow-Dannenberg","Lüchow-Dannenberg",4,3,3,"DE934",1225650222.61503
+"153","Inland marshes","DE935",52179.48625,3,"DE","Lüneburg, Landkreis","Lüneburg, Landkreis",4,2,3,"DE935",1326530355.40004
+"154","Inland marshes","DE936",3227291.29835,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"155","Inland marshes","DE937",934204.48815,3,"DE","Rotenburg (Wümme)","Rotenburg (Wümme)",4,3,3,"DE937",2073372672.35573
+"156","Inland marshes","DE938",107692.02875,3,"DE","Heidekreis","Heidekreis",4,2,3,"DE938",1881689691.31239
+"157","Inland marshes","DE939",1240507.35005,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"158","Inland marshes","DE93B",183573.84375,3,"DE","Verden","Verden",4,2,3,"DE93B",789675230.147464
+"159","Inland marshes","DE942",832714.4849,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"160","Inland marshes","DE945",1546817.7351,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"161","Inland marshes","DE946",1155796.2841,3,"DE","Ammerland","Ammerland",4,2,2,"DE946",729953152.000428
+"162","Inland marshes","DE947",3872990.0957,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"163","Inland marshes","DE948",615797.2969,3,"DE","Cloppenburg","Cloppenburg",4,3,3,"DE948",1421374929.86524
+"164","Inland marshes","DE949",2718272.1432,3,"DE","Emsland","Emsland",4,3,3,"DE949",2883867995.78465
+"165","Inland marshes","DE94A",314021.7537,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"166","Inland marshes","DE94C",6077739.6196501,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"167","Inland marshes","DE94D",51628.246,3,"DE","Oldenburg, Landkreis","Oldenburg, Landkreis",4,2,2,"DE94D",1065477437.64861
+"168","Inland marshes","DE94G",897640.83195,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"169","Inland marshes","DE94H",374562.5199,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"170","Inland marshes","DEA1B",164094.3017,3,"DE","Kleve","Kleve",4,2,3,"DEA1B",1233273879.44075
+"171","Inland marshes","DEA1E",119953.8773,3,"DE","Viersen","Viersen",4,1,3,"DEA1E",563752885.949402
+"172","Inland marshes","DEA27",114436.10475,3,"DE","Rhein-Erft-Kreis","Rhein-Erft-Kreis",4,1,3,"DEA27",703103893.413581
+"173","Inland marshes","DEA28",223576.07,3,"DE","Euskirchen","Euskirchen",4,2,3,"DEA28",1251380263.23967
+"174","Inland marshes","DEA29",53383.8825,3,"DE","Heinsberg","Heinsberg",4,2,3,"DEA29",627587804.289626
+"175","Inland marshes","DEA31",85576.6294,3,"DE","Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt",4,1,3,"DEA31",100079393.509908
+"176","Inland marshes","DEA32",91070.2962,3,"DE","Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt",4,1,3,"DEA32",105924389.114704
+"177","Inland marshes","DEA33",1331929.51175,3,"DE","Münster, Kreisfreie Stadt","Münster, Kreisfreie Stadt",4,1,3,"DEA33",303482228.67034
+"178","Inland marshes","DEA34",1080743.17555,3,"DE","Borken","Borken",4,2,3,"DEA34",1422633543.53468
+"179","Inland marshes","DEA36",163696.78105,3,"DE","Recklinghausen","Recklinghausen",4,1,3,"DEA36",761404385.524167
+"180","Inland marshes","DEA37",614727.88895,3,"DE","Steinfurt","Steinfurt",4,2,3,"DEA37",1795643341.46908
+"181","Inland marshes","DEA44",333815.95295,3,"DE","Höxter","Höxter",4,3,3,"DEA44",1200950878.40927
+"182","Inland marshes","DEA47",51111.565,3,"DE","Paderborn","Paderborn",4,2,3,"DEA47",1247041311.82428
+"183","Inland marshes","DEA54",59410.89325,3,"DE","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt",4,1,3,"DEA54",227955798.883389
+"184","Inland marshes","DEA56",75868.40415,3,"DE","Ennepe-Ruhr-Kreis","Ennepe-Ruhr-Kreis",4,1,3,"DEA56",410427266.463918
+"185","Inland marshes","DEA58",104665.3322,3,"DE","Märkischer Kreis","Märkischer Kreis",4,1,3,"DEA58",1061289203.722
+"186","Inland marshes","DEA5B",80820.6277001,3,"DE","Soest","Soest",4,2,3,"DEA5B",1329560125.47652
+"187","Inland marshes","DEA5C",70592.5905,3,"DE","Unna","Unna",4,1,3,"DEA5C",543090824.415448
+"188","Inland marshes","DEB18",58810.77,3,"DE","Neuwied","Neuwied",4,2,3,"DEB18",627651703.299646
+"189","Inland marshes","DEB21",106464.3754,3,"DE","Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt",4,2,3,"DEB21",116826811.696233
+"190","Inland marshes","DEB22",228731.29095,3,"DE","Bernkastel-Wittlich","Bernkastel-Wittlich",3,3,3,"DEB22",1169452787.64663
+"191","Inland marshes","DEB23",57430.49625,3,"DE","Eifelkreis Bitburg-Prüm","Eifelkreis Bitburg-Prüm",4,3,3,"DEB23",1627709097.38995
+"192","Inland marshes","DEB24",132801.465,3,"DE","Vulkaneifel","Vulkaneifel",4,3,3,"DEB24",910743900.460454
+"193","Inland marshes","DEB25",277368.24625,3,"DE","Trier-Saarburg","Trier-Saarburg",3,2,3,"DEB25",1103421611.10293
+"194","Inland marshes","DEB31",244774.7225,3,"DE","Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt",4,1,3,"DEB31",44178081.4867209
+"195","Inland marshes","DEB34",80301.75875,3,"DE","Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt",4,1,3,"DEB34",77835095.4478041
+"196","Inland marshes","DEB38",109703.79485,3,"DE","Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt",4,1,3,"DEB38",42412827.315229
+"197","Inland marshes","DEB39",288004.84875,3,"DE","Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt",4,1,3,"DEB39",109650258.448413
+"198","Inland marshes","DEB3B",2697549.77125,3,"DE","Alzey-Worms","Alzey-Worms",4,3,3,"DEB3B",587080591.160363
+"199","Inland marshes","DEB3E",580279.6884499,3,"DE","Germersheim","Germersheim",4,1,3,"DEB3E",463336831.578698
+"200","Inland marshes","DEB3I",898030.63015,3,"DE","Rhein-Pfalz-Kreis","Rhein-Pfalz-Kreis",4,1,3,"DEB3I",304563498.012404
+"201","Inland marshes","DEB3J",300605.50375,3,"DE","Mainz-Bingen","Mainz-Bingen",4,2,3,"DEB3J",606455255.176014
+"202","Inland marshes","DEB3K",72816.81525,3,"DE","Südwestpfalz","Südwestpfalz",4,3,3,"DEB3K",954825572.202891
+"203","Inland marshes","DEC01",228084.45,3,"DE","Regionalverband Saarbrücken","Regionalverband Saarbrücken",4,1,3,"DEC01",412262524.379048
+"204","Inland marshes","DEC03",87340.4475,3,"DE","Neunkirchen","Neunkirchen",4,2,3,"DEC03",247683790.446865
+"205","Inland marshes","DEC04",330842.391329,3,"DE","Saarlouis","Saarlouis",4,1,3,"DEC04",458819424.941821
+"206","Inland marshes","DEC05",194229.57775,3,"DE","Saarpfalz-Kreis","Saarpfalz-Kreis",4,1,3,"DEC05",420103663.427504
+"207","Inland marshes","DEC06",69750.52125,3,"DE","St. Wendel","St. Wendel",4,2,3,"DEC06",477509668.634755
+"208","Inland marshes","DED2C",7749211.2572,3,"DE","Bautzen","Bautzen",4,3,3,"DED2C",2394324005.69914
+"209","Inland marshes","DED2D",4587177.4006,3,"DE","Görlitz","Görlitz",4,2,3,"DED2D",2111617357.77598
+"210","Inland marshes","DED2E",1239416.2594,3,"DE","Meißen","Meißen",4,2,3,"DED2E",1458822908.66826
+"211","Inland marshes","DED42",808181.3158,3,"DE","Erzgebirgskreis","Erzgebirgskreis",3,2,3,"DED42",1827391752.94436
+"212","Inland marshes","DED43",50810.36,3,"DE","Mittelsachsen","Mittelsachsen",4,2,3,"DED43",2114905409.96206
+"213","Inland marshes","DED44",115447.295,3,"DE","Vogtlandkreis","Vogtlandkreis",4,2,3,"DED44",1412020787.58242
+"214","Inland marshes","DED45",50611.97125,3,"DE","Zwickau","Zwickau",4,2,3,"DED45",948970483.529633
+"215","Inland marshes","DED51",60705.5425,3,"DE","Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt",4,1,3,"DED51",299994732.271565
+"216","Inland marshes","DED52",1603680.6866,3,"DE","Leipzig","Leipzig",4,1,3,"DED52",1650413243.11551
+"217","Inland marshes","DED53",1578656.88985,3,"DE","Nordsachsen","Nordsachsen",4,3,3,"DED53",2027895996.34862
+"218","Inland marshes","DEE01",431187.4528,3,"DE","Dessau-Roßlau, Kreisfreie Stadt","Dessau-Roßlau, Kreisfreie Stadt",4,2,3,"DEE01",246028463.881621
+"219","Inland marshes","DEE02",278559.4096501,3,"DE","Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt",4,2,3,"DEE02",135908898.690888
+"220","Inland marshes","DEE03",315417.4225,3,"DE","Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt",4,2,3,"DEE03",200918216.51768
+"221","Inland marshes","DEE04",112299.39035,3,"DE","Altmarkkreis Salzwedel","Altmarkkreis Salzwedel",4,3,3,"DEE04",2304520504.26351
+"222","Inland marshes","DEE05",3553266.90615,3,"DE","Anhalt-Bitterfeld","Anhalt-Bitterfeld",4,2,3,"DEE05",1462195496.31366
+"223","Inland marshes","DEE06",2057958.61655,3,"DE","Jerichower Land","Jerichower Land",4,3,3,"DEE06",1589715793.5913
+"224","Inland marshes","DEE07",882714.9255501,3,"DE","Börde","Börde",4,2,3,"DEE07",2377097678.5338
+"225","Inland marshes","DEE08",55697.4025,3,"DE","Burgenlandkreis","Burgenlandkreis",4,3,3,"DEE08",1418669905.12265
+"226","Inland marshes","DEE0A",1167940.12625,3,"DE","Mansfeld-Südharz","Mansfeld-Südharz",4,3,3,"DEE0A",1456725560.41735
+"227","Inland marshes","DEE0B",2374140.75305,3,"DE","Saalekreis","Saalekreis",4,2,3,"DEE0B",1439418533.47617
+"228","Inland marshes","DEE0C",2174966.98595,3,"DE","Salzlandkreis","Salzlandkreis",4,2,3,"DEE0C",1435156297.61134
+"229","Inland marshes","DEE0D",7374634.3084503,3,"DE","Stendal","Stendal",4,3,3,"DEE0D",2436218017.9056
+"230","Inland marshes","DEE0E",1948305.6703496,3,"DE","Wittenberg","Wittenberg",4,3,3,"DEE0E",1942626325.95478
+"231","Inland marshes","DEF02",1218081.9093,3,"DE","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt",4,1,1,"DEF02",113224279.066901
+"232","Inland marshes","DEF03",3702090.3744,3,"DE","Lübeck, Kreisfreie Stadt","Lübeck, Kreisfreie Stadt",4,2,1,"DEF03",211867809.305578
+"233","Inland marshes","DEF05",4986043.5219501,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"234","Inland marshes","DEF06",721226.59955,3,"DE","Herzogtum Lauenburg","Herzogtum Lauenburg",4,2,3,"DEF06",1262379620.72553
+"235","Inland marshes","DEF07",25150724.8438001,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"236","Inland marshes","DEF08",2590038.4794998,3,"DE","Ostholstein","Ostholstein",4,2,1,"DEF08",1386481398.83516
+"237","Inland marshes","DEF09",5287462.39065,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"238","Inland marshes","DEF0A",4861246.9183993,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"239","Inland marshes","DEF0B",4620273.03145,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"240","Inland marshes","DEF0C",3149120.0773,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"241","Inland marshes","DEF0D",451027.27965,3,"DE","Segeberg","Segeberg",4,2,2,"DEF0D",1346167740.73886
+"242","Inland marshes","DEF0E",1537755.4555,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"243","Inland marshes","DEF0F",605697.165,3,"DE","Stormarn","Stormarn",4,2,3,"DEF0F",766261528.023555
+"244","Inland marshes","DEG01",60846.915,3,"DE","Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt",4,2,3,"DEG01",271358003.180449
+"245","Inland marshes","DEG09",521534.4975,3,"DE","Unstrut-Hainich-Kreis","Unstrut-Hainich-Kreis",4,3,3,"DEG09",980146308.827859
+"246","Inland marshes","DEG0A",254590.58375,3,"DE","Kyffhäuserkreis","Kyffhäuserkreis",4,3,3,"DEG0A",1038019674.72515
+"247","Inland marshes","DEG0B",281839.285,3,"DE","Schmalkalden-Meiningen","Schmalkalden-Meiningen",3,2,3,"DEG0B",1210719335.63334
+"248","Inland marshes","DEG0C",243895.96575,3,"DE","Gotha","Gotha",4,3,3,"DEG0C",935749088.386473
+"249","Inland marshes","DEG0E",50006.11625,3,"DE","Hildburghausen","Hildburghausen",2,3,3,"DEG0E",937443908.019157
+"250","Inland marshes","DEG0G",127732.3775,3,"DE","Weimarer Land","Weimarer Land",4,2,3,"DEG0G",804370741.063243
+"251","Inland marshes","DEG0J",267082.63445,3,"DE","Saale-Holzland-Kreis","Saale-Holzland-Kreis",4,2,3,"DEG0J",815338072.776793
+"252","Inland marshes","DEG0K",123595.58625,3,"DE","Saale-Orla-Kreis","Saale-Orla-Kreis",4,3,3,"DEG0K",1152244965.13537
+"253","Inland marshes","DEG0L",77128.57,3,"DE","Greiz","Greiz",4,2,3,"DEG0L",845844658.560738
+"254","Inland marshes","DEG0M",1706247.4938,3,"DE","Altenburger Land","Altenburger Land",4,2,3,"DEG0M",569813531.060611
+"255","Inland marshes","DEG0P",360009.02025,3,"DE","Wartburgkreis","Wartburgkreis",4,3,3,"DEG0P",1305335933.19303
+"256","Intertidal flats","DE502",496547254.60605,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"257","Intertidal flats","DE600",405538707.26,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"258","Intertidal flats","DE932",418822616.6869,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"259","Intertidal flats","DE936",1022998.33695,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"260","Intertidal flats","DE939",28543253.95045,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"261","Intertidal flats","DE942",3601956.26685,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"262","Intertidal flats","DE945",152946671.3151,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"263","Intertidal flats","DE947",490323599.84265,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"264","Intertidal flats","DE94A",155190681.60405,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"265","Intertidal flats","DE94C",233763196.9665,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"266","Intertidal flats","DE94G",308426902.52625,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"267","Intertidal flats","DE94H",144701794.23345,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"268","Intertidal flats","DEF05",426469438.6987,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"269","Intertidal flats","DEF07",912855344.608649,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"270","Intertidal flats","DEF0E",3218522.92125,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"271","Peatbogs","DE118",60039.3937,3,"DE","Heilbronn, Landkreis","Heilbronn, Landkreis",4,2,3,"DE118",1098993992.80318
+"272","Peatbogs","DE121",267905.495,3,"DE","Baden-Baden, Stadtkreis","Baden-Baden, Stadtkreis",3,1,3,"DE121",139700810.054739
+"273","Peatbogs","DE122",87395.32125,3,"DE","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis",4,1,3,"DE122",174498748.643615
+"274","Peatbogs","DE123",87395.32125,3,"DE","Karlsruhe, Landkreis","Karlsruhe, Landkreis",4,1,3,"DE123",1083742989.38858
+"275","Peatbogs","DE124",706619.10625,3,"DE","Rastatt","Rastatt",4,1,3,"DE124",739544382.998046
+"276","Peatbogs","DE12A",561605.2975,3,"DE","Calw","Calw",2,3,3,"DE12A",797563034.692163
+"277","Peatbogs","DE132",71980.53125,3,"DE","Breisgau-Hochschwarzwald","Breisgau-Hochschwarzwald",2,2,3,"DE132",1376919977.57085
+"278","Peatbogs","DE134",159347.93625,3,"DE","Ortenaukreis","Ortenaukreis",2,2,3,"DE134",1859698705.84385
+"279","Peatbogs","DE136",2538915.71405,3,"DE","Schwarzwald-Baar-Kreis","Schwarzwald-Baar-Kreis",4,2,3,"DE136",1026381921.87872
+"280","Peatbogs","DE137",444147.85795,3,"DE","Tuttlingen","Tuttlingen",3,2,3,"DE137",733132549.453917
+"281","Peatbogs","DE138",661521.22,3,"DE","Konstanz","Konstanz",4,2,3,"DE138",863233863.937629
+"282","Peatbogs","DE13A",104015.92375,3,"DE","Waldshut","Waldshut",3,2,3,"DE13A",1131027190.77065
+"283","Peatbogs","DE145",2295466.32795,3,"DE","Alb-Donau-Kreis","Alb-Donau-Kreis",4,2,3,"DE145",1357309263.38533
+"284","Peatbogs","DE146",9300462.0043001,3,"DE","Biberach","Biberach",4,3,3,"DE146",1410291001.8721
+"285","Peatbogs","DE147",1159328.60615,3,"DE","Bodenseekreis","Bodenseekreis",4,2,3,"DE147",881414111.057589
+"286","Peatbogs","DE148",17290111.8557,3,"DE","Ravensburg","Ravensburg",4,2,3,"DE148",1632852195.73125
+"287","Peatbogs","DE149",1758457.97955,3,"DE","Sigmaringen","Sigmaringen",4,3,3,"DE149",1204748486.40452
+"288","Peatbogs","DE214",341080.78845,3,"DE","Altötting","Altötting",4,2,3,"DE214",568637620.844652
+"289","Peatbogs","DE215",687667.29125,3,"DE","Berchtesgadener Land","Berchtesgadener Land",3,2,3,"DE215",839007695.993632
+"290","Peatbogs","DE216",35483580.61225,3,"DE","Bad Tölz-Wolfratshausen","Bad Tölz-Wolfratshausen",2,2,3,"DE216",1111738386.38701
+"291","Peatbogs","DE218",949653.32655,3,"DE","Ebersberg","Ebersberg",4,2,3,"DE218",549947351.179638
+"292","Peatbogs","DE21A",410511.07875,3,"DE","Erding","Erding",4,3,3,"DE21A",870735570.749398
+"293","Peatbogs","DE21C",5047837.56625,3,"DE","Fürstenfeldbruck","Fürstenfeldbruck",4,2,3,"DE21C",434303131.514166
+"294","Peatbogs","DE21D",50867389.42205,3,"DE","Garmisch-Partenkirchen","Garmisch-Partenkirchen",3,2,3,"DE21D",1011621466.20587
+"295","Peatbogs","DE21E",5300527.79625,3,"DE","Landsberg am Lech","Landsberg am Lech",4,3,3,"DE21E",803187477.563865
+"296","Peatbogs","DE21F",1250075.10635,3,"DE","Miesbach","Miesbach",3,2,3,"DE21F",867878819.720599
+"297","Peatbogs","DE21H",825806.4877999,3,"DE","München, Landkreis","München, Landkreis",4,1,3,"DE21H",664005409.595299
+"298","Peatbogs","DE21I",73966.61625,3,"DE","Neuburg-Schrobenhausen","Neuburg-Schrobenhausen",4,3,3,"DE21I",740797368.95015
+"299","Peatbogs","DE21K",19304008.4540999,3,"DE","Rosenheim, Landkreis","Rosenheim, Landkreis",4,2,3,"DE21K",1441126051.81986
+"300","Peatbogs","DE21L",8547337.54735,3,"DE","Starnberg","Starnberg",4,2,3,"DE21L",485962879.134515
+"301","Peatbogs","DE21M",19673270.8687999,3,"DE","Traunstein","Traunstein",4,3,3,"DE21M",1533304184.32057
+"302","Peatbogs","DE21N",35854839.4384,3,"DE","Weilheim-Schongau","Weilheim-Schongau",4,2,3,"DE21N",967862689.399724
+"303","Peatbogs","DE224",54556.19875,3,"DE","Deggendorf","Deggendorf",4,3,3,"DE224",860830092.648876
+"304","Peatbogs","DE225",841439.6925,3,"DE","Freyung-Grafenau","Freyung-Grafenau",3,3,3,"DE225",985303691.678694
+"305","Peatbogs","DE226",167454.67515,3,"DE","Kelheim","Kelheim",4,3,3,"DE226",1063580761.75501
+"306","Peatbogs","DE22A",89582.27095,3,"DE","Rottal-Inn","Rottal-Inn",4,3,3,"DE22A",1281883718.03827
+"307","Peatbogs","DE22B",104055.7325,3,"DE","Straubing-Bogen","Straubing-Bogen",4,3,3,"DE22B",1202289544.38978
+"308","Peatbogs","DE22C",138438.78625,3,"DE","Dingolfing-Landau","Dingolfing-Landau",4,3,3,"DE22C",877603908.137835
+"309","Peatbogs","DE234",90040.08,3,"DE","Amberg-Sulzbach","Amberg-Sulzbach",4,2,3,"DE234",1254394217.66907
+"310","Peatbogs","DE237",1356720.4075,3,"DE","Neustadt a. d. Waldnaab","Neustadt a. d. Waldnaab",4,3,3,"DE237",1427910653.4614
+"311","Peatbogs","DE238",86338.20375,3,"DE","Regensburg, Landkreis","Regensburg, Landkreis",4,2,3,"DE238",1392336652.46492
+"312","Peatbogs","DE239",791008.525,3,"DE","Schwandorf","Schwandorf",4,3,3,"DE239",1459187333.25126
+"313","Peatbogs","DE256",175454.7146,3,"DE","Ansbach, Landkreis","Ansbach, Landkreis",4,3,3,"DE256",1971975510.503
+"314","Peatbogs","DE25C",321804.8811,3,"DE","Weißenburg-Gunzenhausen","Weißenburg-Gunzenhausen",4,3,3,"DE25C",969833051.721287
+"315","Peatbogs","DE266",1355625.2505,3,"DE","Rhön-Grabfeld","Rhön-Grabfeld",4,3,3,"DE266",1021849206.68919
+"316","Peatbogs","DE269",214212.655,3,"DE","Miltenberg","Miltenberg",2,2,3,"DE269",714910368.280708
+"317","Peatbogs","DE273",134445.53865,3,"DE","Kempten (Allgäu), Kreisfreie Stadt","Kempten (Allgäu), Kreisfreie Stadt",2,2,3,"DE273",63190327.2015361
+"318","Peatbogs","DE276",75839.49875,3,"DE","Augsburg, Landkreis","Augsburg, Landkreis",4,1,3,"DE276",1072378068.37977
+"319","Peatbogs","DE277",421125.88345,3,"DE","Dillingen a.d. Donau","Dillingen a.d. Donau",4,3,3,"DE277",791598089.232373
+"320","Peatbogs","DE278",2569239.07995,3,"DE","Günzburg","Günzburg",4,3,3,"DE278",763011483.609461
+"321","Peatbogs","DE27A",444763.0693233,3,"DE","Lindau (Bodensee)","Lindau (Bodensee)",3,2,3,"DE27A",362199028.156974
+"322","Peatbogs","DE27B",5951485.6543,3,"DE","Ostallgäu","Ostallgäu",4,2,3,"DE27B",1394403948.35445
+"323","Peatbogs","DE27C",207661.525,3,"DE","Unterallgäu","Unterallgäu",4,3,3,"DE27C",1230286007.8808
+"324","Peatbogs","DE27D",326144.13615,3,"DE","Donau-Ries","Donau-Ries",4,3,3,"DE27D",1273243172.23197
+"325","Peatbogs","DE27E",2732686.74575,3,"DE","Oberallgäu","Oberallgäu",3,2,3,"DE27E",1527525608.89952
+"326","Peatbogs","DE300",195935.3925,3,"DE","Berlin","Berlin",4,1,3,"DE300",892632884.129363
+"327","Peatbogs","DE401",98496.82625,3,"DE","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt",4,2,3,"DE401",228896031.438055
+"328","Peatbogs","DE406",588306.12375,3,"DE","Dahme-Spreewald","Dahme-Spreewald",4,2,3,"DE406",2275022366.25851
+"329","Peatbogs","DE409",516634.541,3,"DE","Märkisch-Oderland","Märkisch-Oderland",4,2,3,"DE409",2157811528.308
+"330","Peatbogs","DE40A",68433,3,"DE","Oberhavel","Oberhavel",4,2,3,"DE40A",1807252372.99428
+"331","Peatbogs","DE40C",1874585.61755,3,"DE","Oder-Spree","Oder-Spree",4,2,3,"DE40C",2256586794.17642
+"332","Peatbogs","DE40E",153290.26375,3,"DE","Potsdam-Mittelmark","Potsdam-Mittelmark",4,2,3,"DE40E",2592887387.34177
+"333","Peatbogs","DE40G",202026.3225,3,"DE","Spree-Neiße","Spree-Neiße",4,2,3,"DE40G",1657489773.15028
+"334","Peatbogs","DE40I",609586.41,3,"DE","Uckermark","Uckermark",4,3,3,"DE40I",3076623028.41344
+"335","Peatbogs","DE600",2696887.43425,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"336","Peatbogs","DE716",474277.1728,3,"DE","Darmstadt-Dieburg","Darmstadt-Dieburg",4,1,3,"DE716",658555696.868773
+"337","Peatbogs","DE719",169987.34375,3,"DE","Main-Kinzig-Kreis","Main-Kinzig-Kreis",4,2,3,"DE719",1397135896.90246
+"338","Peatbogs","DE724",414515.95875,3,"DE","Marburg-Biedenkopf","Marburg-Biedenkopf",4,2,3,"DE724",1262433047.38785
+"339","Peatbogs","DE725",117258.69625,3,"DE","Vogelsbergkreis","Vogelsbergkreis",4,3,3,"DE725",1458037091.49231
+"340","Peatbogs","DE732",182463.63745,3,"DE","Fulda","Fulda",4,2,3,"DE732",1381508604.63321
+"341","Peatbogs","DE735",75234.5568,3,"DE","Schwalm-Eder-Kreis","Schwalm-Eder-Kreis",4,3,3,"DE735",1538470342.63618
+"342","Peatbogs","DE803",412274.6653,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"343","Peatbogs","DE804",99700.2403,3,"DE","Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt",4,3,2,"DE804",130550663.890612
+"344","Peatbogs","DE80J",1593859.72145,3,"DE","Mecklenburgische Seenplatte","Mecklenburgische Seenplatte",4,3,3,"DE80J",5495764654.16188
+"345","Peatbogs","DE80K",3548683.82905,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"346","Peatbogs","DE80L",6810336.2923,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"347","Peatbogs","DE80M",2764677.06535,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"348","Peatbogs","DE80N",32193631.6327,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"349","Peatbogs","DE80O",1217968.32875,3,"DE","Ludwigslust-Parchim","Ludwigslust-Parchim",4,3,3,"DE80O",4767556761.67532
+"350","Peatbogs","DE911",216457.45435,3,"DE","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt",4,2,3,"DE911",192575054.406326
+"351","Peatbogs","DE914",12419539.7391,3,"DE","Gifhorn","Gifhorn",4,2,3,"DE914",1568489671.94785
+"352","Peatbogs","DE916",3548791.0513,3,"DE","Goslar","Goslar",3,2,3,"DE916",968650105.346912
+"353","Peatbogs","DE918",533085.87875,3,"DE","Northeim","Northeim",4,3,3,"DE918",1270287546.82484
+"354","Peatbogs","DE91A",195902.8575,3,"DE","Peine","Peine",4,2,3,"DE91A",536510724.527694
+"355","Peatbogs","DE91B",173663.6175,3,"DE","Wolfenbüttel","Wolfenbüttel",4,2,3,"DE91B",723619876.202555
+"356","Peatbogs","DE91C",479075.5775,3,"DE","Göttingen","Göttingen",4,2,3,"DE91C",1755583844.9965
+"357","Peatbogs","DE922",101731259.4083,3,"DE","Diepholz","Diepholz",4,2,3,"DE922",1989909931.69491
+"358","Peatbogs","DE923",63888.4625,3,"DE","Hameln-Pyrmont","Hameln-Pyrmont",4,2,3,"DE923",797827172.188895
+"359","Peatbogs","DE925",121900.05075,3,"DE","Hildesheim","Hildesheim",4,2,3,"DE925",1207711592.47233
+"360","Peatbogs","DE926",488453.265,3,"DE","Holzminden","Holzminden",4,3,3,"DE926",694045656.965633
+"361","Peatbogs","DE927",35352523.6294001,3,"DE","Nienburg (Weser)","Nienburg (Weser)",4,3,3,"DE927",1401882982.31737
+"362","Peatbogs","DE928",250477.02445,3,"DE","Schaumburg","Schaumburg",4,2,3,"DE928",676583077.468158
+"363","Peatbogs","DE929",18643128.3876,3,"DE","Region Hannover","Region Hannover",4,1,3,"DE929",2297355176.08333
+"364","Peatbogs","DE931",12208276.36415,3,"DE","Celle","Celle",4,2,3,"DE931",1550266895.98411
+"365","Peatbogs","DE932",31707967.14305,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"366","Peatbogs","DE933",3815878.42525,3,"DE","Harburg","Harburg",4,2,3,"DE933",1249808737.9316
+"367","Peatbogs","DE934",696329.4163,3,"DE","Lüchow-Dannenberg","Lüchow-Dannenberg",4,3,3,"DE934",1225650222.61503
+"368","Peatbogs","DE935",778181.5840496,3,"DE","Lüneburg, Landkreis","Lüneburg, Landkreis",4,2,3,"DE935",1326530355.40004
+"369","Peatbogs","DE936",5449435.9354,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"370","Peatbogs","DE937",24576893.4189999,3,"DE","Rotenburg (Wümme)","Rotenburg (Wümme)",4,3,3,"DE937",2073372672.35573
+"371","Peatbogs","DE938",18395838.8641499,3,"DE","Heidekreis","Heidekreis",4,2,3,"DE938",1881689691.31239
+"372","Peatbogs","DE939",11752544.7469,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"373","Peatbogs","DE93A",1558193.32375,3,"DE","Uelzen","Uelzen",4,3,3,"DE93A",1463165062.15144
+"374","Peatbogs","DE93B",377757.1563,3,"DE","Verden","Verden",4,2,3,"DE93B",789675230.147464
+"375","Peatbogs","DE942",168308.00365,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"376","Peatbogs","DE946",26232599.3060501,3,"DE","Ammerland","Ammerland",4,2,2,"DE946",729953152.000428
+"377","Peatbogs","DE947",18428875.94145,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"378","Peatbogs","DE948",65924278.3115002,3,"DE","Cloppenburg","Cloppenburg",4,3,3,"DE948",1421374929.86524
+"379","Peatbogs","DE949",141128612.982728,3,"DE","Emsland","Emsland",4,3,3,"DE949",2883867995.78465
+"380","Peatbogs","DE94A",8920620.82145,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"381","Peatbogs","DE94B",26278748.57975,3,"DE","Grafschaft Bentheim","Grafschaft Bentheim",4,2,3,"DE94B",981409436.788826
+"382","Peatbogs","DE94C",58204206.52365,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"383","Peatbogs","DE94D",3174624.68015,3,"DE","Oldenburg, Landkreis","Oldenburg, Landkreis",4,2,2,"DE94D",1065477437.64861
+"384","Peatbogs","DE94E",16778838.6261,3,"DE","Osnabrück, Landkreis","Osnabrück, Landkreis",4,2,3,"DE94E",2120461941.77748
+"385","Peatbogs","DE94F",46094803.0931,3,"DE","Vechta","Vechta",4,2,3,"DE94F",813936055.13258
+"386","Peatbogs","DE94G",3145992.0036,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"387","Peatbogs","DE94H",15583447.09805,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"388","Peatbogs","DEA11",56046.717,3,"DE","Düsseldorf, Kreisfreie Stadt","Düsseldorf, Kreisfreie Stadt",4,1,3,"DEA11",217642471.837296
+"389","Peatbogs","DEA1C",107298.6524,3,"DE","Mettmann","Mettmann",4,1,3,"DEA1C",408467768.045507
+"390","Peatbogs","DEA1F",171258.9023,3,"DE","Wesel","Wesel",4,1,3,"DEA1F",1042903749.9752
+"391","Peatbogs","DEA28",60931.09625,3,"DE","Euskirchen","Euskirchen",4,2,3,"DEA28",1251380263.23967
+"392","Peatbogs","DEA2D",570526.5947,3,"DE","Städteregion Aachen","Städteregion Aachen",4,1,3,"DEA2D",707422985.528845
+"393","Peatbogs","DEA34",3113063.360461,3,"DE","Borken","Borken",4,2,3,"DEA34",1422633543.53468
+"394","Peatbogs","DEA35",103582.8912,3,"DE","Coesfeld","Coesfeld",4,1,3,"DEA35",1111968188.69059
+"395","Peatbogs","DEA37",505185.17905,3,"DE","Steinfurt","Steinfurt",4,2,3,"DEA37",1795643341.46908
+"396","Peatbogs","DEA38",146295.4558,3,"DE","Warendorf","Warendorf",4,2,3,"DEA38",1319363417.20812
+"397","Peatbogs","DEA44",66207.98,3,"DE","Höxter","Höxter",4,3,3,"DEA44",1200950878.40927
+"398","Peatbogs","DEA46",6684111.30875,3,"DE","Minden-Lübbecke","Minden-Lübbecke",4,2,3,"DEA46",1151426926.02607
+"399","Peatbogs","DEA47",422433.5825,3,"DE","Paderborn","Paderborn",4,2,3,"DEA47",1247041311.82428
+"400","Peatbogs","DEA54",146295.4558,3,"DE","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt",4,1,3,"DEA54",227955798.883389
+"401","Peatbogs","DEA58",136959.59,3,"DE","Märkischer Kreis","Märkischer Kreis",4,1,3,"DEA58",1061289203.722
+"402","Peatbogs","DEB25",62499.23625,3,"DE","Trier-Saarburg","Trier-Saarburg",3,2,3,"DEB25",1103421611.10293
+"403","Peatbogs","DEB3F",52109.65405,3,"DE","Kaiserslautern, Landkreis","Kaiserslautern, Landkreis",4,2,3,"DEB3F",641050267.478935
+"404","Peatbogs","DED42",50239.51875,3,"DE","Erzgebirgskreis","Erzgebirgskreis",3,2,3,"DED42",1827391752.94436
+"405","Peatbogs","DED45",55689.0075,3,"DE","Zwickau","Zwickau",4,2,3,"DED45",948970483.529633
+"406","Peatbogs","DED53",1794572.1628,3,"DE","Nordsachsen","Nordsachsen",4,3,3,"DED53",2027895996.34862
+"407","Peatbogs","DEE09",118545.455,3,"DE","Harz","Harz",4,2,3,"DEE09",2108238551.98025
+"408","Peatbogs","DEF04",2722115.9959,3,"DE","Neumünster, Kreisfreie Stadt","Neumünster, Kreisfreie Stadt",4,2,2,"DEF04",71607382.3141106
+"409","Peatbogs","DEF05",17198539.1013501,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"410","Peatbogs","DEF06",401929.88615,3,"DE","Herzogtum Lauenburg","Herzogtum Lauenburg",4,2,3,"DEF06",1262379620.72553
+"411","Peatbogs","DEF07",6751701.62685,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"412","Peatbogs","DEF08",2940286.3666,3,"DE","Ostholstein","Ostholstein",4,2,1,"DEF08",1386481398.83516
+"413","Peatbogs","DEF09",3269578.2748,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"414","Peatbogs","DEF0A",3999848.56535,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"415","Peatbogs","DEF0B",21435756.6237999,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"416","Peatbogs","DEF0C",20346048.9221999,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"417","Peatbogs","DEF0D",9421438.0673001,3,"DE","Segeberg","Segeberg",4,2,2,"DEF0D",1346167740.73886
+"418","Peatbogs","DEF0E",2359408.7178,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"419","Peatbogs","DEF0F",3087010.7125,3,"DE","Stormarn","Stormarn",4,2,3,"DEF0F",766261528.023555
+"420","Peatbogs","DEG01",50857.2925,3,"DE","Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt",4,2,3,"DEG01",271358003.180449
+"421","Peatbogs","DEG09",159274.65425,3,"DE","Unstrut-Hainich-Kreis","Unstrut-Hainich-Kreis",4,3,3,"DEG09",980146308.827859
+"422","Peatbogs","DEG0C",209742.9375,3,"DE","Gotha","Gotha",4,3,3,"DEG0C",935749088.386473
+"423","Peatbogs","DEG0K",560817.1156,3,"DE","Saale-Orla-Kreis","Saale-Orla-Kreis",4,3,3,"DEG0K",1152244965.13537
+"424","Peatbogs","DEG0L",126664.0372,3,"DE","Greiz","Greiz",4,2,3,"DEG0L",845844658.560738
+"425","Peatbogs","DEG0P",57739.10125,3,"DE","Wartburgkreis","Wartburgkreis",4,3,3,"DEG0P",1305335933.19303

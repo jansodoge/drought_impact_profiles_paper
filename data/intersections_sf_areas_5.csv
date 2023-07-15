@@ -1,0 +1,741 @@
+"","description","NUTS_ID","area_total","LEVL_CODE","CNTR_CODE","NAME_LATN","NUTS_NAME","MOUNT_TYPE","URBN_TYPE","COAST_TYPE","FID","area_size_total"
+"1","Coastal lagoons","DE803",12862857.1182,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"2","Coastal lagoons","DE80K",38263461.9932,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"3","Coastal lagoons","DE80L",589089898.71255,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"4","Coastal lagoons","DE80M",42572984.973,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"5","Coastal lagoons","DE80N",461926859.05545,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"6","Coastal lagoons","DEF08",2968810.2923,3,"DE","Ostholstein","Ostholstein",4,2,1,"DEF08",1386481398.83516
+"7","Coastal lagoons","DEF0A",431732.93,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"8","Coastal lagoons","DEF0B",52772585.47015,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"9","Coastal lagoons","DEF0C",52707736.34475,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"10","Esruaries","DE501",70639901.5367,3,"DE","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt",4,1,1,"DE501",325592393.953141
+"11","Esruaries","DE502",70639901.5367,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"12","Esruaries","DE600",281380269.389,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"13","Esruaries","DE932",352077835.6701,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"14","Esruaries","DE933",281380269.389,3,"DE","Harburg","Harburg",4,2,3,"DE933",1249808737.9316
+"15","Esruaries","DE936",70639901.5367,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"16","Esruaries","DE939",281380269.389,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"17","Esruaries","DE942",75603645.8782,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"18","Esruaries","DE947",75858629.67165,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"19","Esruaries","DE94A",310068.91195,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"20","Esruaries","DE94C",75603645.8782,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"21","Esruaries","DE94G",70908778.50405,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"22","Esruaries","DE94H",138177.69185,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"23","Esruaries","DEF01",740783.40595,3,"DE","Flensburg, Kreisfreie Stadt","Flensburg, Kreisfreie Stadt",4,2,1,"DEF01",49090925.52108
+"24","Esruaries","DEF05",288959725.5456,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"25","Esruaries","DEF06",281380269.389,3,"DE","Herzogtum Lauenburg","Herzogtum Lauenburg",4,2,3,"DEF06",1262379620.72553
+"26","Esruaries","DEF07",7450863.68235,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"27","Esruaries","DEF09",281380269.389,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"28","Esruaries","DEF0E",281380269.389,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"29","Sea and ocean","DE600",84421.4136999,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"30","Sea and ocean","DE803",10791513314.1,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"31","Sea and ocean","DE80K",10791513314.1,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"32","Sea and ocean","DE80L",10791513314.1,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"33","Sea and ocean","DE80M",10791513314.1,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"34","Sea and ocean","DE80N",10791513314.1,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"35","Sea and ocean","DE945",9234699860,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"36","Sea and ocean","DE947",9234699860,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"37","Sea and ocean","DE94A",9234699860,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"38","Sea and ocean","DE94C",9234699860,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"39","Sea and ocean","DE94G",9234699860,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"40","Sea and ocean","DE94H",9234699860,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"41","Sea and ocean","DEF01",10791513314.1,3,"DE","Flensburg, Kreisfreie Stadt","Flensburg, Kreisfreie Stadt",4,2,1,"DEF01",49090925.52108
+"42","Sea and ocean","DEF02",10791513314.1,3,"DE","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt",4,1,1,"DEF02",113224279.066901
+"43","Sea and ocean","DEF03",10791513314.1,3,"DE","Lübeck, Kreisfreie Stadt","Lübeck, Kreisfreie Stadt",4,2,1,"DEF03",211867809.305578
+"44","Sea and ocean","DEF05",9234776655.7141,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"45","Sea and ocean","DEF07",9234699860,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"46","Sea and ocean","DEF08",10791578104.1012,3,"DE","Ostholstein","Ostholstein",4,2,1,"DEF08",1386481398.83516
+"47","Sea and ocean","DEF09",9234699860,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"48","Sea and ocean","DEF0A",10791513314.1,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"49","Sea and ocean","DEF0B",10791513314.1,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"50","Sea and ocean","DEF0C",10791513314.1,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"51","Water bodies","DE111",442539.9396,3,"DE","Stuttgart, Stadtkreis","Stuttgart, Stadtkreis",4,1,3,"DE111",210111231.572561
+"52","Water bodies","DE113",734319.70435,3,"DE","Esslingen","Esslingen",4,1,3,"DE113",639653087.634639
+"53","Water bodies","DE114",175981.39625,3,"DE","Göppingen","Göppingen",3,1,3,"DE114",642175034.832007
+"54","Water bodies","DE115",101179.0817,3,"DE","Ludwigsburg","Ludwigsburg",4,1,3,"DE115",685990294.660686
+"55","Water bodies","DE116",361971.6868,3,"DE","Rems-Murr-Kreis","Rems-Murr-Kreis",4,1,3,"DE116",856918530.725362
+"56","Water bodies","DE117",73639.00875,3,"DE","Heilbronn, Stadtkreis","Heilbronn, Stadtkreis",4,2,3,"DE117",100661417.036062
+"57","Water bodies","DE118",698887.3293,3,"DE","Heilbronn, Landkreis","Heilbronn, Landkreis",4,2,3,"DE118",1098993992.80318
+"58","Water bodies","DE119",180534.7972,3,"DE","Hohenlohekreis","Hohenlohekreis",4,3,3,"DE119",777054680.59534
+"59","Water bodies","DE11A",404270.4676501,3,"DE","Schwäbisch Hall","Schwäbisch Hall",4,3,3,"DE11A",1484723816.9574
+"60","Water bodies","DE11B",297809.69,3,"DE","Main-Tauber-Kreis","Main-Tauber-Kreis",4,3,3,"DE11B",1304391537.28439
+"61","Water bodies","DE11C",186298.38005,3,"DE","Heidenheim","Heidenheim",4,2,3,"DE11C",626943384.753197
+"62","Water bodies","DE11D",2295302.328,3,"DE","Ostalbkreis","Ostalbkreis",4,2,3,"DE11D",1511168828.10402
+"63","Water bodies","DE121",1808569.8681,3,"DE","Baden-Baden, Stadtkreis","Baden-Baden, Stadtkreis",3,1,3,"DE121",139700810.054739
+"64","Water bodies","DE122",3464770.55645,3,"DE","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis",4,1,3,"DE122",174498748.643615
+"65","Water bodies","DE123",18461723.2242499,3,"DE","Karlsruhe, Landkreis","Karlsruhe, Landkreis",4,1,3,"DE123",1083742989.38858
+"66","Water bodies","DE124",10563544.2866999,3,"DE","Rastatt","Rastatt",4,1,3,"DE124",739544382.998046
+"67","Water bodies","DE126",1299751.26645,3,"DE","Mannheim, Stadtkreis","Mannheim, Stadtkreis",4,1,3,"DE126",145121268.985362
+"68","Water bodies","DE128",4969211.80675,3,"DE","Rhein-Neckar-Kreis","Rhein-Neckar-Kreis",4,1,3,"DE128",1060449184.94986
+"69","Water bodies","DE12B",204338.5875,3,"DE","Enzkreis","Enzkreis",4,2,3,"DE12B",573053894.384032
+"70","Water bodies","DE12C",1025131.00375,3,"DE","Freudenstadt","Freudenstadt",3,3,3,"DE12C",870822637.050476
+"71","Water bodies","DE131",878382.65845,3,"DE","Freiburg im Breisgau, Stadtkreis","Freiburg im Breisgau, Stadtkreis",4,2,3,"DE131",154093476.898963
+"72","Water bodies","DE132",9417905.8217,3,"DE","Breisgau-Hochschwarzwald","Breisgau-Hochschwarzwald",2,2,3,"DE132",1376919977.57085
+"73","Water bodies","DE133",1597189.7614,3,"DE","Emmendingen","Emmendingen",2,2,3,"DE133",680111254.844883
+"74","Water bodies","DE134",10854875.2053999,3,"DE","Ortenaukreis","Ortenaukreis",2,2,3,"DE134",1859698705.84385
+"75","Water bodies","DE136",1751405.3281,3,"DE","Schwarzwald-Baar-Kreis","Schwarzwald-Baar-Kreis",4,2,3,"DE136",1026381921.87872
+"76","Water bodies","DE137",274309.40925,3,"DE","Tuttlingen","Tuttlingen",3,2,3,"DE137",733132549.453917
+"77","Water bodies","DE138",519737885.159,3,"DE","Konstanz","Konstanz",4,2,3,"DE138",863233863.937629
+"78","Water bodies","DE13A",1270010.3019,3,"DE","Waldshut","Waldshut",3,2,3,"DE13A",1131027190.77065
+"79","Water bodies","DE141",403765.50625,3,"DE","Reutlingen","Reutlingen",1,2,3,"DE141",1092928197.42345
+"80","Water bodies","DE142",967864.40345,3,"DE","Tübingen, Landkreis","Tübingen, Landkreis",4,2,3,"DE142",519699131.934403
+"81","Water bodies","DE143",227052.5634,3,"DE","Zollernalbkreis","Zollernalbkreis",3,2,3,"DE143",917334100.757974
+"82","Water bodies","DE144",74931.3875,3,"DE","Ulm, Stadtkreis","Ulm, Stadtkreis",4,2,3,"DE144",119375741.619876
+"83","Water bodies","DE145",3152093.51025,3,"DE","Alb-Donau-Kreis","Alb-Donau-Kreis",4,2,3,"DE145",1357309263.38533
+"84","Water bodies","DE146",5416138.5560501,3,"DE","Biberach","Biberach",4,3,3,"DE146",1410291001.8721
+"85","Water bodies","DE147",473725577.7285,3,"DE","Bodenseekreis","Bodenseekreis",4,2,3,"DE147",881414111.057589
+"86","Water bodies","DE148",8033211.47705,3,"DE","Ravensburg","Ravensburg",4,2,3,"DE148",1632852195.73125
+"87","Water bodies","DE149",5359447.51575,3,"DE","Sigmaringen","Sigmaringen",4,3,3,"DE149",1204748486.40452
+"88","Water bodies","DE211",2568756.7391001,3,"DE","Ingolstadt, Kreisfreie Stadt","Ingolstadt, Kreisfreie Stadt",4,2,3,"DE211",133325007.334283
+"89","Water bodies","DE212",1692048.41155,3,"DE","München, Kreisfreie Stadt","München, Kreisfreie Stadt",4,1,3,"DE212",311773686.596285
+"90","Water bodies","DE213",508453.4173,3,"DE","Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt",4,2,3,"DE213",36270134.4697756
+"91","Water bodies","DE214",751016.5486,3,"DE","Altötting","Altötting",4,2,3,"DE214",568637620.844652
+"92","Water bodies","DE215",7594645.2985,3,"DE","Berchtesgadener Land","Berchtesgadener Land",3,2,3,"DE215",839007695.993632
+"93","Water bodies","DE216",84000332.67565,3,"DE","Bad Tölz-Wolfratshausen","Bad Tölz-Wolfratshausen",2,2,3,"DE216",1111738386.38701
+"94","Water bodies","DE217",1147481.64935,3,"DE","Dachau","Dachau",4,2,3,"DE217",579675207.43844
+"95","Water bodies","DE218",8854480.21565,3,"DE","Ebersberg","Ebersberg",4,2,3,"DE218",549947351.179638
+"96","Water bodies","DE219",2535504.83625,3,"DE","Eichstätt","Eichstätt",4,2,3,"DE219",1214987684.53575
+"97","Water bodies","DE21A",8715636.44015,3,"DE","Erding","Erding",4,3,3,"DE21A",870735570.749398
+"98","Water bodies","DE21B",3947513.34005,3,"DE","Freising","Freising",4,2,3,"DE21B",799220968.906402
+"99","Water bodies","DE21C",562707.85095,3,"DE","Fürstenfeldbruck","Fürstenfeldbruck",4,2,3,"DE21C",434303131.514166
+"100","Water bodies","DE21D",12949420.63065,3,"DE","Garmisch-Partenkirchen","Garmisch-Partenkirchen",3,2,3,"DE21D",1011621466.20587
+"101","Water bodies","DE21E",47137507.59175,3,"DE","Landsberg am Lech","Landsberg am Lech",4,3,3,"DE21E",803187477.563865
+"102","Water bodies","DE21F",12496150.21145,3,"DE","Miesbach","Miesbach",3,2,3,"DE21F",867878819.720599
+"103","Water bodies","DE21H",10004839.7022,3,"DE","München, Landkreis","München, Landkreis",4,1,3,"DE21H",664005409.595299
+"104","Water bodies","DE21I",5982586.45715,3,"DE","Neuburg-Schrobenhausen","Neuburg-Schrobenhausen",4,3,3,"DE21I",740797368.95015
+"105","Water bodies","DE21J",7213338.6241,3,"DE","Pfaffenhofen a. d. Ilm","Pfaffenhofen a. d. Ilm",4,2,3,"DE21J",760884170.082064
+"106","Water bodies","DE21K",92844938.6261,3,"DE","Rosenheim, Landkreis","Rosenheim, Landkreis",4,2,3,"DE21K",1441126051.81986
+"107","Water bodies","DE21L",109627085.8709,3,"DE","Starnberg","Starnberg",4,2,3,"DE21L",485962879.134515
+"108","Water bodies","DE21M",88932737.3839,3,"DE","Traunstein","Traunstein",4,3,3,"DE21M",1533304184.32057
+"109","Water bodies","DE21N",111380049.9859,3,"DE","Weilheim-Schongau","Weilheim-Schongau",4,2,3,"DE21N",967862689.399724
+"110","Water bodies","DE221",2150263.0528,3,"DE","Landshut, Kreisfreie Stadt","Landshut, Kreisfreie Stadt",4,3,3,"DE221",66236572.6815427
+"111","Water bodies","DE222",342450.8725,3,"DE","Passau, Kreisfreie Stadt","Passau, Kreisfreie Stadt",4,3,3,"DE222",70507066.2646052
+"112","Water bodies","DE223",778961.67875,3,"DE","Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt",4,3,3,"DE223",66970953.8555493
+"113","Water bodies","DE224",4953830.80945,3,"DE","Deggendorf","Deggendorf",4,3,3,"DE224",860830092.648876
+"114","Water bodies","DE225",219805.79155,3,"DE","Freyung-Grafenau","Freyung-Grafenau",3,3,3,"DE225",985303691.678694
+"115","Water bodies","DE226",2056872.5569,3,"DE","Kelheim","Kelheim",4,3,3,"DE226",1063580761.75501
+"116","Water bodies","DE227",2891154.0453,3,"DE","Landshut, Landkreis","Landshut, Landkreis",4,3,3,"DE227",1347018653.24374
+"117","Water bodies","DE228",2648599.2787,3,"DE","Passau, Landkreis","Passau, Landkreis",4,3,3,"DE228",1528530882.03236
+"118","Water bodies","DE229",1423005.41905,3,"DE","Regen","Regen",3,3,3,"DE229",973760839.329393
+"119","Water bodies","DE22A",1065228.6625,3,"DE","Rottal-Inn","Rottal-Inn",4,3,3,"DE22A",1281883718.03827
+"120","Water bodies","DE22B",5371977.0801501,3,"DE","Straubing-Bogen","Straubing-Bogen",4,3,3,"DE22B",1202289544.38978
+"121","Water bodies","DE22C",4925855.847,3,"DE","Dingolfing-Landau","Dingolfing-Landau",4,3,3,"DE22C",877603908.137835
+"122","Water bodies","DE232",224439.35,3,"DE","Regensburg, Kreisfreie Stadt","Regensburg, Kreisfreie Stadt",4,2,3,"DE232",79686410.9380194
+"123","Water bodies","DE234",3092573.00915,3,"DE","Amberg-Sulzbach","Amberg-Sulzbach",4,2,3,"DE234",1254394217.66907
+"124","Water bodies","DE235",5713438.2656,3,"DE","Cham","Cham",4,3,3,"DE235",1526051890.16244
+"125","Water bodies","DE236",1055666.68095,3,"DE","Neumarkt i. d. OPf.","Neumarkt i. d. OPf.",4,3,3,"DE236",1344143011.79267
+"126","Water bodies","DE237",9507346.18535,3,"DE","Neustadt a. d. Waldnaab","Neustadt a. d. Waldnaab",4,3,3,"DE237",1427910653.4614
+"127","Water bodies","DE238",4099526.7933,3,"DE","Regensburg, Landkreis","Regensburg, Landkreis",4,2,3,"DE238",1392336652.46492
+"128","Water bodies","DE239",22693758.5574999,3,"DE","Schwandorf","Schwandorf",4,3,3,"DE239",1459187333.25126
+"129","Water bodies","DE23A",7629917.6528,3,"DE","Tirschenreuth","Tirschenreuth",4,3,3,"DE23A",1084422775.32253
+"130","Water bodies","DE243",554794.95125,3,"DE","Coburg, Kreisfreie Stadt","Coburg, Kreisfreie Stadt",4,2,3,"DE243",48399162.5617278
+"131","Water bodies","DE244",615932.1425,3,"DE","Hof, Kreisfreie Stadt","Hof, Kreisfreie Stadt",4,2,3,"DE244",58764199.4257606
+"132","Water bodies","DE245",8392091.3587,3,"DE","Bamberg, Landkreis","Bamberg, Landkreis",4,2,3,"DE245",1167414617.04728
+"133","Water bodies","DE246",839682.29375,3,"DE","Bayreuth, Landkreis","Bayreuth, Landkreis",4,2,3,"DE246",1273357853.65589
+"134","Water bodies","DE247",377833.17875,3,"DE","Coburg, Landkreis","Coburg, Landkreis",4,2,3,"DE247",591153790.812475
+"135","Water bodies","DE248",2169843.5587,3,"DE","Forchheim","Forchheim",4,2,3,"DE248",642924442.77897
+"136","Water bodies","DE249",1253651.319,3,"DE","Hof, Landkreis","Hof, Landkreis",4,2,3,"DE249",892993754.528977
+"137","Water bodies","DE24A",966528.82625,3,"DE","Kronach","Kronach",3,3,3,"DE24A",650758218.902805
+"138","Water bodies","DE24B",573866.56955,3,"DE","Kulmbach","Kulmbach",4,3,3,"DE24B",657774250.086135
+"139","Water bodies","DE24C",4781348.86095,3,"DE","Lichtenfels","Lichtenfels",4,3,3,"DE24C",519420213.691818
+"140","Water bodies","DE24D",1295166.9149,3,"DE","Wunsiedel i. Fichtelgebirge","Wunsiedel i. Fichtelgebirge",4,3,3,"DE24D",606651486.074252
+"141","Water bodies","DE251",51093.53,3,"DE","Ansbach, Kreisfreie Stadt","Ansbach, Kreisfreie Stadt",4,3,3,"DE251",100568557.550111
+"142","Water bodies","DE252",2060038.8045,3,"DE","Erlangen, Kreisfreie Stadt","Erlangen, Kreisfreie Stadt",4,1,3,"DE252",78147269.3994493
+"143","Water bodies","DE254",1099072.6377,3,"DE","Nürnberg, Kreisfreie Stadt","Nürnberg, Kreisfreie Stadt",4,1,3,"DE254",187566724.072112
+"144","Water bodies","DE256",2631394.7574502,3,"DE","Ansbach, Landkreis","Ansbach, Landkreis",4,3,3,"DE256",1971975510.503
+"145","Water bodies","DE257",9457075.2066999,3,"DE","Erlangen-Höchstadt","Erlangen-Höchstadt",4,1,3,"DE257",565048291.834412
+"146","Water bodies","DE258",105478.27125,3,"DE","Fürth, Landkreis","Fürth, Landkreis",4,1,3,"DE258",306827003.78163
+"147","Water bodies","DE259",1168297.68245,3,"DE","Nürnberger Land","Nürnberger Land",4,2,3,"DE259",798072667.014482
+"148","Water bodies","DE25A",1052630.6356,3,"DE","Neustadt a. d. Aisch-Bad Windsheim","Neustadt a. d. Aisch-Bad Windsheim",4,3,3,"DE25A",1267156208.50574
+"149","Water bodies","DE25B",14665421.1644,3,"DE","Roth","Roth",4,2,3,"DE25B",895869447.767299
+"150","Water bodies","DE25C",17672043.4548,3,"DE","Weißenburg-Gunzenhausen","Weißenburg-Gunzenhausen",4,3,3,"DE25C",969833051.721287
+"151","Water bodies","DE261",227038.13125,3,"DE","Aschaffenburg, Kreisfreie Stadt","Aschaffenburg, Kreisfreie Stadt",4,1,3,"DE261",62095616.8662336
+"152","Water bodies","DE262",669399.9196,3,"DE","Schweinfurt, Kreisfreie Stadt","Schweinfurt, Kreisfreie Stadt",4,2,3,"DE262",35860454.9027161
+"153","Water bodies","DE263",73467.79,3,"DE","Würzburg, Kreisfreie Stadt","Würzburg, Kreisfreie Stadt",4,2,3,"DE263",88293196.6210524
+"154","Water bodies","DE264",3619852.67995,3,"DE","Aschaffenburg, Landkreis","Aschaffenburg, Landkreis",4,1,3,"DE264",699225290.869527
+"155","Water bodies","DE265",70874.62875,3,"DE","Bad Kissingen","Bad Kissingen",4,3,3,"DE265",1137053515.01027
+"156","Water bodies","DE266",107278.1425,3,"DE","Rhön-Grabfeld","Rhön-Grabfeld",4,3,3,"DE266",1021849206.68919
+"157","Water bodies","DE267",4680974.6404999,3,"DE","Haßberge","Haßberge",4,3,3,"DE267",957089041.896937
+"158","Water bodies","DE268",1896026.4007999,3,"DE","Kitzingen","Kitzingen",4,3,3,"DE268",683480816.827557
+"159","Water bodies","DE269",1514423.8944,3,"DE","Miltenberg","Miltenberg",2,2,3,"DE269",714910368.280708
+"160","Water bodies","DE26A",502785.87625,3,"DE","Main-Spessart","Main-Spessart",4,3,3,"DE26A",1322491608.33352
+"161","Water bodies","DE26B",3918281.59125,3,"DE","Schweinfurt, Landkreis","Schweinfurt, Landkreis",4,2,3,"DE26B",841574565.301676
+"162","Water bodies","DE26C",459110.2909,3,"DE","Würzburg, Landkreis","Würzburg, Landkreis",4,2,3,"DE26C",966710893.829081
+"163","Water bodies","DE271",1177739.215,3,"DE","Augsburg, Kreisfreie Stadt","Augsburg, Kreisfreie Stadt",4,1,3,"DE271",146063372.960191
+"164","Water bodies","DE272",777808.2789,3,"DE","Kaufbeuren, Kreisfreie Stadt","Kaufbeuren, Kreisfreie Stadt",4,2,3,"DE272",40442679.4901194
+"165","Water bodies","DE273",151778.94805,3,"DE","Kempten (Allgäu), Kreisfreie Stadt","Kempten (Allgäu), Kreisfreie Stadt",2,2,3,"DE273",63190327.2015361
+"166","Water bodies","DE275",3779597.63315,3,"DE","Aichach-Friedberg","Aichach-Friedberg",4,2,3,"DE275",780056152.198697
+"167","Water bodies","DE276",1821981.51625,3,"DE","Augsburg, Landkreis","Augsburg, Landkreis",4,1,3,"DE276",1072378068.37977
+"168","Water bodies","DE277",14898803.38325,3,"DE","Dillingen a.d. Donau","Dillingen a.d. Donau",4,3,3,"DE277",791598089.232373
+"169","Water bodies","DE278",7998190.7052,3,"DE","Günzburg","Günzburg",4,3,3,"DE278",763011483.609461
+"170","Water bodies","DE279",6511807.5929,3,"DE","Neu-Ulm","Neu-Ulm",4,2,3,"DE279",515325483.665401
+"171","Water bodies","DE27A",472350106.12635,3,"DE","Lindau (Bodensee)","Lindau (Bodensee)",3,2,3,"DE27A",362199028.156974
+"172","Water bodies","DE27B",27861278.72505,3,"DE","Ostallgäu","Ostallgäu",4,2,3,"DE27B",1394403948.35445
+"173","Water bodies","DE27C",5341775.4471,3,"DE","Unterallgäu","Unterallgäu",4,3,3,"DE27C",1230286007.8808
+"174","Water bodies","DE27D",6834262.531,3,"DE","Donau-Ries","Donau-Ries",4,3,3,"DE27D",1273243172.23197
+"175","Water bodies","DE27E",10063204.6129,3,"DE","Oberallgäu","Oberallgäu",3,2,3,"DE27E",1527525608.89952
+"176","Water bodies","DE300",51324480.1551499,3,"DE","Berlin","Berlin",4,1,3,"DE300",892632884.129363
+"177","Water bodies","DE401",30878725.68675,3,"DE","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt",4,2,3,"DE401",228896031.438055
+"178","Water bodies","DE402",948505.865,3,"DE","Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt",4,2,3,"DE402",165271146.233965
+"179","Water bodies","DE403",3370038.1606,3,"DE","Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt",4,2,3,"DE403",148317613.391826
+"180","Water bodies","DE404",47296042.21555,3,"DE","Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt",4,2,3,"DE404",187267262.45604
+"181","Water bodies","DE405",52601139.2242501,3,"DE","Barnim","Barnim",4,2,3,"DE405",1481804299.65358
+"182","Water bodies","DE406",85063331.37905,3,"DE","Dahme-Spreewald","Dahme-Spreewald",4,2,3,"DE406",2275022366.25851
+"183","Water bodies","DE407",19949681.15345,3,"DE","Elbe-Elster","Elbe-Elster",4,3,3,"DE407",1900211417.46318
+"184","Water bodies","DE408",22487292.02065,3,"DE","Havelland","Havelland",4,2,3,"DE408",1726899002.73072
+"185","Water bodies","DE409",26555789.2220999,3,"DE","Märkisch-Oderland","Märkisch-Oderland",4,2,3,"DE409",2157811528.308
+"186","Water bodies","DE40A",52186620.9725501,3,"DE","Oberhavel","Oberhavel",4,2,3,"DE40A",1807252372.99428
+"187","Water bodies","DE40B",86797309.62775,3,"DE","Oberspreewald-Lausitz","Oberspreewald-Lausitz",4,2,3,"DE40B",1222263381.86757
+"188","Water bodies","DE40C",91811696.81275,3,"DE","Oder-Spree","Oder-Spree",4,2,3,"DE40C",2256586794.17642
+"189","Water bodies","DE40D",69382249.6861,3,"DE","Ostprignitz-Ruppin","Ostprignitz-Ruppin",4,3,3,"DE40D",2525912661.75807
+"190","Water bodies","DE40E",78299016.3564,3,"DE","Potsdam-Mittelmark","Potsdam-Mittelmark",4,2,3,"DE40E",2592887387.34177
+"191","Water bodies","DE40F",4694479.2718499,3,"DE","Prignitz","Prignitz",4,3,3,"DE40F",2138629029.18524
+"192","Water bodies","DE40G",33393917.91155,3,"DE","Spree-Neiße","Spree-Neiße",4,2,3,"DE40G",1657489773.15028
+"193","Water bodies","DE40H",20149203.4499,3,"DE","Teltow-Fläming","Teltow-Fläming",4,2,3,"DE40H",2104570842.28913
+"194","Water bodies","DE40I",126686778.3283,3,"DE","Uckermark","Uckermark",4,3,3,"DE40I",3076623028.41344
+"195","Water bodies","DE501",6934247.99565,3,"DE","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt",4,1,1,"DE501",325592393.953141
+"196","Water bodies","DE502",1476160.9958001,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"197","Water bodies","DE600",14983443.48955,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"198","Water bodies","DE711",125511.7375,3,"DE","Darmstadt, Kreisfreie Stadt","Darmstadt, Kreisfreie Stadt",4,1,3,"DE711",123126541.030151
+"199","Water bodies","DE712",383507.1727,3,"DE","Frankfurt am Main, Kreisfreie Stadt","Frankfurt am Main, Kreisfreie Stadt",4,1,3,"DE712",248242981.874162
+"200","Water bodies","DE713",158177.65625,3,"DE","Offenbach am Main, Kreisfreie Stadt","Offenbach am Main, Kreisfreie Stadt",4,1,3,"DE713",45094825.0884365
+"201","Water bodies","DE714",612974.84635,3,"DE","Wiesbaden, Kreisfreie Stadt","Wiesbaden, Kreisfreie Stadt",4,1,3,"DE714",204028534.730629
+"202","Water bodies","DE715",3253829.00935,3,"DE","Bergstraße","Bergstraße",4,1,3,"DE715",718282753.692553
+"203","Water bodies","DE716",1604448.58375,3,"DE","Darmstadt-Dieburg","Darmstadt-Dieburg",4,1,3,"DE716",658555696.868773
+"204","Water bodies","DE717",4490950.6941501,3,"DE","Groß-Gerau","Groß-Gerau",4,1,3,"DE717",453685392.567884
+"205","Water bodies","DE719",3236976.5195,3,"DE","Main-Kinzig-Kreis","Main-Kinzig-Kreis",4,2,3,"DE719",1397135896.90246
+"206","Water bodies","DE71A",190502.90625,3,"DE","Main-Taunus-Kreis","Main-Taunus-Kreis",4,1,3,"DE71A",221297385.854974
+"207","Water bodies","DE71B",263397.0175,3,"DE","Odenwaldkreis","Odenwaldkreis",3,3,3,"DE71B",625139460.151842
+"208","Water bodies","DE71C",3700199.0908,3,"DE","Offenbach, Landkreis","Offenbach, Landkreis",4,1,3,"DE71C",355404592.600392
+"209","Water bodies","DE71D",362974.66195,3,"DE","Rheingau-Taunus-Kreis","Rheingau-Taunus-Kreis",2,2,3,"DE71D",811229859.921685
+"210","Water bodies","DE71E",1839169.8081,3,"DE","Wetteraukreis","Wetteraukreis",4,2,3,"DE71E",1101267870.56871
+"211","Water bodies","DE721",3022092.1768001,3,"DE","Gießen, Landkreis","Gießen, Landkreis",4,2,3,"DE721",855463709.872568
+"212","Water bodies","DE722",2634473.94255,3,"DE","Lahn-Dill-Kreis","Lahn-Dill-Kreis",4,2,3,"DE722",1065831512.29283
+"213","Water bodies","DE723",245084.9313,3,"DE","Limburg-Weilburg","Limburg-Weilburg",4,2,3,"DE723",739046830.024034
+"214","Water bodies","DE724",1636738.35465,3,"DE","Marburg-Biedenkopf","Marburg-Biedenkopf",4,2,3,"DE724",1262433047.38785
+"215","Water bodies","DE725",1750525.05625,3,"DE","Vogelsbergkreis","Vogelsbergkreis",4,3,3,"DE725",1458037091.49231
+"216","Water bodies","DE731",542286.16235,3,"DE","Kassel, Kreisfreie Stadt","Kassel, Kreisfreie Stadt",4,2,3,"DE731",104382828.270114
+"217","Water bodies","DE732",224323.565,3,"DE","Fulda","Fulda",4,2,3,"DE732",1381508604.63321
+"218","Water bodies","DE733",1594576.0139,3,"DE","Hersfeld-Rotenburg","Hersfeld-Rotenburg",4,3,3,"DE733",1097864927.76037
+"219","Water bodies","DE734",244933.23075,3,"DE","Kassel, Landkreis","Kassel, Landkreis",4,2,3,"DE734",1295635356.19977
+"220","Water bodies","DE735",4983788.7431,3,"DE","Schwalm-Eder-Kreis","Schwalm-Eder-Kreis",4,3,3,"DE735",1538470342.63618
+"221","Water bodies","DE736",14158028.39865,3,"DE","Waldeck-Frankenberg","Waldeck-Frankenberg",4,3,3,"DE736",1848046275.6139
+"222","Water bodies","DE737",3076839.95445,3,"DE","Werra-Meißner-Kreis","Werra-Meißner-Kreis",2,3,3,"DE737",1024492366.46967
+"223","Water bodies","DE803",441955.3697,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"224","Water bodies","DE804",71484878.08465,3,"DE","Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt",4,3,2,"DE804",130550663.890612
+"225","Water bodies","DE80J",443091616.18335,3,"DE","Mecklenburgische Seenplatte","Mecklenburgische Seenplatte",4,3,3,"DE80J",5495764654.16188
+"226","Water bodies","DE80K",71143710.0854001,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"227","Water bodies","DE80L",16124743.5155,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"228","Water bodies","DE80M",149708436.47845,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"229","Water bodies","DE80N",50655555.5251,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"230","Water bodies","DE80O",203218044.2858,3,"DE","Ludwigslust-Parchim","Ludwigslust-Parchim",4,3,3,"DE80O",4767556761.67532
+"231","Water bodies","DE911",1917361.78435,3,"DE","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt",4,2,3,"DE911",192575054.406326
+"232","Water bodies","DE912",3974232.73265,3,"DE","Salzgitter, Kreisfreie Stadt","Salzgitter, Kreisfreie Stadt",4,2,3,"DE912",225035790.808515
+"233","Water bodies","DE913",1615066.31795,3,"DE","Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt",4,2,3,"DE913",204911779.620516
+"234","Water bodies","DE914",4312996.3623,3,"DE","Gifhorn","Gifhorn",4,2,3,"DE914",1568489671.94785
+"235","Water bodies","DE916",11087903.52185,3,"DE","Goslar","Goslar",3,2,3,"DE916",968650105.346912
+"236","Water bodies","DE917",3764632.7431,3,"DE","Helmstedt","Helmstedt",4,3,3,"DE917",676165260.453927
+"237","Water bodies","DE918",2875138.9084,3,"DE","Northeim","Northeim",4,3,3,"DE918",1270287546.82484
+"238","Water bodies","DE91A",7401926.35795,3,"DE","Peine","Peine",4,2,3,"DE91A",536510724.527694
+"239","Water bodies","DE91B",2217464.8195,3,"DE","Wolfenbüttel","Wolfenbüttel",4,2,3,"DE91B",723619876.202555
+"240","Water bodies","DE91C",5084421.46645,3,"DE","Göttingen","Göttingen",4,2,3,"DE91C",1755583844.9965
+"241","Water bodies","DE922",18861132.7109503,3,"DE","Diepholz","Diepholz",4,2,3,"DE922",1989909931.69491
+"242","Water bodies","DE923",3165257.65775,3,"DE","Hameln-Pyrmont","Hameln-Pyrmont",4,2,3,"DE923",797827172.188895
+"243","Water bodies","DE925",7692244.89525,3,"DE","Hildesheim","Hildesheim",4,2,3,"DE925",1207711592.47233
+"244","Water bodies","DE926",3141233.7082,3,"DE","Holzminden","Holzminden",4,3,3,"DE926",694045656.965633
+"245","Water bodies","DE927",14526469.4235001,3,"DE","Nienburg (Weser)","Nienburg (Weser)",4,3,3,"DE927",1401882982.31737
+"246","Water bodies","DE928",32177361.81015,3,"DE","Schaumburg","Schaumburg",4,2,3,"DE928",676583077.468158
+"247","Water bodies","DE929",42015456.9506502,3,"DE","Region Hannover","Region Hannover",4,1,3,"DE929",2297355176.08333
+"248","Water bodies","DE931",6435919.4172,3,"DE","Celle","Celle",4,2,3,"DE931",1550266895.98411
+"249","Water bodies","DE932",13734938.8074,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"250","Water bodies","DE933",4060854.4186501,3,"DE","Harburg","Harburg",4,2,3,"DE933",1249808737.9316
+"251","Water bodies","DE934",2805481.71535,3,"DE","Lüchow-Dannenberg","Lüchow-Dannenberg",4,3,3,"DE934",1225650222.61503
+"252","Water bodies","DE935",3823598.7587,3,"DE","Lüneburg, Landkreis","Lüneburg, Landkreis",4,2,3,"DE935",1326530355.40004
+"253","Water bodies","DE936",2185255.43715,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"254","Water bodies","DE937",5761607.4413999,3,"DE","Rotenburg (Wümme)","Rotenburg (Wümme)",4,3,3,"DE937",2073372672.35573
+"255","Water bodies","DE938",3012655.0555,3,"DE","Heidekreis","Heidekreis",4,2,3,"DE938",1881689691.31239
+"256","Water bodies","DE939",5371625.15825,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"257","Water bodies","DE93A",916425.44375,3,"DE","Uelzen","Uelzen",4,3,3,"DE93A",1463165062.15144
+"258","Water bodies","DE93B",1477666.1123,3,"DE","Verden","Verden",4,2,3,"DE93B",789675230.147464
+"259","Water bodies","DE941",132716.7773,3,"DE","Delmenhorst, Kreisfreie Stadt","Delmenhorst, Kreisfreie Stadt",4,1,2,"DE941",62447526.9381574
+"260","Water bodies","DE942",2689595.2495,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"261","Water bodies","DE943",1636056.94305,3,"DE","Oldenburg (Oldenburg), Kreisfreie Stadt","Oldenburg (Oldenburg), Kreisfreie Stadt",4,2,2,"DE943",104101502.026344
+"262","Water bodies","DE944",384497.0809,3,"DE","Osnabrück, Kreisfreie Stadt","Osnabrück, Kreisfreie Stadt",4,2,3,"DE944",120309983.060923
+"263","Water bodies","DE945",3485295.4229,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"264","Water bodies","DE946",8840125.14475,3,"DE","Ammerland","Ammerland",4,2,2,"DE946",729953152.000428
+"265","Water bodies","DE947",11479998.6417001,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"266","Water bodies","DE948",9494295.1554497,3,"DE","Cloppenburg","Cloppenburg",4,3,3,"DE948",1421374929.86524
+"267","Water bodies","DE949",20065645.2930001,3,"DE","Emsland","Emsland",4,3,3,"DE949",2883867995.78465
+"268","Water bodies","DE94A",4923265.6918498,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"269","Water bodies","DE94B",5009482.8821004,3,"DE","Grafschaft Bentheim","Grafschaft Bentheim",4,2,3,"DE94B",981409436.788826
+"270","Water bodies","DE94C",10430334.06825,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"271","Water bodies","DE94D",3699383.168,3,"DE","Oldenburg, Landkreis","Oldenburg, Landkreis",4,2,2,"DE94D",1065477437.64861
+"272","Water bodies","DE94E",4618832.9441001,3,"DE","Osnabrück, Landkreis","Osnabrück, Landkreis",4,2,3,"DE94E",2120461941.77748
+"273","Water bodies","DE94F",15468570.4349499,3,"DE","Vechta","Vechta",4,2,3,"DE94F",813936055.13258
+"274","Water bodies","DE94G",3067881.3687498,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"275","Water bodies","DE94H",3283744.48505,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"276","Water bodies","DEA11",4874466.4924991,3,"DE","Düsseldorf, Kreisfreie Stadt","Düsseldorf, Kreisfreie Stadt",4,1,3,"DEA11",217642471.837296
+"277","Water bodies","DEA12",6837501.87415,3,"DE","Duisburg, Kreisfreie Stadt","Duisburg, Kreisfreie Stadt",4,1,3,"DEA12",232472687.045201
+"278","Water bodies","DEA13",2832242.7339,3,"DE","Essen, Kreisfreie Stadt","Essen, Kreisfreie Stadt",4,1,3,"DEA13",210837910.563292
+"279","Water bodies","DEA14",2076846.82685,3,"DE","Krefeld, Kreisfreie Stadt","Krefeld, Kreisfreie Stadt",4,1,3,"DEA14",137435355.182603
+"280","Water bodies","DEA15",148800.7429501,3,"DE","Mönchengladbach, Kreisfreie Stadt","Mönchengladbach, Kreisfreie Stadt",4,1,3,"DEA15",170261806.196545
+"281","Water bodies","DEA16",221356.0949,3,"DE","Mülheim an der Ruhr, Kreisfreie Stadt","Mülheim an der Ruhr, Kreisfreie Stadt",4,1,3,"DEA16",90365531.4036003
+"282","Water bodies","DEA18",2465655.7286,3,"DE","Remscheid, Kreisfreie Stadt","Remscheid, Kreisfreie Stadt",4,1,3,"DEA18",73977727.1438668
+"283","Water bodies","DEA19",227003.04375,3,"DE","Solingen, Kreisfreie Stadt","Solingen, Kreisfreie Stadt",4,1,3,"DEA19",89005298.1861593
+"284","Water bodies","DEA1A",769204.9316,3,"DE","Wuppertal, Kreisfreie Stadt","Wuppertal, Kreisfreie Stadt",4,1,3,"DEA1A",168089663.213308
+"285","Water bodies","DEA1B",24053141.719088,3,"DE","Kleve","Kleve",4,2,3,"DEA1B",1233273879.44075
+"286","Water bodies","DEA1C",4768422.8392001,3,"DE","Mettmann","Mettmann",4,1,3,"DEA1C",408467768.045507
+"287","Water bodies","DEA1D",7007331.661,3,"DE","Rhein-Kreis Neuss","Rhein-Kreis Neuss",4,1,3,"DEA1D",576774483.522309
+"288","Water bodies","DEA1E",6462452.98665,3,"DE","Viersen","Viersen",4,1,3,"DEA1E",563752885.949402
+"289","Water bodies","DEA1F",30643208.7488501,3,"DE","Wesel","Wesel",4,1,3,"DEA1F",1042903749.9752
+"290","Water bodies","DEA22",110437.6025,3,"DE","Bonn, Kreisfreie Stadt","Bonn, Kreisfreie Stadt",4,1,3,"DEA22",141813893.951768
+"291","Water bodies","DEA23",6658533.2923499,3,"DE","Köln, Kreisfreie Stadt","Köln, Kreisfreie Stadt",4,1,3,"DEA23",406362793.036673
+"292","Water bodies","DEA24",1463854.91065,3,"DE","Leverkusen, Kreisfreie Stadt","Leverkusen, Kreisfreie Stadt",4,1,3,"DEA24",79171925.1569377
+"293","Water bodies","DEA26",13923459.451,3,"DE","Düren","Düren",4,2,3,"DEA26",940283413.920119
+"294","Water bodies","DEA27",6610663.102,3,"DE","Rhein-Erft-Kreis","Rhein-Erft-Kreis",4,1,3,"DEA27",703103893.413581
+"295","Water bodies","DEA28",12693796.27,3,"DE","Euskirchen","Euskirchen",4,2,3,"DEA28",1251380263.23967
+"296","Water bodies","DEA29",3685204.3119989,3,"DE","Heinsberg","Heinsberg",4,2,3,"DEA29",627587804.289626
+"297","Water bodies","DEA2A",11859613.95745,3,"DE","Oberbergischer Kreis","Oberbergischer Kreis",4,2,3,"DEA2A",917489688.740491
+"298","Water bodies","DEA2B",4700433.04635,3,"DE","Rheinisch-Bergischer Kreis","Rheinisch-Bergischer Kreis",4,1,3,"DEA2B",438667594.242975
+"299","Water bodies","DEA2C",6169975.6823,3,"DE","Rhein-Sieg-Kreis","Rhein-Sieg-Kreis",4,1,3,"DEA2C",1152469679.55234
+"300","Water bodies","DEA2D",12853546.40095,3,"DE","Städteregion Aachen","Städteregion Aachen",4,1,3,"DEA2D",707422985.528845
+"301","Water bodies","DEA31",690164.6644,3,"DE","Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt",4,1,3,"DEA31",100079393.509908
+"302","Water bodies","DEA32",504324.269,3,"DE","Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt",4,1,3,"DEA32",105924389.114704
+"303","Water bodies","DEA33",1964034.64035,3,"DE","Münster, Kreisfreie Stadt","Münster, Kreisfreie Stadt",4,1,3,"DEA33",303482228.67034
+"304","Water bodies","DEA34",3338184.5144501,3,"DE","Borken","Borken",4,2,3,"DEA34",1422633543.53468
+"305","Water bodies","DEA35",4168160.0686999,3,"DE","Coesfeld","Coesfeld",4,1,3,"DEA35",1111968188.69059
+"306","Water bodies","DEA36",9773245.4109,3,"DE","Recklinghausen","Recklinghausen",4,1,3,"DEA36",761404385.524167
+"307","Water bodies","DEA37",4874613.5139,3,"DE","Steinfurt","Steinfurt",4,2,3,"DEA37",1795643341.46908
+"308","Water bodies","DEA38",3291936.21325,3,"DE","Warendorf","Warendorf",4,2,3,"DEA38",1319363417.20812
+"309","Water bodies","DEA41",219625.4328,3,"DE","Bielefeld, Kreisfreie Stadt","Bielefeld, Kreisfreie Stadt",4,1,3,"DEA41",259076065.222171
+"310","Water bodies","DEA42",4302290.8923001,3,"DE","Gütersloh","Gütersloh",4,1,3,"DEA42",969734459.039256
+"311","Water bodies","DEA43",557079.3572,3,"DE","Herford","Herford",4,1,3,"DEA43",450062830.858437
+"312","Water bodies","DEA44",2625387.6835,3,"DE","Höxter","Höxter",4,3,3,"DEA44",1200950878.40927
+"313","Water bodies","DEA45",4188289.9807,3,"DE","Lippe","Lippe",4,2,3,"DEA45",1246676294.05469
+"314","Water bodies","DEA46",13634409.6316499,3,"DE","Minden-Lübbecke","Minden-Lübbecke",4,2,3,"DEA46",1151426926.02607
+"315","Water bodies","DEA47",10157611.7569999,3,"DE","Paderborn","Paderborn",4,2,3,"DEA47",1247041311.82428
+"316","Water bodies","DEA51",1511817.5264,3,"DE","Bochum, Kreisfreie Stadt","Bochum, Kreisfreie Stadt",4,1,3,"DEA51",144679359.436114
+"317","Water bodies","DEA52",2143241.8936,3,"DE","Dortmund, Kreisfreie Stadt","Dortmund, Kreisfreie Stadt",4,1,3,"DEA52",279961350.115703
+"318","Water bodies","DEA53",2486423.0627,3,"DE","Hagen, Kreisfreie Stadt","Hagen, Kreisfreie Stadt",4,1,3,"DEA53",160900894.658126
+"319","Water bodies","DEA54",361794.4317,3,"DE","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt",4,1,3,"DEA54",227955798.883389
+"320","Water bodies","DEA55",76218.1060501,3,"DE","Herne, Kreisfreie Stadt","Herne, Kreisfreie Stadt",4,1,3,"DEA55",51309089.1067936
+"321","Water bodies","DEA56",5286303.7838,3,"DE","Ennepe-Ruhr-Kreis","Ennepe-Ruhr-Kreis",4,1,3,"DEA56",410427266.463918
+"322","Water bodies","DEA57",7172617.86945,3,"DE","Hochsauerlandkreis","Hochsauerlandkreis",2,2,3,"DEA57",1959262942.01602
+"323","Water bodies","DEA58",14797665.83335,3,"DE","Märkischer Kreis","Märkischer Kreis",4,1,3,"DEA58",1061289203.722
+"324","Water bodies","DEA59",9326006.5754,3,"DE","Olpe","Olpe",2,2,3,"DEA59",711669394.921959
+"325","Water bodies","DEA5A",1360941.35785,3,"DE","Siegen-Wittgenstein","Siegen-Wittgenstein",2,2,3,"DEA5A",1134922590.71321
+"326","Water bodies","DEA5B",12924425.32125,3,"DE","Soest","Soest",4,2,3,"DEA5B",1329560125.47652
+"327","Water bodies","DEA5C",622969.5732,3,"DE","Unna","Unna",4,1,3,"DEA5C",543090824.415448
+"328","Water bodies","DEB11",133355.5789,3,"DE","Koblenz, Kreisfreie Stadt","Koblenz, Kreisfreie Stadt",4,2,3,"DEB11",106783604.734165
+"329","Water bodies","DEB12",3929529.27225,3,"DE","Ahrweiler","Ahrweiler",2,2,3,"DEB12",786465337.128641
+"330","Water bodies","DEB13",88921.89875,3,"DE","Altenkirchen (Westerwald)","Altenkirchen (Westerwald)",4,3,3,"DEB13",640374242.203086
+"331","Water bodies","DEB14",140660.22125,3,"DE","Bad Kreuznach","Bad Kreuznach",4,2,3,"DEB14",863637968.960448
+"332","Water bodies","DEB15",355053.7178,3,"DE","Birkenfeld","Birkenfeld",3,3,3,"DEB15",777409842.211285
+"333","Water bodies","DEB17",4019685.1041,3,"DE","Mayen-Koblenz","Mayen-Koblenz",4,2,3,"DEB17",816305786.579477
+"334","Water bodies","DEB18",1334793.4948,3,"DE","Neuwied","Neuwied",4,2,3,"DEB18",627651703.299646
+"335","Water bodies","DEB1A",163558.1678,3,"DE","Rhein-Lahn-Kreis","Rhein-Lahn-Kreis",3,2,3,"DEB1A",781823841.882597
+"336","Water bodies","DEB1B",3724568.5833,3,"DE","Westerwaldkreis","Westerwaldkreis",4,3,3,"DEB1B",989495543.683692
+"337","Water bodies","DEB1C",293092.9,3,"DE","Cochem-Zell","Cochem-Zell",3,3,3,"DEB1C",693233536.039953
+"338","Water bodies","DEB1D",60329.0853499,3,"DE","Rhein-Hunsrück-Kreis","Rhein-Hunsrück-Kreis",1,3,3,"DEB1D",990610495.402277
+"339","Water bodies","DEB21",201982.152,3,"DE","Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt",4,2,3,"DEB21",116826811.696233
+"340","Water bodies","DEB22",595539.2379,3,"DE","Bernkastel-Wittlich","Bernkastel-Wittlich",3,3,3,"DEB22",1169452787.64663
+"341","Water bodies","DEB23",371714.50375,3,"DE","Eifelkreis Bitburg-Prüm","Eifelkreis Bitburg-Prüm",4,3,3,"DEB23",1627709097.38995
+"342","Water bodies","DEB24",1174131.9306,3,"DE","Vulkaneifel","Vulkaneifel",4,3,3,"DEB24",910743900.460454
+"343","Water bodies","DEB25",1698900.3458,3,"DE","Trier-Saarburg","Trier-Saarburg",3,2,3,"DEB25",1103421611.10293
+"344","Water bodies","DEB31",852072.6013,3,"DE","Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt",4,1,3,"DEB31",44178081.4867209
+"345","Water bodies","DEB32",175862.85095,3,"DE","Kaiserslautern, Kreisfreie Stadt","Kaiserslautern, Kreisfreie Stadt",4,2,3,"DEB32",140707092.116966
+"346","Water bodies","DEB34",2960716.29435,3,"DE","Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt",4,1,3,"DEB34",77835095.4478041
+"347","Water bodies","DEB35",251037.3486,3,"DE","Mainz, Kreisfreie Stadt","Mainz, Kreisfreie Stadt",4,1,3,"DEB35",97669068.1543472
+"348","Water bodies","DEB36",64729.6875,3,"DE","Neustadt an der Weinstraße, Kreisfreie Stadt","Neustadt an der Weinstraße, Kreisfreie Stadt",4,2,3,"DEB36",118320307.11797
+"349","Water bodies","DEB38",2064097.5642,3,"DE","Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt",4,1,3,"DEB38",42412827.315229
+"350","Water bodies","DEB39",301792.6625,3,"DE","Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt",4,1,3,"DEB39",109650258.448413
+"351","Water bodies","DEB3B",2976421.4538,3,"DE","Alzey-Worms","Alzey-Worms",4,3,3,"DEB3B",587080591.160363
+"352","Water bodies","DEB3C",336238.21375,3,"DE","Bad Dürkheim","Bad Dürkheim",4,2,3,"DEB3C",592866431.814314
+"353","Water bodies","DEB3E",8913878.4745,3,"DE","Germersheim","Germersheim",4,1,3,"DEB3E",463336831.578698
+"354","Water bodies","DEB3F",378357.4686,3,"DE","Kaiserslautern, Landkreis","Kaiserslautern, Landkreis",4,2,3,"DEB3F",641050267.478935
+"355","Water bodies","DEB3G",173954.3378,3,"DE","Kusel","Kusel",4,3,3,"DEB3G",572215618.644631
+"356","Water bodies","DEB3H",58470.316,3,"DE","Südliche Weinstraße","Südliche Weinstraße",4,2,3,"DEB3H",638401340.209828
+"357","Water bodies","DEB3I",7788242.5143501,3,"DE","Rhein-Pfalz-Kreis","Rhein-Pfalz-Kreis",4,1,3,"DEB3I",304563498.012404
+"358","Water bodies","DEB3J",526489.0813,3,"DE","Mainz-Bingen","Mainz-Bingen",4,2,3,"DEB3J",606455255.176014
+"359","Water bodies","DEB3K",231512.4045,3,"DE","Südwestpfalz","Südwestpfalz",4,3,3,"DEB3K",954825572.202891
+"360","Water bodies","DEC01",196028.2098999,3,"DE","Regionalverband Saarbrücken","Regionalverband Saarbrücken",4,1,3,"DEC01",412262524.379048
+"361","Water bodies","DEC02",1654761.41215,3,"DE","Merzig-Wadern","Merzig-Wadern",4,2,3,"DEC02",556430238.565988
+"362","Water bodies","DEC03",234923.77075,3,"DE","Neunkirchen","Neunkirchen",4,2,3,"DEC03",247683790.446865
+"363","Water bodies","DEC04",1094109.4242,3,"DE","Saarlouis","Saarlouis",4,1,3,"DEC04",458819424.941821
+"364","Water bodies","DEC05",348035.0803,3,"DE","Saarpfalz-Kreis","Saarpfalz-Kreis",4,1,3,"DEC05",420103663.427504
+"365","Water bodies","DEC06",2131344.1024,3,"DE","St. Wendel","St. Wendel",4,2,3,"DEC06",477509668.634755
+"366","Water bodies","DED21",1262954.3123499,3,"DE","Dresden, Kreisfreie Stadt","Dresden, Kreisfreie Stadt",4,1,3,"DED21",327871743.652502
+"367","Water bodies","DED2C",107972728.56635,3,"DE","Bautzen","Bautzen",4,3,3,"DED2C",2394324005.69914
+"368","Water bodies","DED2D",61134221.9797,3,"DE","Görlitz","Görlitz",4,2,3,"DED2D",2111617357.77598
+"369","Water bodies","DED2E",14824777.8993,3,"DE","Meißen","Meißen",4,2,3,"DED2E",1458822908.66826
+"370","Water bodies","DED2F",4886065.14225,3,"DE","Sächsische Schweiz-Osterzgebirge","Sächsische Schweiz-Osterzgebirge",4,1,3,"DED2F",1653087363.58717
+"371","Water bodies","DED41",141857.22625,3,"DE","Chemnitz, Kreisfreie Stadt","Chemnitz, Kreisfreie Stadt",4,2,3,"DED41",221442200.706391
+"372","Water bodies","DED42",8082622.8228,3,"DE","Erzgebirgskreis","Erzgebirgskreis",3,2,3,"DED42",1827391752.94436
+"373","Water bodies","DED43",5657593.22695,3,"DE","Mittelsachsen","Mittelsachsen",4,2,3,"DED43",2114905409.96206
+"374","Water bodies","DED44",8820758.49085,3,"DE","Vogtlandkreis","Vogtlandkreis",4,2,3,"DED44",1412020787.58242
+"375","Water bodies","DED45",2054649.11655,3,"DE","Zwickau","Zwickau",4,2,3,"DED45",948970483.529633
+"376","Water bodies","DED51",17864685.4158,3,"DE","Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt",4,1,3,"DED51",299994732.271565
+"377","Water bodies","DED52",62029609.61155,3,"DE","Leipzig","Leipzig",4,1,3,"DED52",1650413243.11551
+"378","Water bodies","DED53",33043890.24,3,"DE","Nordsachsen","Nordsachsen",4,3,3,"DED53",2027895996.34862
+"379","Water bodies","DEE01",1533840.52505,3,"DE","Dessau-Roßlau, Kreisfreie Stadt","Dessau-Roßlau, Kreisfreie Stadt",4,2,3,"DEE01",246028463.881621
+"380","Water bodies","DEE02",2254436.8210001,3,"DE","Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt",4,2,3,"DEE02",135908898.690888
+"381","Water bodies","DEE03",4753964.49775,3,"DE","Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt",4,2,3,"DEE03",200918216.51768
+"382","Water bodies","DEE04",5967427.9280999,3,"DE","Altmarkkreis Salzwedel","Altmarkkreis Salzwedel",4,3,3,"DEE04",2304520504.26351
+"383","Water bodies","DEE05",44554207.74975,3,"DE","Anhalt-Bitterfeld","Anhalt-Bitterfeld",4,2,3,"DEE05",1462195496.31366
+"384","Water bodies","DEE06",8700948.373,3,"DE","Jerichower Land","Jerichower Land",4,3,3,"DEE06",1589715793.5913
+"385","Water bodies","DEE07",7785625.1433499,3,"DE","Börde","Börde",4,2,3,"DEE07",2377097678.5338
+"386","Water bodies","DEE08",6210402.9044,3,"DE","Burgenlandkreis","Burgenlandkreis",4,3,3,"DEE08",1418669905.12265
+"387","Water bodies","DEE09",9690675.53205,3,"DE","Harz","Harz",4,2,3,"DEE09",2108238551.98025
+"388","Water bodies","DEE0A",11747911.54515,3,"DE","Mansfeld-Südharz","Mansfeld-Südharz",4,3,3,"DEE0A",1456725560.41735
+"389","Water bodies","DEE0B",35722815.1461998,3,"DE","Saalekreis","Saalekreis",4,2,3,"DEE0B",1439418533.47617
+"390","Water bodies","DEE0C",18224048.63445,3,"DE","Salzlandkreis","Salzlandkreis",4,2,3,"DEE0C",1435156297.61134
+"391","Water bodies","DEE0D",11227302.51955,3,"DE","Stendal","Stendal",4,3,3,"DEE0D",2436218017.9056
+"392","Water bodies","DEE0E",19320231.86205,3,"DE","Wittenberg","Wittenberg",4,3,3,"DEE0E",1942626325.95478
+"393","Water bodies","DEF02",1538978.71565,3,"DE","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt",4,1,1,"DEF02",113224279.066901
+"394","Water bodies","DEF03",15030517.8954,3,"DE","Lübeck, Kreisfreie Stadt","Lübeck, Kreisfreie Stadt",4,2,1,"DEF03",211867809.305578
+"395","Water bodies","DEF04",2095294.42105,3,"DE","Neumünster, Kreisfreie Stadt","Neumünster, Kreisfreie Stadt",4,2,2,"DEF04",71607382.3141106
+"396","Water bodies","DEF05",7777293.56555,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"397","Water bodies","DEF06",52919549.4914,3,"DE","Herzogtum Lauenburg","Herzogtum Lauenburg",4,2,3,"DEF06",1262379620.72553
+"398","Water bodies","DEF07",28045492.376542,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"399","Water bodies","DEF08",67099499.9655,3,"DE","Ostholstein","Ostholstein",4,2,1,"DEF08",1386481398.83516
+"400","Water bodies","DEF09",2279815.9780999,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"401","Water bodies","DEF0A",103976936.1285,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"402","Water bodies","DEF0B",44236180.1710501,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"403","Water bodies","DEF0C",10682669.4276229,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"404","Water bodies","DEF0D",46995677.83385,3,"DE","Segeberg","Segeberg",4,2,2,"DEF0D",1346167740.73886
+"405","Water bodies","DEF0E",5141126.2644999,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"406","Water bodies","DEF0F",5179532.5797501,3,"DE","Stormarn","Stormarn",4,2,3,"DEF0F",766261528.023555
+"407","Water bodies","DEG01",4540077.71065,3,"DE","Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt",4,2,3,"DEG01",271358003.180449
+"408","Water bodies","DEG02",127131.9345,3,"DE","Gera, Kreisfreie Stadt","Gera, Kreisfreie Stadt",4,2,3,"DEG02",152684429.002469
+"409","Water bodies","DEG05",81369.12625,3,"DE","Weimar, Kreisfreie Stadt","Weimar, Kreisfreie Stadt",4,2,3,"DEG05",84771831.6249039
+"410","Water bodies","DEG06",567890.14875,3,"DE","Eichsfeld","Eichsfeld",4,3,3,"DEG06",942055973.283677
+"411","Water bodies","DEG07",10784018.99855,3,"DE","Nordhausen","Nordhausen",4,2,3,"DEG07",713959877.884815
+"412","Water bodies","DEG09",1687013.50095,3,"DE","Unstrut-Hainich-Kreis","Unstrut-Hainich-Kreis",4,3,3,"DEG09",980146308.827859
+"413","Water bodies","DEG0A",7505083.652,3,"DE","Kyffhäuserkreis","Kyffhäuserkreis",4,3,3,"DEG0A",1038019674.72515
+"414","Water bodies","DEG0B",1656076.75655,3,"DE","Schmalkalden-Meiningen","Schmalkalden-Meiningen",3,2,3,"DEG0B",1210719335.63334
+"415","Water bodies","DEG0C",4628111.18925,3,"DE","Gotha","Gotha",4,3,3,"DEG0C",935749088.386473
+"416","Water bodies","DEG0D",5852421.29655,3,"DE","Sömmerda","Sömmerda",4,2,3,"DEG0D",805783357.115653
+"417","Water bodies","DEG0E",2607598.85535,3,"DE","Hildburghausen","Hildburghausen",2,3,3,"DEG0E",937443908.019157
+"418","Water bodies","DEG0F",1906334.525,3,"DE","Ilm-Kreis","Ilm-Kreis",3,3,3,"DEG0F",842833839.449991
+"419","Water bodies","DEG0G",1740334.4317,3,"DE","Weimarer Land","Weimarer Land",4,2,3,"DEG0G",804370741.063243
+"420","Water bodies","DEG0H",1478288.9847,3,"DE","Sonneberg","Sonneberg",3,3,3,"DEG0H",433185776.750179
+"421","Water bodies","DEG0I",9814373.1111,3,"DE","Saalfeld-Rudolstadt","Saalfeld-Rudolstadt",3,2,3,"DEG0I",1036231581.36936
+"422","Water bodies","DEG0J",270843.7347,3,"DE","Saale-Holzland-Kreis","Saale-Holzland-Kreis",4,2,3,"DEG0J",815338072.776793
+"423","Water bodies","DEG0K",21194210.54605,3,"DE","Saale-Orla-Kreis","Saale-Orla-Kreis",4,3,3,"DEG0K",1152244965.13537
+"424","Water bodies","DEG0L",5408076.7067001,3,"DE","Greiz","Greiz",4,2,3,"DEG0L",845844658.560738
+"425","Water bodies","DEG0M",7217749.657,3,"DE","Altenburger Land","Altenburger Land",4,2,3,"DEG0M",569813531.060611
+"426","Water bodies","DEG0N",50667.24,3,"DE","Eisenach, Kreisfreie Stadt","Eisenach, Kreisfreie Stadt",4,3,3,"DEG0N",104642241.684368
+"427","Water bodies","DEG0P",2652016.0908,3,"DE","Wartburgkreis","Wartburgkreis",4,3,3,"DEG0P",1305335933.19303
+"428","Water courses","DE111",362066391.008,3,"DE","Stuttgart, Stadtkreis","Stuttgart, Stadtkreis",4,1,3,"DE111",210111231.572561
+"429","Water courses","DE113",362066391.008,3,"DE","Esslingen","Esslingen",4,1,3,"DE113",639653087.634639
+"430","Water courses","DE115",362162373.1755,3,"DE","Ludwigsburg","Ludwigsburg",4,1,3,"DE115",685990294.660686
+"431","Water courses","DE116",362066391.008,3,"DE","Rems-Murr-Kreis","Rems-Murr-Kreis",4,1,3,"DE116",856918530.725362
+"432","Water courses","DE117",362066391.008,3,"DE","Heilbronn, Stadtkreis","Heilbronn, Stadtkreis",4,2,3,"DE117",100661417.036062
+"433","Water courses","DE118",364913730.3185,3,"DE","Heilbronn, Landkreis","Heilbronn, Landkreis",4,2,3,"DE118",1098993992.80318
+"434","Water courses","DE119",2847339.3105,3,"DE","Hohenlohekreis","Hohenlohekreis",4,3,3,"DE119",777054680.59534
+"435","Water courses","DE11A",3124854.12205,3,"DE","Schwäbisch Hall","Schwäbisch Hall",4,3,3,"DE11A",1484723816.9574
+"436","Water courses","DE11B",362066391.008,3,"DE","Main-Tauber-Kreis","Main-Tauber-Kreis",4,3,3,"DE11B",1304391537.28439
+"437","Water courses","DE122",362261023.7355,3,"DE","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis",4,1,3,"DE122",174498748.643615
+"438","Water courses","DE123",362891424.1068,3,"DE","Karlsruhe, Landkreis","Karlsruhe, Landkreis",4,1,3,"DE123",1083742989.38858
+"439","Water courses","DE124",363502079.80865,3,"DE","Rastatt","Rastatt",4,1,3,"DE124",739544382.998046
+"440","Water courses","DE125",362066391.008,3,"DE","Heidelberg, Stadtkreis","Heidelberg, Stadtkreis",3,1,3,"DE125",109597719.509603
+"441","Water courses","DE126",362066391.008,3,"DE","Mannheim, Stadtkreis","Mannheim, Stadtkreis",4,1,3,"DE126",145121268.985362
+"442","Water courses","DE127",362066391.008,3,"DE","Neckar-Odenwald-Kreis","Neckar-Odenwald-Kreis",4,3,3,"DE127",1125966997.13839
+"443","Water courses","DE128",362066391.008,3,"DE","Rhein-Neckar-Kreis","Rhein-Neckar-Kreis",4,1,3,"DE128",1060449184.94986
+"444","Water courses","DE129",120127.94405,3,"DE","Pforzheim, Stadtkreis","Pforzheim, Stadtkreis",2,2,3,"DE129",98477334.4854167
+"445","Water courses","DE12B",362799209.853,3,"DE","Enzkreis","Enzkreis",4,2,3,"DE12B",573053894.384032
+"446","Water courses","DE12C",362066391.008,3,"DE","Freudenstadt","Freudenstadt",3,3,3,"DE12C",870822637.050476
+"447","Water courses","DE132",363626713.300709,3,"DE","Breisgau-Hochschwarzwald","Breisgau-Hochschwarzwald",2,2,3,"DE132",1376919977.57085
+"448","Water courses","DE133",362147450.1755,3,"DE","Emmendingen","Emmendingen",2,2,3,"DE133",680111254.844883
+"449","Water courses","DE134",362619827.2713,3,"DE","Ortenaukreis","Ortenaukreis",2,2,3,"DE134",1859698705.84385
+"450","Water courses","DE135",58784.62875,3,"DE","Rottweil","Rottweil",4,3,3,"DE135",769776098.745494
+"451","Water courses","DE136",142319.9328,3,"DE","Schwarzwald-Baar-Kreis","Schwarzwald-Baar-Kreis",4,2,3,"DE136",1026381921.87872
+"452","Water courses","DE137",285766.016,3,"DE","Tuttlingen","Tuttlingen",3,2,3,"DE137",733132549.453917
+"453","Water courses","DE138",1429842.7205,3,"DE","Konstanz","Konstanz",4,2,3,"DE138",863233863.937629
+"454","Water courses","DE139",10540091.983337,3,"DE","Lörrach","Lörrach",3,2,3,"DE139",807519402.432648
+"455","Water courses","DE13A",9655844.57011,3,"DE","Waldshut","Waldshut",3,2,3,"DE13A",1131027190.77065
+"456","Water courses","DE141",362066391.008,3,"DE","Reutlingen","Reutlingen",1,2,3,"DE141",1092928197.42345
+"457","Water courses","DE142",362066391.008,3,"DE","Tübingen, Landkreis","Tübingen, Landkreis",4,2,3,"DE142",519699131.934403
+"458","Water courses","DE144",160146506.42725,3,"DE","Ulm, Stadtkreis","Ulm, Stadtkreis",4,2,3,"DE144",119375741.619876
+"459","Water courses","DE145",160210816.82225,3,"DE","Alb-Donau-Kreis","Alb-Donau-Kreis",4,2,3,"DE145",1357309263.38533
+"460","Water courses","DE146",160465087.9514,3,"DE","Biberach","Biberach",4,3,3,"DE146",1410291001.8721
+"461","Water courses","DE147",353447.36625,3,"DE","Bodenseekreis","Bodenseekreis",4,2,3,"DE147",881414111.057589
+"462","Water courses","DE148",160172517.806,3,"DE","Ravensburg","Ravensburg",4,2,3,"DE148",1632852195.73125
+"463","Water courses","DE149",990007.10805,3,"DE","Sigmaringen","Sigmaringen",4,3,3,"DE149",1204748486.40452
+"464","Water courses","DE211",160077415.101,3,"DE","Ingolstadt, Kreisfreie Stadt","Ingolstadt, Kreisfreie Stadt",4,2,3,"DE211",133325007.334283
+"465","Water courses","DE212",11715922.2569,3,"DE","München, Kreisfreie Stadt","München, Kreisfreie Stadt",4,1,3,"DE212",311773686.596285
+"466","Water courses","DE213",160077415.101,3,"DE","Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt",4,2,3,"DE213",36270134.4697756
+"467","Water courses","DE214",160077415.101,3,"DE","Altötting","Altötting",4,2,3,"DE214",568637620.844652
+"468","Water courses","DE215",160077415.101,3,"DE","Berchtesgadener Land","Berchtesgadener Land",3,2,3,"DE215",839007695.993632
+"469","Water courses","DE216",13091766.04705,3,"DE","Bad Tölz-Wolfratshausen","Bad Tölz-Wolfratshausen",2,2,3,"DE216",1111738386.38701
+"470","Water courses","DE217",381575.9873,3,"DE","Dachau","Dachau",4,2,3,"DE217",579675207.43844
+"471","Water courses","DE218",557602.63,3,"DE","Ebersberg","Ebersberg",4,2,3,"DE218",549947351.179638
+"472","Water courses","DE219",161244782.5385,3,"DE","Eichstätt","Eichstätt",4,2,3,"DE219",1214987684.53575
+"473","Water courses","DE21A",12753368.6436,3,"DE","Erding","Erding",4,3,3,"DE21A",870735570.749398
+"474","Water courses","DE21B",12199810.15505,3,"DE","Freising","Freising",4,2,3,"DE21B",799220968.906402
+"475","Water courses","DE21C",162241.23125,3,"DE","Fürstenfeldbruck","Fürstenfeldbruck",4,2,3,"DE21C",434303131.514166
+"476","Water courses","DE21D",121863.33875,3,"DE","Garmisch-Partenkirchen","Garmisch-Partenkirchen",3,2,3,"DE21D",1011621466.20587
+"477","Water courses","DE21E",12506921.2989,3,"DE","Landsberg am Lech","Landsberg am Lech",4,3,3,"DE21E",803187477.563865
+"478","Water courses","DE21G",160077415.101,3,"DE","Mühldorf a. Inn","Mühldorf a. Inn",4,3,3,"DE21G",805051413.631094
+"479","Water courses","DE21H",12265247.6636,3,"DE","München, Landkreis","München, Landkreis",4,1,3,"DE21H",664005409.595299
+"480","Water courses","DE21I",160077415.101,3,"DE","Neuburg-Schrobenhausen","Neuburg-Schrobenhausen",4,3,3,"DE21I",740797368.95015
+"481","Water courses","DE21J",160077415.101,3,"DE","Pfaffenhofen a. d. Ilm","Pfaffenhofen a. d. Ilm",4,2,3,"DE21J",760884170.082064
+"482","Water courses","DE21K",160426065.11315,3,"DE","Rosenheim, Landkreis","Rosenheim, Landkreis",4,2,3,"DE21K",1441126051.81986
+"483","Water courses","DE21M",161522508.0738,3,"DE","Traunstein","Traunstein",4,3,3,"DE21M",1533304184.32057
+"484","Water courses","DE21N",27820400.85595,3,"DE","Weilheim-Schongau","Weilheim-Schongau",4,2,3,"DE21N",967862689.399724
+"485","Water courses","DE221",14385695.5796,3,"DE","Landshut, Kreisfreie Stadt","Landshut, Kreisfreie Stadt",4,3,3,"DE221",66236572.6815427
+"486","Water courses","DE222",160277104.2013,3,"DE","Passau, Kreisfreie Stadt","Passau, Kreisfreie Stadt",4,3,3,"DE222",70507066.2646052
+"487","Water courses","DE223",160077415.101,3,"DE","Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt",4,3,3,"DE223",66970953.8555493
+"488","Water courses","DE224",160152600.75225,3,"DE","Deggendorf","Deggendorf",4,3,3,"DE224",860830092.648876
+"489","Water courses","DE226",160077415.101,3,"DE","Kelheim","Kelheim",4,3,3,"DE226",1063580761.75501
+"490","Water courses","DE227",14385695.5796,3,"DE","Landshut, Landkreis","Landshut, Landkreis",4,3,3,"DE227",1347018653.24374
+"491","Water courses","DE228",161252234.37065,3,"DE","Passau, Landkreis","Passau, Landkreis",4,3,3,"DE228",1528530882.03236
+"492","Water courses","DE229",2146252.4016,3,"DE","Regen","Regen",3,3,3,"DE229",973760839.329393
+"493","Water courses","DE22A",160268695.3053,3,"DE","Rottal-Inn","Rottal-Inn",4,3,3,"DE22A",1281883718.03827
+"494","Water courses","DE22B",160077415.101,3,"DE","Straubing-Bogen","Straubing-Bogen",4,3,3,"DE22B",1202289544.38978
+"495","Water courses","DE22C",162998797.2712,3,"DE","Dingolfing-Landau","Dingolfing-Landau",4,3,3,"DE22C",877603908.137835
+"496","Water courses","DE232",160077415.101,3,"DE","Regensburg, Kreisfreie Stadt","Regensburg, Kreisfreie Stadt",4,2,3,"DE232",79686410.9380194
+"497","Water courses","DE235",4496712.8322,3,"DE","Cham","Cham",4,3,3,"DE235",1526051890.16244
+"498","Water courses","DE236",162465746.86475,3,"DE","Neumarkt i. d. OPf.","Neumarkt i. d. OPf.",4,3,3,"DE236",1344143011.79267
+"499","Water courses","DE237",665510.74375,3,"DE","Neustadt a. d. Waldnaab","Neustadt a. d. Waldnaab",4,3,3,"DE237",1427910653.4614
+"500","Water courses","DE238",162176484.62015,3,"DE","Regensburg, Landkreis","Regensburg, Landkreis",4,2,3,"DE238",1392336652.46492
+"501","Water courses","DE239",167890046.567,3,"DE","Schwandorf","Schwandorf",4,3,3,"DE239",1459187333.25126
+"502","Water courses","DE241",362378318.914,3,"DE","Bamberg, Kreisfreie Stadt","Bamberg, Kreisfreie Stadt",4,2,3,"DE241",54554220.8261781
+"503","Water courses","DE245",362710342.34495,3,"DE","Bamberg, Landkreis","Bamberg, Landkreis",4,2,3,"DE245",1167414617.04728
+"504","Water courses","DE248",362477325.04135,3,"DE","Forchheim","Forchheim",4,2,3,"DE248",642924442.77897
+"505","Water courses","DE249",117788.34,3,"DE","Hof, Landkreis","Hof, Landkreis",4,2,3,"DE249",892993754.528977
+"506","Water courses","DE24B",136949.4505,3,"DE","Kulmbach","Kulmbach",4,3,3,"DE24B",657774250.086135
+"507","Water courses","DE24C",1198582.32325,3,"DE","Lichtenfels","Lichtenfels",4,3,3,"DE24C",519420213.691818
+"508","Water courses","DE252",364107780.6182,3,"DE","Erlangen, Kreisfreie Stadt","Erlangen, Kreisfreie Stadt",4,1,3,"DE252",78147269.3994493
+"509","Water courses","DE253",363649012.2835,3,"DE","Fürth, Kreisfreie Stadt","Fürth, Kreisfreie Stadt",4,1,3,"DE253",63606324.3486146
+"510","Water courses","DE254",2220516.16215,3,"DE","Nürnberg, Kreisfreie Stadt","Nürnberg, Kreisfreie Stadt",4,1,3,"DE254",187566724.072112
+"511","Water courses","DE255",691173.71665,3,"DE","Schwabach, Kreisfreie Stadt","Schwabach, Kreisfreie Stadt",4,1,3,"DE255",40751531.2470088
+"512","Water courses","DE256",297934.9957,3,"DE","Ansbach, Landkreis","Ansbach, Landkreis",4,3,3,"DE256",1971975510.503
+"513","Water courses","DE257",362989372.20605,3,"DE","Erlangen-Höchstadt","Erlangen-Höchstadt",4,1,3,"DE257",565048291.834412
+"514","Water courses","DE25B",2710781.52455,3,"DE","Roth","Roth",4,2,3,"DE25B",895869447.767299
+"515","Water courses","DE25C",297934.9957,3,"DE","Weißenburg-Gunzenhausen","Weißenburg-Gunzenhausen",4,3,3,"DE25C",969833051.721287
+"516","Water courses","DE261",362066391.008,3,"DE","Aschaffenburg, Kreisfreie Stadt","Aschaffenburg, Kreisfreie Stadt",4,1,3,"DE261",62095616.8662336
+"517","Water courses","DE262",362066391.008,3,"DE","Schweinfurt, Kreisfreie Stadt","Schweinfurt, Kreisfreie Stadt",4,2,3,"DE262",35860454.9027161
+"518","Water courses","DE263",362066391.008,3,"DE","Würzburg, Kreisfreie Stadt","Würzburg, Kreisfreie Stadt",4,2,3,"DE263",88293196.6210524
+"519","Water courses","DE264",362066391.008,3,"DE","Aschaffenburg, Landkreis","Aschaffenburg, Landkreis",4,1,3,"DE264",699225290.869527
+"520","Water courses","DE267",362066391.008,3,"DE","Haßberge","Haßberge",4,3,3,"DE267",957089041.896937
+"521","Water courses","DE268",362066391.008,3,"DE","Kitzingen","Kitzingen",4,3,3,"DE268",683480816.827557
+"522","Water courses","DE269",362066391.008,3,"DE","Miltenberg","Miltenberg",2,2,3,"DE269",714910368.280708
+"523","Water courses","DE26A",362066391.008,3,"DE","Main-Spessart","Main-Spessart",4,3,3,"DE26A",1322491608.33352
+"524","Water courses","DE26B",362066391.008,3,"DE","Schweinfurt, Landkreis","Schweinfurt, Landkreis",4,2,3,"DE26B",841574565.301676
+"525","Water courses","DE26C",362066391.008,3,"DE","Würzburg, Landkreis","Würzburg, Landkreis",4,2,3,"DE26C",966710893.829081
+"526","Water courses","DE271",160906138.8482,3,"DE","Augsburg, Kreisfreie Stadt","Augsburg, Kreisfreie Stadt",4,1,3,"DE271",146063372.960191
+"527","Water courses","DE272",158408.2127,3,"DE","Kaufbeuren, Kreisfreie Stadt","Kaufbeuren, Kreisfreie Stadt",4,2,3,"DE272",40442679.4901194
+"528","Water courses","DE273",160077415.101,3,"DE","Kempten (Allgäu), Kreisfreie Stadt","Kempten (Allgäu), Kreisfreie Stadt",2,2,3,"DE273",63190327.2015361
+"529","Water courses","DE274",160077415.101,3,"DE","Memmingen, Kreisfreie Stadt","Memmingen, Kreisfreie Stadt",4,3,3,"DE274",69525845.2392632
+"530","Water courses","DE275",172584336.3999,3,"DE","Aichach-Friedberg","Aichach-Friedberg",4,2,3,"DE275",780056152.198697
+"531","Water courses","DE276",174288196.4996,3,"DE","Augsburg, Landkreis","Augsburg, Landkreis",4,1,3,"DE276",1072378068.37977
+"532","Water courses","DE277",160077415.101,3,"DE","Dillingen a.d. Donau","Dillingen a.d. Donau",4,3,3,"DE277",791598089.232373
+"533","Water courses","DE278",160171854.5835,3,"DE","Günzburg","Günzburg",4,3,3,"DE278",763011483.609461
+"534","Water courses","DE279",160077415.101,3,"DE","Neu-Ulm","Neu-Ulm",4,2,3,"DE279",515325483.665401
+"535","Water courses","DE27B",3887755.72305,3,"DE","Ostallgäu","Ostallgäu",4,2,3,"DE27B",1394403948.35445
+"536","Water courses","DE27C",161465277.49095,3,"DE","Unterallgäu","Unterallgäu",4,3,3,"DE27C",1230286007.8808
+"537","Water courses","DE27D",160803229.819,3,"DE","Donau-Ries","Donau-Ries",4,3,3,"DE27D",1273243172.23197
+"538","Water courses","DE27E",160077415.101,3,"DE","Oberallgäu","Oberallgäu",3,2,3,"DE27E",1527525608.89952
+"539","Water courses","DE300",38218944.4857001,3,"DE","Berlin","Berlin",4,1,3,"DE300",892632884.129363
+"540","Water courses","DE401",189042647.8512,3,"DE","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt",4,2,3,"DE401",228896031.438055
+"541","Water courses","DE402",378518.9775,3,"DE","Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt",4,2,3,"DE402",165271146.233965
+"542","Water courses","DE403",25668137.9827,3,"DE","Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt",4,2,3,"DE403",148317613.391826
+"543","Water courses","DE404",10423713.406,3,"DE","Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt",4,2,3,"DE404",187267262.45604
+"544","Water courses","DE405",40643874.03985,3,"DE","Barnim","Barnim",4,2,3,"DE405",1481804299.65358
+"545","Water courses","DE406",28022844.0696,3,"DE","Dahme-Spreewald","Dahme-Spreewald",4,2,3,"DE406",2275022366.25851
+"546","Water courses","DE407",182129011.68725,3,"DE","Elbe-Elster","Elbe-Elster",4,3,3,"DE407",1900211417.46318
+"547","Water courses","DE408",197125123.9025,3,"DE","Havelland","Havelland",4,2,3,"DE408",1726899002.73072
+"548","Water courses","DE409",34206555.48125,3,"DE","Märkisch-Oderland","Märkisch-Oderland",4,2,3,"DE409",2157811528.308
+"549","Water courses","DE40A",27965255.07065,3,"DE","Oberhavel","Oberhavel",4,2,3,"DE40A",1807252372.99428
+"550","Water courses","DE40B",52169.459,3,"DE","Oberspreewald-Lausitz","Oberspreewald-Lausitz",4,2,3,"DE40B",1222263381.86757
+"551","Water courses","DE40C",26995221.0168501,3,"DE","Oder-Spree","Oder-Spree",4,2,3,"DE40C",2256586794.17642
+"552","Water courses","DE40D",197397.52,3,"DE","Ostprignitz-Ruppin","Ostprignitz-Ruppin",4,3,3,"DE40D",2525912661.75807
+"553","Water courses","DE40E",209448776.4855,3,"DE","Potsdam-Mittelmark","Potsdam-Mittelmark",4,2,3,"DE40E",2592887387.34177
+"554","Water courses","DE40F",182524197.41445,3,"DE","Prignitz","Prignitz",4,3,3,"DE40F",2138629029.18524
+"555","Water courses","DE40G",314007.1554701,3,"DE","Spree-Neiße","Spree-Neiße",4,2,3,"DE40G",1657489773.15028
+"556","Water courses","DE40I",42278895.6185001,3,"DE","Uckermark","Uckermark",4,3,3,"DE40I",3076623028.41344
+"557","Water courses","DE501",70836798.7952,3,"DE","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt",4,1,1,"DE501",325592393.953141
+"558","Water courses","DE502",913096.2822,3,"DE","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt",4,2,1,"DE502",93814787.8011778
+"559","Water courses","DE600",6497225.7979998,3,"DE","Hamburg","Hamburg",4,1,1,"DE600",752829856.137627
+"560","Water courses","DE712",362270133.90205,3,"DE","Frankfurt am Main, Kreisfreie Stadt","Frankfurt am Main, Kreisfreie Stadt",4,1,3,"DE712",248242981.874162
+"561","Water courses","DE713",362066391.008,3,"DE","Offenbach am Main, Kreisfreie Stadt","Offenbach am Main, Kreisfreie Stadt",4,1,3,"DE713",45094825.0884365
+"562","Water courses","DE714",362066391.008,3,"DE","Wiesbaden, Kreisfreie Stadt","Wiesbaden, Kreisfreie Stadt",4,1,3,"DE714",204028534.730629
+"563","Water courses","DE715",362714509.70675,3,"DE","Bergstraße","Bergstraße",4,1,3,"DE715",718282753.692553
+"564","Water courses","DE717",362190528.1058,3,"DE","Groß-Gerau","Groß-Gerau",4,1,3,"DE717",453685392.567884
+"565","Water courses","DE719",362066391.008,3,"DE","Main-Kinzig-Kreis","Main-Kinzig-Kreis",4,2,3,"DE719",1397135896.90246
+"566","Water courses","DE71A",362066391.008,3,"DE","Main-Taunus-Kreis","Main-Taunus-Kreis",4,1,3,"DE71A",221297385.854974
+"567","Water courses","DE71C",362066391.008,3,"DE","Offenbach, Landkreis","Offenbach, Landkreis",4,1,3,"DE71C",355404592.600392
+"568","Water courses","DE71D",362066391.008,3,"DE","Rheingau-Taunus-Kreis","Rheingau-Taunus-Kreis",2,2,3,"DE71D",811229859.921685
+"569","Water courses","DE721",589743.83925,3,"DE","Gießen, Landkreis","Gießen, Landkreis",4,2,3,"DE721",855463709.872568
+"570","Water courses","DE722",772915.05875,3,"DE","Lahn-Dill-Kreis","Lahn-Dill-Kreis",4,2,3,"DE722",1065831512.29283
+"571","Water courses","DE723",3187775.8476,3,"DE","Limburg-Weilburg","Limburg-Weilburg",4,2,3,"DE723",739046830.024034
+"572","Water courses","DE724",413125.98195,3,"DE","Marburg-Biedenkopf","Marburg-Biedenkopf",4,2,3,"DE724",1262433047.38785
+"573","Water courses","DE725",117396.30375,3,"DE","Vogelsbergkreis","Vogelsbergkreis",4,3,3,"DE725",1458037091.49231
+"574","Water courses","DE731",67454519.0299,3,"DE","Kassel, Kreisfreie Stadt","Kassel, Kreisfreie Stadt",4,2,3,"DE731",104382828.270114
+"575","Water courses","DE732",56823.3425,3,"DE","Fulda","Fulda",4,2,3,"DE732",1381508604.63321
+"576","Water courses","DE733",2090487.5557999,3,"DE","Hersfeld-Rotenburg","Hersfeld-Rotenburg",4,3,3,"DE733",1097864927.76037
+"577","Water courses","DE734",67454519.0299,3,"DE","Kassel, Landkreis","Kassel, Landkreis",4,2,3,"DE734",1295635356.19977
+"578","Water courses","DE735",69557708.5623999,3,"DE","Schwalm-Eder-Kreis","Schwalm-Eder-Kreis",4,3,3,"DE735",1538470342.63618
+"579","Water courses","DE736",1373706.40025,3,"DE","Waldeck-Frankenberg","Waldeck-Frankenberg",4,3,3,"DE736",1848046275.6139
+"580","Water courses","DE737",70760697.4794999,3,"DE","Werra-Meißner-Kreis","Werra-Meißner-Kreis",2,3,3,"DE737",1024492366.46967
+"581","Water courses","DE803",1829000.20325,3,"DE","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt",4,2,1,"DE803",169250912.438794
+"582","Water courses","DE80J",7802591.8968999,3,"DE","Mecklenburgische Seenplatte","Mecklenburgische Seenplatte",4,3,3,"DE80J",5495764654.16188
+"583","Water courses","DE80K",8768178.5818,3,"DE","Landkreis Rostock","Landkreis Rostock",4,2,1,"DE80K",3430059208.18993
+"584","Water courses","DE80L",7595381.80975,3,"DE","Vorpommern-Rügen","Vorpommern-Rügen",4,3,1,"DE80L",3166412329.30647
+"585","Water courses","DE80M",10636545.5083,3,"DE","Nordwestmecklenburg","Nordwestmecklenburg",4,3,1,"DE80M",2124495935.96764
+"586","Water courses","DE80N",7984910.40975,3,"DE","Vorpommern-Greifswald","Vorpommern-Greifswald",4,3,1,"DE80N",3796376086.49198
+"587","Water courses","DE80O",182592153.31695,3,"DE","Ludwigslust-Parchim","Ludwigslust-Parchim",4,3,3,"DE80O",4767556761.67532
+"588","Water courses","DE911",8820060.40255,3,"DE","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt",4,2,3,"DE911",192575054.406326
+"589","Water courses","DE912",1110780.22435,3,"DE","Salzgitter, Kreisfreie Stadt","Salzgitter, Kreisfreie Stadt",4,2,3,"DE912",225035790.808515
+"590","Water courses","DE913",190692560.1023,3,"DE","Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt",4,2,3,"DE913",204911779.620516
+"591","Water courses","DE914",258147079.1322,3,"DE","Gifhorn","Gifhorn",4,2,3,"DE914",1568489671.94785
+"592","Water courses","DE918",67854378.40145,3,"DE","Northeim","Northeim",4,3,3,"DE918",1270287546.82484
+"593","Water courses","DE91A",9046996.4823,3,"DE","Peine","Peine",4,2,3,"DE91A",536510724.527694
+"594","Water courses","DE91C",67454519.0299,3,"DE","Göttingen","Göttingen",4,2,3,"DE91C",1755583844.9965
+"595","Water courses","DE922",67636026.6093001,3,"DE","Diepholz","Diepholz",4,2,3,"DE922",1989909931.69491
+"596","Water courses","DE923",67454519.0299,3,"DE","Hameln-Pyrmont","Hameln-Pyrmont",4,2,3,"DE923",797827172.188895
+"597","Water courses","DE925",76240469.60495,3,"DE","Hildesheim","Hildesheim",4,2,3,"DE925",1207711592.47233
+"598","Water courses","DE926",67454519.0299,3,"DE","Holzminden","Holzminden",4,3,3,"DE926",694045656.965633
+"599","Water courses","DE927",67888676.4589499,3,"DE","Nienburg (Weser)","Nienburg (Weser)",4,3,3,"DE927",1401882982.31737
+"600","Water courses","DE928",67454519.0299,3,"DE","Schaumburg","Schaumburg",4,2,3,"DE928",676583077.468158
+"601","Water courses","DE929",76197908.90495,3,"DE","Region Hannover","Region Hannover",4,1,3,"DE929",2297355176.08333
+"602","Water courses","DE931",67454519.0299,3,"DE","Celle","Celle",4,2,3,"DE931",1550266895.98411
+"603","Water courses","DE932",7600076.6268998,3,"DE","Cuxhaven","Cuxhaven",4,2,1,"DE932",2060562912.84052
+"604","Water courses","DE933",182407374.8537,3,"DE","Harburg","Harburg",4,2,3,"DE933",1249808737.9316
+"605","Water courses","DE934",183029277.5737,3,"DE","Lüchow-Dannenberg","Lüchow-Dannenberg",4,3,3,"DE934",1225650222.61503
+"606","Water courses","DE935",182087959.356,3,"DE","Lüneburg, Landkreis","Lüneburg, Landkreis",4,2,3,"DE935",1326530355.40004
+"607","Water courses","DE936",2642606.61445,3,"DE","Osterholz","Osterholz",4,2,2,"DE936",652500580.070263
+"608","Water courses","DE937",5627873.3645,3,"DE","Rotenburg (Wümme)","Rotenburg (Wümme)",4,3,3,"DE937",2073372672.35573
+"609","Water courses","DE938",67504941.29615,3,"DE","Heidekreis","Heidekreis",4,2,3,"DE938",1881689691.31239
+"610","Water courses","DE939",7067396.9736001,3,"DE","Stade","Stade",4,2,1,"DE939",1265908947.07304
+"611","Water courses","DE93A",191767752.5563,3,"DE","Uelzen","Uelzen",4,3,3,"DE93A",1463165062.15144
+"612","Water courses","DE93B",67716768.962,3,"DE","Verden","Verden",4,2,3,"DE93B",789675230.147464
+"613","Water courses","DE941",488807.86365,3,"DE","Delmenhorst, Kreisfreie Stadt","Delmenhorst, Kreisfreie Stadt",4,1,2,"DE941",62447526.9381574
+"614","Water courses","DE942",2036670.3205,3,"DE","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt",4,2,1,"DE942",111709801.105318
+"615","Water courses","DE943",36590968.615,3,"DE","Oldenburg (Oldenburg), Kreisfreie Stadt","Oldenburg (Oldenburg), Kreisfreie Stadt",4,2,2,"DE943",104101502.026344
+"616","Water courses","DE944",365853.06235,3,"DE","Osnabrück, Kreisfreie Stadt","Osnabrück, Kreisfreie Stadt",4,2,3,"DE944",120309983.060923
+"617","Water courses","DE945",394930.25805,3,"DE","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt",4,2,1,"DE945",107322895.388487
+"618","Water courses","DE946",37019914.3799,3,"DE","Ammerland","Ammerland",4,2,2,"DE946",729953152.000428
+"619","Water courses","DE947",3007646.8636001,3,"DE","Aurich","Aurich",4,2,1,"DE947",1293410720.66243
+"620","Water courses","DE948",37100065.0068,3,"DE","Cloppenburg","Cloppenburg",4,3,3,"DE948",1421374929.86524
+"621","Water courses","DE949",38475607.9345,3,"DE","Emsland","Emsland",4,3,3,"DE949",2883867995.78465
+"622","Water courses","DE94A",1826758.52365,3,"DE","Friesland (DE)","Friesland (DE)",4,2,1,"DE94A",617808851.718435
+"623","Water courses","DE94B",336028.44965,3,"DE","Grafschaft Bentheim","Grafschaft Bentheim",4,2,3,"DE94B",981409436.788826
+"624","Water courses","DE94C",37516896.76505,3,"DE","Leer","Leer",4,2,1,"DE94C",1066486768.09976
+"625","Water courses","DE94D",36707699.22835,3,"DE","Oldenburg, Landkreis","Oldenburg, Landkreis",4,2,2,"DE94D",1065477437.64861
+"626","Water courses","DE94E",67733035.2254,3,"DE","Osnabrück, Landkreis","Osnabrück, Landkreis",4,2,3,"DE94E",2120461941.77748
+"627","Water courses","DE94G",37334392.3187,3,"DE","Wesermarsch","Wesermarsch",4,2,1,"DE94G",827712458.397358
+"628","Water courses","DE94H",412418.29135,3,"DE","Wittmund","Wittmund",4,3,1,"DE94H",659207812.080524
+"629","Water courses","DEA11",362066391.008,3,"DE","Düsseldorf, Kreisfreie Stadt","Düsseldorf, Kreisfreie Stadt",4,1,3,"DEA11",217642471.837296
+"630","Water courses","DEA12",362231809.20225,3,"DE","Duisburg, Kreisfreie Stadt","Duisburg, Kreisfreie Stadt",4,1,3,"DEA12",232472687.045201
+"631","Water courses","DEA13",363470473.8005,3,"DE","Essen, Kreisfreie Stadt","Essen, Kreisfreie Stadt",4,1,3,"DEA13",210837910.563292
+"632","Water courses","DEA14",362066391.008,3,"DE","Krefeld, Kreisfreie Stadt","Krefeld, Kreisfreie Stadt",4,1,3,"DEA14",137435355.182603
+"633","Water courses","DEA16",362066391.008,3,"DE","Mülheim an der Ruhr, Kreisfreie Stadt","Mülheim an der Ruhr, Kreisfreie Stadt",4,1,3,"DEA16",90365531.4036003
+"634","Water courses","DEA17",362066391.008,3,"DE","Oberhausen, Kreisfreie Stadt","Oberhausen, Kreisfreie Stadt",4,1,3,"DEA17",77585333.525203
+"635","Water courses","DEA19",59108.8025,3,"DE","Solingen, Kreisfreie Stadt","Solingen, Kreisfreie Stadt",4,1,3,"DEA19",89005298.1861593
+"636","Water courses","DEA1A",60455.55015,3,"DE","Wuppertal, Kreisfreie Stadt","Wuppertal, Kreisfreie Stadt",4,1,3,"DEA1A",168089663.213308
+"637","Water courses","DEA1B",362199097.66345,3,"DE","Kleve","Kleve",4,2,3,"DEA1B",1233273879.44075
+"638","Water courses","DEA1C",362066391.008,3,"DE","Mettmann","Mettmann",4,1,3,"DEA1C",408467768.045507
+"639","Water courses","DEA1D",362066391.008,3,"DE","Rhein-Kreis Neuss","Rhein-Kreis Neuss",4,1,3,"DEA1D",576774483.522309
+"640","Water courses","DEA1F",364551176.82995,3,"DE","Wesel","Wesel",4,1,3,"DEA1F",1042903749.9752
+"641","Water courses","DEA22",362066391.008,3,"DE","Bonn, Kreisfreie Stadt","Bonn, Kreisfreie Stadt",4,1,3,"DEA22",141813893.951768
+"642","Water courses","DEA23",362066391.008,3,"DE","Köln, Kreisfreie Stadt","Köln, Kreisfreie Stadt",4,1,3,"DEA23",406362793.036673
+"643","Water courses","DEA24",362066391.008,3,"DE","Leverkusen, Kreisfreie Stadt","Leverkusen, Kreisfreie Stadt",4,1,3,"DEA24",79171925.1569377
+"644","Water courses","DEA26",187908.36625,3,"DE","Düren","Düren",4,2,3,"DEA26",940283413.920119
+"645","Water courses","DEA27",362066391.008,3,"DE","Rhein-Erft-Kreis","Rhein-Erft-Kreis",4,1,3,"DEA27",703103893.413581
+"646","Water courses","DEA2A",86650.89425,3,"DE","Oberbergischer Kreis","Oberbergischer Kreis",4,2,3,"DEA2A",917489688.740491
+"647","Water courses","DEA2B",59108.8025,3,"DE","Rheinisch-Bergischer Kreis","Rheinisch-Bergischer Kreis",4,1,3,"DEA2B",438667594.242975
+"648","Water courses","DEA2C",364417678.11835,3,"DE","Rhein-Sieg-Kreis","Rhein-Sieg-Kreis",4,1,3,"DEA2C",1152469679.55234
+"649","Water courses","DEA31",362066391.008,3,"DE","Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt",4,1,3,"DEA31",100079393.509908
+"650","Water courses","DEA32",362654126.651,3,"DE","Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt",4,1,3,"DEA32",105924389.114704
+"651","Water courses","DEA33",4004717.09965,3,"DE","Münster, Kreisfreie Stadt","Münster, Kreisfreie Stadt",4,1,3,"DEA33",303482228.67034
+"652","Water courses","DEA35",7873157.1613,3,"DE","Coesfeld","Coesfeld",4,1,3,"DEA35",1111968188.69059
+"653","Water courses","DEA36",10067964.3779,3,"DE","Recklinghausen","Recklinghausen",4,1,3,"DEA36",761404385.524167
+"654","Water courses","DEA37",105347577.50705,3,"DE","Steinfurt","Steinfurt",4,2,3,"DEA37",1795643341.46908
+"655","Water courses","DEA38",240659.58585,3,"DE","Warendorf","Warendorf",4,2,3,"DEA38",1319363417.20812
+"656","Water courses","DEA43",67505155.90035,3,"DE","Herford","Herford",4,1,3,"DEA43",450062830.858437
+"657","Water courses","DEA44",67454519.0299,3,"DE","Höxter","Höxter",4,3,3,"DEA44",1200950878.40927
+"658","Water courses","DEA45",67454519.0299,3,"DE","Lippe","Lippe",4,2,3,"DEA45",1246676294.05469
+"659","Water courses","DEA46",67454519.0299,3,"DE","Minden-Lübbecke","Minden-Lübbecke",4,2,3,"DEA46",1151426926.02607
+"660","Water courses","DEA51",1606793.45665,3,"DE","Bochum, Kreisfreie Stadt","Bochum, Kreisfreie Stadt",4,1,3,"DEA51",144679359.436114
+"661","Water courses","DEA52",1379772.82545,3,"DE","Dortmund, Kreisfreie Stadt","Dortmund, Kreisfreie Stadt",4,1,3,"DEA52",279961350.115703
+"662","Water courses","DEA53",1561567.4194,3,"DE","Hagen, Kreisfreie Stadt","Hagen, Kreisfreie Stadt",4,1,3,"DEA53",160900894.658126
+"663","Water courses","DEA54",5711450.1819,3,"DE","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt",4,1,3,"DEA54",227955798.883389
+"664","Water courses","DEA55",4886843.2447,3,"DE","Herne, Kreisfreie Stadt","Herne, Kreisfreie Stadt",4,1,3,"DEA55",51309089.1067936
+"665","Water courses","DEA56",3178936.60095,3,"DE","Ennepe-Ruhr-Kreis","Ennepe-Ruhr-Kreis",4,1,3,"DEA56",410427266.463918
+"666","Water courses","DEA57",178288.04895,3,"DE","Hochsauerlandkreis","Hochsauerlandkreis",2,2,3,"DEA57",1959262942.01602
+"667","Water courses","DEA58",3677749.4186,3,"DE","Märkischer Kreis","Märkischer Kreis",4,1,3,"DEA58",1061289203.722
+"668","Water courses","DEA59",673514.5964,3,"DE","Olpe","Olpe",2,2,3,"DEA59",711669394.921959
+"669","Water courses","DEA5B",1190386.11325,3,"DE","Soest","Soest",4,2,3,"DEA5B",1329560125.47652
+"670","Water courses","DEA5C",7904807.49195,3,"DE","Unna","Unna",4,1,3,"DEA5C",543090824.415448
+"671","Water courses","DEB11",362066391.008,3,"DE","Koblenz, Kreisfreie Stadt","Koblenz, Kreisfreie Stadt",4,2,3,"DEB11",106783604.734165
+"672","Water courses","DEB12",362066391.008,3,"DE","Ahrweiler","Ahrweiler",2,2,3,"DEB12",786465337.128641
+"673","Water courses","DEB13",413033.4055,3,"DE","Altenkirchen (Westerwald)","Altenkirchen (Westerwald)",4,3,3,"DEB13",640374242.203086
+"674","Water courses","DEB14",363441356.74695,3,"DE","Bad Kreuznach","Bad Kreuznach",4,2,3,"DEB14",863637968.960448
+"675","Water courses","DEB15",85051.45625,3,"DE","Birkenfeld","Birkenfeld",3,3,3,"DEB15",777409842.211285
+"676","Water courses","DEB17",362066391.008,3,"DE","Mayen-Koblenz","Mayen-Koblenz",4,2,3,"DEB17",816305786.579477
+"677","Water courses","DEB18",362193067.06425,3,"DE","Neuwied","Neuwied",4,2,3,"DEB18",627651703.299646
+"678","Water courses","DEB1A",364115657.23525,3,"DE","Rhein-Lahn-Kreis","Rhein-Lahn-Kreis",3,2,3,"DEB1A",781823841.882597
+"679","Water courses","DEB1C",362066391.008,3,"DE","Cochem-Zell","Cochem-Zell",3,3,3,"DEB1C",693233536.039953
+"680","Water courses","DEB1D",362066391.008,3,"DE","Rhein-Hunsrück-Kreis","Rhein-Hunsrück-Kreis",1,3,3,"DEB1D",990610495.402277
+"681","Water courses","DEB21",362066391.008,3,"DE","Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt",4,2,3,"DEB21",116826811.696233
+"682","Water courses","DEB22",362066391.008,3,"DE","Bernkastel-Wittlich","Bernkastel-Wittlich",3,3,3,"DEB22",1169452787.64663
+"683","Water courses","DEB23",362832619.851171,3,"DE","Eifelkreis Bitburg-Prüm","Eifelkreis Bitburg-Prüm",4,3,3,"DEB23",1627709097.38995
+"684","Water courses","DEB25",362066391.008,3,"DE","Trier-Saarburg","Trier-Saarburg",3,2,3,"DEB25",1103421611.10293
+"685","Water courses","DEB31",362066391.008,3,"DE","Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt",4,1,3,"DEB31",44178081.4867209
+"686","Water courses","DEB34",362066391.008,3,"DE","Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt",4,1,3,"DEB34",77835095.4478041
+"687","Water courses","DEB35",362066391.008,3,"DE","Mainz, Kreisfreie Stadt","Mainz, Kreisfreie Stadt",4,1,3,"DEB35",97669068.1543472
+"688","Water courses","DEB38",362066391.008,3,"DE","Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt",4,1,3,"DEB38",42412827.315229
+"689","Water courses","DEB39",362066391.008,3,"DE","Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt",4,1,3,"DEB39",109650258.448413
+"690","Water courses","DEB3B",362066391.008,3,"DE","Alzey-Worms","Alzey-Worms",4,3,3,"DEB3B",587080591.160363
+"691","Water courses","DEB3E",363874208.10715,3,"DE","Germersheim","Germersheim",4,1,3,"DEB3E",463336831.578698
+"692","Water courses","DEB3I",362066391.008,3,"DE","Rhein-Pfalz-Kreis","Rhein-Pfalz-Kreis",4,1,3,"DEB3I",304563498.012404
+"693","Water courses","DEB3J",362287840.3177,3,"DE","Mainz-Bingen","Mainz-Bingen",4,2,3,"DEB3J",606455255.176014
+"694","Water courses","DEC01",362066391.008,3,"DE","Regionalverband Saarbrücken","Regionalverband Saarbrücken",4,1,3,"DEC01",412262524.379048
+"695","Water courses","DEC02",362066391.008,3,"DE","Merzig-Wadern","Merzig-Wadern",4,2,3,"DEC02",556430238.565988
+"696","Water courses","DEC04",362135207.07855,3,"DE","Saarlouis","Saarlouis",4,1,3,"DEC04",458819424.941821
+"697","Water courses","DEC05",362066391.008,3,"DE","Saarpfalz-Kreis","Saarpfalz-Kreis",4,1,3,"DEC05",420103663.427504
+"698","Water courses","DED21",182033222.136,3,"DE","Dresden, Kreisfreie Stadt","Dresden, Kreisfreie Stadt",4,1,3,"DED21",327871743.652502
+"699","Water courses","DED2D",82090.4275,3,"DE","Görlitz","Görlitz",4,2,3,"DED2D",2111617357.77598
+"700","Water courses","DED2E",182033222.136,3,"DE","Meißen","Meißen",4,2,3,"DED2E",1458822908.66826
+"701","Water courses","DED2F",182033222.136,3,"DE","Sächsische Schweiz-Osterzgebirge","Sächsische Schweiz-Osterzgebirge",4,1,3,"DED2F",1653087363.58717
+"702","Water courses","DED42",303380.0875,3,"DE","Erzgebirgskreis","Erzgebirgskreis",3,2,3,"DED42",1827391752.94436
+"703","Water courses","DED43",12383178.11355,3,"DE","Mittelsachsen","Mittelsachsen",4,2,3,"DED43",2114905409.96206
+"704","Water courses","DED45",949895.1799002,3,"DE","Zwickau","Zwickau",4,2,3,"DED45",948970483.529633
+"705","Water courses","DED51",1122506.50985,3,"DE","Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt",4,1,3,"DED51",299994732.271565
+"706","Water courses","DED52",9595899.9117,3,"DE","Leipzig","Leipzig",4,1,3,"DED52",1650413243.11551
+"707","Water courses","DED53",192613158.44305,3,"DE","Nordsachsen","Nordsachsen",4,3,3,"DED53",2027895996.34862
+"708","Water courses","DEE01",182112930.17975,3,"DE","Dessau-Roßlau, Kreisfreie Stadt","Dessau-Roßlau, Kreisfreie Stadt",4,2,3,"DEE01",246028463.881621
+"709","Water courses","DEE02",182033222.136,3,"DE","Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt",4,2,3,"DEE02",135908898.690888
+"710","Water courses","DEE03",182100330.0635,3,"DE","Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt",4,2,3,"DEE03",200918216.51768
+"711","Water courses","DEE05",192049820.6282,3,"DE","Anhalt-Bitterfeld","Anhalt-Bitterfeld",4,2,3,"DEE05",1462195496.31366
+"712","Water courses","DEE06",182449939.076,3,"DE","Jerichower Land","Jerichower Land",4,3,3,"DEE06",1589715793.5913
+"713","Water courses","DEE07",182033222.136,3,"DE","Börde","Börde",4,2,3,"DEE07",2377097678.5338
+"714","Water courses","DEE08",188976559.622,3,"DE","Burgenlandkreis","Burgenlandkreis",4,3,3,"DEE08",1418669905.12265
+"715","Water courses","DEE0A",182033222.136,3,"DE","Mansfeld-Südharz","Mansfeld-Südharz",4,3,3,"DEE0A",1456725560.41735
+"716","Water courses","DEE0B",182545086.1446,3,"DE","Saalekreis","Saalekreis",4,2,3,"DEE0B",1439418533.47617
+"717","Water courses","DEE0C",182521589.7742,3,"DE","Salzlandkreis","Salzlandkreis",4,2,3,"DEE0C",1435156297.61134
+"718","Water courses","DEE0D",182369366.62425,3,"DE","Stendal","Stendal",4,3,3,"DEE0D",2436218017.9056
+"719","Water courses","DEE0E",182567872.67085,3,"DE","Wittenberg","Wittenberg",4,3,3,"DEE0E",1942626325.95478
+"720","Water courses","DEF02",28322158.01535,3,"DE","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt",4,1,1,"DEF02",113224279.066901
+"721","Water courses","DEF03",12514430.6283,3,"DE","Lübeck, Kreisfreie Stadt","Lübeck, Kreisfreie Stadt",4,2,1,"DEF03",211867809.305578
+"722","Water courses","DEF05",28546905.9402,3,"DE","Dithmarschen","Dithmarschen",4,3,1,"DEF05",1442189904.68907
+"723","Water courses","DEF06",182602214.50005,3,"DE","Herzogtum Lauenburg","Herzogtum Lauenburg",4,2,3,"DEF06",1262379620.72553
+"724","Water courses","DEF07",31209085.5329,3,"DE","Nordfriesland","Nordfriesland",4,3,1,"DEF07",2082788701.61271
+"725","Water courses","DEF09",1120039.85655,3,"DE","Pinneberg","Pinneberg",4,1,1,"DEF09",660754103.80334
+"726","Water courses","DEF0A",1364330.594,3,"DE","Plön","Plön",4,1,1,"DEF0A",1082990962.44124
+"727","Water courses","DEF0B",28144164.2034,3,"DE","Rendsburg-Eckernförde","Rendsburg-Eckernförde",4,2,1,"DEF0B",2169436142.8087
+"728","Water courses","DEF0C",31233936.53725,3,"DE","Schleswig-Flensburg","Schleswig-Flensburg",4,2,1,"DEF0C",1991617450.81926
+"729","Water courses","DEF0E",32628516.4728,3,"DE","Steinburg","Steinburg",4,2,1,"DEF0E",1056208586.18438
+"730","Water courses","DEG02",388743.3015,3,"DE","Gera, Kreisfreie Stadt","Gera, Kreisfreie Stadt",4,2,3,"DEG02",152684429.002469
+"731","Water courses","DEG03",6592023.66305,3,"DE","Jena, Kreisfreie Stadt","Jena, Kreisfreie Stadt",1,2,3,"DEG03",115038513.291536
+"732","Water courses","DEG06",67542484.5649,3,"DE","Eichsfeld","Eichsfeld",4,3,3,"DEG06",942055973.283677
+"733","Water courses","DEG0B",103449.5325,3,"DE","Schmalkalden-Meiningen","Schmalkalden-Meiningen",3,2,3,"DEG0B",1210719335.63334
+"734","Water courses","DEG0G",6592023.66305,3,"DE","Weimarer Land","Weimarer Land",4,2,3,"DEG0G",804370741.063243
+"735","Water courses","DEG0I",6643052.4593,3,"DE","Saalfeld-Rudolstadt","Saalfeld-Rudolstadt",3,2,3,"DEG0I",1036231581.36936
+"736","Water courses","DEG0J",6704121.46055,3,"DE","Saale-Holzland-Kreis","Saale-Holzland-Kreis",4,2,3,"DEG0J",815338072.776793
+"737","Water courses","DEG0K",2090774.35735,3,"DE","Saale-Orla-Kreis","Saale-Orla-Kreis",4,3,3,"DEG0K",1152244965.13537
+"738","Water courses","DEG0L",561081.48355,3,"DE","Greiz","Greiz",4,2,3,"DEG0L",845844658.560738
+"739","Water courses","DEG0N",1708416.62285,3,"DE","Eisenach, Kreisfreie Stadt","Eisenach, Kreisfreie Stadt",4,3,3,"DEG0N",104642241.684368
+"740","Water courses","DEG0P",3545102.6829999,3,"DE","Wartburgkreis","Wartburgkreis",4,3,3,"DEG0P",1305335933.19303

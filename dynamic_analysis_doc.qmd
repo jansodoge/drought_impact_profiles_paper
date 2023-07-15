@@ -1,0 +1,1722 @@
+---
+title: "Unravelling dynamic patterns of socioeconomic impacts of drought"
+author: "Jan Sodoge"
+format: html
+editor: visual
+---
+
+### Loading data etc. for analysis
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(factoextra)
+library(ggrepel)
+library(patchwork)
+library(RColorBrewer)
+library(tmap)
+library(scales)
+library(ggradar)
+library(gt)
+library(aweSOM)
+library(ggalluvial)
+library(ggfittext)
+library(readr)
+library(biscale)
+library(tidyverse)  
+library(cluster)    
+library(factoextra) 
+library(dendextend) 
+library(readxl)
+library(GGally)
+library(tidyverse)
+load("data/nuts_geo_layers.RData")
+nuts1 <- nuts_geo_data %>% 
+  dplyr::filter(LEVL_CODE == 1) %>% 
+  dplyr::filter(CNTR_CODE == "DE")
+nuts2 <- nuts_geo_data %>% 
+  dplyr::filter(LEVL_CODE == 2) %>% 
+  dplyr::filter(CNTR_CODE == "DE")
+nuts3 <- nuts_geo_data %>% 
+  dplyr::filter(LEVL_CODE == 3) %>% 
+  dplyr::filter(CNTR_CODE == "DE")
+
+
+
+intersections_sf_areas_1 <- read_csv("data/intersections_sf_areas_2.csv")
+intersections_sf_areas_2 <- read_csv("data/intersections_sf_areas_3.csv")
+intersections_sf_areas_3 <- read_csv("data/intersections_sf_areas_4.csv")
+intersections_sf_areas_4 <- read_csv("data/intersections_sf_areas_5.csv")
+intersections_sf_areas_5 <- read_csv("data/intersections_sf_areas_1.csv")
+
+
+
+
+land_use <- dplyr::bind_rows(
+  intersections_sf_areas_1,
+  intersections_sf_areas_2,
+  intersections_sf_areas_3,
+  intersections_sf_areas_4,
+  intersections_sf_areas_5
+) %>%
+  dplyr::select(NUTS_ID, area_total, description) %>%
+  tidyr::pivot_wider(NUTS_ID, names_from = "description", values_from = "area_total") %>%
+  dplyr::select(
+    "Non-irrigated arable land",
+    "Pastures, meadows and other permanent grasslands under agricultural use",
+    "Coniferous forest",
+    "Broad-leaved forest",
+    "Water courses",
+    "Discontinuous urban fabric",
+    "Mixed forest",
+    "Industrial or commercial units and public facilities",
+    "Water bodies",
+    "Transitional woodland/shrub",
+    NUTS_ID
+  ) 
+
+land_use[is.na(land_use)] <- 0
+
+
+total_area <- land_use %>% 
+  tidyr::pivot_longer(!NUTS_ID, names_to = "land_cover", values_to = "area") %>% 
+  group_by(NUTS_ID) %>% 
+  summarise(total_area = sum(area, na.rm = TRUE))
+
+
+#alternative land-use for varrank algorithm 
+land_use_varrank <- land_use %>% 
+  dplyr::left_join(total_area, by = c("NUTS_ID"="NUTS_ID")) %>% 
+  tidyr::pivot_longer(!c(NUTS_ID, total_area), names_to = "land_type", values_to = "area") %>% 
+  group_by(NUTS_ID, land_type) %>% 
+  summarise(area = sum(area, na.rm = TRUE),
+            total_area = mean(total_area, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(relative_area  = area / total_area) %>% 
+  dplyr::select(relative_area, NUTS_ID, land_type) %>% 
+  tidyr::pivot_wider(NUTS_ID, names_from = land_type, values_from = relative_area)
+
+
+
+
+# land-use summarised
+
+
+land_use <- land_use %>% 
+  dplyr::left_join(total_area, by = c("NUTS_ID"="NUTS_ID")) %>% 
+  tidyr::pivot_longer(!c(NUTS_ID, total_area), names_to = "land_type", values_to = "area") %>% 
+   mutate(
+    land_type = case_when(
+      land_type == "Non-irrigated arable land" ~ "agricultural land",
+      land_type == "Pastures, meadows and other permanent grasslands under agricultural use" ~ "agricultural land",
+       land_type == "Broad-leaved forest" ~ "forest",
+       land_type == "Coniferous forest" ~ "forest",
+       land_type == "Mixed forest" ~ "forest",
+        land_type == "Water bodies" ~ "water_bodies",
+      land_type == "Continuous urban fabric" ~ "urban",
+      land_type == "Discontinuous urban fabric" ~ "urban")) %>% 
+  group_by(NUTS_ID, land_type) %>% 
+  summarise(area = sum(area, na.rm = TRUE),
+            total_area = mean(total_area, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(relative_area  = area / total_area) %>% 
+  dplyr::select(relative_area, NUTS_ID, land_type) %>% 
+  tidyr::pivot_wider(NUTS_ID, names_from = land_type, values_from = relative_area)
+
+```
+
+Load impact dataset, use nuts-3 level (districts) for analysis
+
+```{r, warning=FALSE, message=FALSE}
+load("impacts_dataset_export_validation.RData")
+impacts_dataset <- impacts_dataset %>% 
+  drop_na(type_of_class) %>% 
+  dplyr::filter(type_of_class != "energy")
+
+total_annual_impact_data <- impacts_dataset %>% 
+  drop_na(type_of_class) %>% 
+  group_by(nuts_id, statistical_unit, year_date, type_of_class) %>% 
+  summarise(MIS = sum(MIS, na.rm = TRUE)) %>% 
+  tidyr::pivot_wider(names_from = type_of_class, values_from = MIS) %>% 
+  replace(is.na(.), 0) %>% 
+    dplyr::filter(statistical_unit  == "nuts3")
+
+```
+
+### Dataset descriptive: spatial and temporal distribution of each impact class
+
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=15, fig.cap='Figure ...: Spatial distribution of drought impact types'}
+visualize_impacts_across <- impacts_dataset %>% 
+  dplyr::filter(statistical_unit  == "nuts3") %>% 
+  group_by(type_of_class, nuts_id) %>% 
+  summarise(MIS = sum(MIS, na.rm = TRUE)) %>% 
+  dplyr::right_join(nuts3, 
+                   by = c("nuts_id"="NUTS_ID")) %>% 
+  sf::st_as_sf()
+
+map_data <- expand.grid(type_of_class = unique(impacts_dataset$type_of_class),
+            nuts_id = unique(nuts3$NUTS_ID)) %>% 
+            dplyr::left_join(visualize_impacts_across, 
+                             by = c("nuts_id" = "nuts_id",
+                                    "type_of_class" = "type_of_class")) %>% 
+  mutate(MIS = ifelse(is.na(MIS), 0, MIS)) %>% 
+  group_by(type_of_class) %>% 
+  mutate(MIS = scales::rescale(MIS)) %>% 
+  sf::st_as_sf()
+
+
+spatial_map <-  ggplot(map_data) + 
+    geom_sf(aes(fill=(MIS)), color = NA)+
+    facet_wrap(~type_of_class,
+               nrow = 1)+
+    scale_fill_distiller(palette = "YlOrRd", direction = 1)+
+    geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())+
+    theme_minimal()+
+    theme(axis.title = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid = element_blank(),
+          
+          panel.spacing = unit(5, "lines"),
+          strip.text = element_text(size = 30, face = "bold"),
+          legend.title = element_text(size = 30),
+          legend.text = element_text(size = 30),
+          legend.key.size = unit(2, "cm"),
+          legend.position = c(0.5,1.4),
+          legend.direction = "horizontal")+
+    labs(fill = "Relative distribution of DIS")
+ 
+
+
+temporal <- impacts_dataset %>% 
+ group_by(year_date, type_of_class) %>% 
+ summarise(n = sum(MIS, na.rm = TRUE)) %>%
+  ggplot(aes(x = year_date, y = n))+
+  geom_line()+
+  geom_point()+
+  scale_x_continuous(breaks = c(2000,2010,2022), labels = c(2000,2010,2022))+
+  facet_wrap(~type_of_class, nrow = 1)+
+  theme_void()+
+  labs(y = "DIS")+
+  theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1),
+        panel.spacing = unit(5, "lines"),
+        strip.text = element_blank(),
+        axis.text.x = element_text(size = 24, face = "bold"),
+        axis.title.y = element_text(size = 24, face = "bold"))
+
+
+
+spatial_map + inset_element(temporal, 0,0,1,.2)
+
+
+
+ggsave(plot = last_plot(),
+       device = "svg",
+       filename = "data_descriptive_figure.svg",
+       width = 70,
+       height = 27,
+       units = "cm")
+
+
+```
+
+```{r}
+
+visualize_impacts_across_years <- impacts_dataset %>% 
+  dplyr::filter(statistical_unit  == "nuts3") %>% 
+  group_by(year_date, nuts_id) %>% 
+  summarise(MIS = sum(MIS, na.rm = TRUE)) %>% 
+  dplyr::right_join(nuts3, 
+                   by = c("nuts_id"="NUTS_ID")) %>% 
+  sf::st_as_sf()
+
+expand.grid(type_of_class = unique(impacts_dataset$type_of_class),
+            year_date = seq(2000,2022,1),
+            nuts_id = unique(nuts3$NUTS_ID)) %>% 
+            dplyr::left_join(visualize_impacts_across_years, 
+                             by = c("nuts_id" = "nuts_id",
+                                    "year_date" = "year_date")) %>% 
+  mutate(MIS = ifelse(is.na(MIS), 0, MIS)) %>% 
+  sf::st_as_sf() %>% 
+  
+  ggplot() + 
+    geom_sf(aes(fill=(MIS)), color = NA)+
+    facet_wrap(~year_date)+
+    scale_fill_distiller(palette = "YlOrRd", direction = 1)+
+    geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())+
+    theme_void()+
+    labs(fill = "DIS")
+```
+
+### Temporal distribution of impacts, reasoning the binning with annual values
+
+```{r}
+p1 <- impacts_dataset %>% 
+  mutate(date_full  = lubridate::ym(paste0(year_date,"-", month_date))) %>% 
+  mutate(date_year = lubridate::year(date_full)) %>% 
+  dplyr::filter(statistical_unit == "nuts3") %>% 
+  dplyr::filter(type_of_class != "energy") %>% 
+  drop_na(type_of_class) %>% 
+  ggplot(aes(x = date_full, y = MIS))+
+  geom_bar(stat = "identity")+
+  geom_vline(xintercept =  lubridate::ymd("2000:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+  geom_vline(xintercept =  lubridate::ymd("2001:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2002:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2003:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2004:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2005:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2006:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2007:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2008:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2009:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2010:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2011:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2012:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2013:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2014:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2015:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2016:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2017:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2018:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2019:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2020:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2021:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2022:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2023:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+  facet_wrap(~type_of_class, scales = "free_y")+
+  theme_minimal()+
+  theme(panel.border = element_rect(color = "black", fill = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())+
+  labs(x = "Time", y = "Drought impact statements")
+
+
+
+p2 <- impacts_dataset %>% 
+  mutate(date_full  = lubridate::ym(paste0(year_date,"-", month_date))) %>% 
+  mutate(date_year = lubridate::year(date_full)) %>% 
+  dplyr::filter(statistical_unit == "nuts3") %>% 
+  dplyr::filter(type_of_class != "energy") %>% 
+  drop_na(type_of_class) %>% 
+  ggplot(aes(x = date_full, y = MIS))+
+  geom_bar(stat = "identity")+
+  geom_vline(xintercept =  lubridate::ymd("2000:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+  geom_vline(xintercept =  lubridate::ymd("2001:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2002:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2003:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2004:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2005:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2006:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2007:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2008:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2009:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2010:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2011:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2012:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2013:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2014:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2015:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2016:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2017:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2018:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2019:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2020:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2021:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2022:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+   geom_vline(xintercept =  lubridate::ymd("2023:01:01"), 
+             color = "red", size = .1, linetype = "dashed")+
+  theme_minimal()+
+  theme(panel.border = element_rect(color = "black", fill = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())+
+  labs(x = "Time", y = "DIS", title = "A")
+
+
+
+p3 <- impacts_dataset %>% 
+  dplyr::filter(statistical_unit == "nuts3") %>% 
+  dplyr::filter(type_of_class != "energy") %>% 
+  drop_na(type_of_class) %>% 
+  group_by(month_date) %>% 
+  summarise(n = sum(MIS, na.rm = TRUE)) %>% 
+  ggplot(aes(x = month_date, y = n))+
+  geom_bar(stat = "identity")+
+   theme_minimal()+
+  theme(panel.border = element_rect(color = "black", fill = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(hjust = 0),
+        plot.background = element_rect(fill = "white"))+
+  labs(x = "Month", y = "DIS", title = "B")+
+  scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10,1,12))
+
+
+
+p2 + patchwork::inset_element(p3, left = 0.3, right = .7, bottom = .5, top = .95)
+
+
+ggsave(plot = last_plot(),
+       device = "svg",
+       filename = "annual_intervals_dis_figure.svg",
+       width = 27,
+       height = 13.5,
+       units = "cm")
+
+
+```
+
+### Plot total impacts per each year, guiding the selection of the analyzed drought events
+
+```{r}
+#plot of selected years for analysis based on DIS statements count
+
+ impacts_dataset %>% 
+ group_by(year_date) %>% 
+ summarise(n = sum(MIS, na.rm = TRUE)) %>%
+  ggplot(aes(x = year_date, y = n))+
+  geom_line(linetype = "dashed")+
+  geom_point(size = 2)+
+  scale_x_continuous(breaks = c(2000,2010,2022), labels = c(2000,2010,2022))+
+  theme_void()+
+  labs(y = "DIS")+
+  theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1),
+        panel.spacing = unit(5, "lines"),
+        strip.text = element_blank(),
+        axis.text.x = element_text(size = 24, face = "bold"),
+        axis.title.y = element_text(size = 24, face = "bold"))+
+  #geom_hline(yintercept = 150, color = "red", linetype = "dashed")+
+  geom_label_repel(data = . %>% dplyr::filter(year_date %in% c(2003, 2018, 2015,2018, 2019,2020,2022)),
+               aes(x = year_date, y = n, label  = paste0(year_date, "; \n", round(n,1), "DIS")), 
+               size = 3)
+
+```
+
+### Data transformation
+
+```{r}
+#step 1: remove all observations w/o impact and years not relevant
+to_keep <- expand.grid(nuts_id = nuts3$NUTS_ID,
+            year_date = seq(2000,2022,1)) %>% 
+  dplyr::left_join(total_annual_impact_data %>% 
+  ungroup() %>% 
+  mutate(across(agriculture:fire, 
+                ~ as.numeric(.x))) %>% 
+  tidyr::pivot_longer(!c(nuts_id, statistical_unit, year_date),
+                      names_to = "impact_class",
+                      values_to = "MIS") %>% 
+  group_by(nuts_id, year_date) %>% 
+  summarise(MIS = sum(MIS, na.rm = TRUE)),
+  by = c("nuts_id" = "nuts_id", "year_date" = "year_date")) %>% 
+  mutate(MIS = ifelse(is.na(MIS),0,MIS)) %>% 
+  dplyr::filter(MIS > 0) %>% 
+  ungroup()
+
+total_annual_impact_data_transformed <- total_annual_impact_data %>% 
+  dplyr::semi_join(to_keep, 
+                   by = c("nuts_id" = "nuts_id", 
+                          "year_date" = "year_date")) %>% 
+  ungroup()
+
+
+
+total_annual_impact_data_transformed <- total_annual_impact_data_transformed %>% 
+  dplyr::filter(year_date %in% c(2018, 2019,2020,2003, 2015,2022))
+
+total_annual_impact_data_transformed <- total_annual_impact_data_transformed %>% 
+   mutate(across(agriculture:fire, 
+                ~ scales::rescale(.x)))
+
+#re-scale w/ respect to annual max and min
+ total_annual_impact_data_transformed <- total_annual_impact_data_transformed %>% 
+   tidyr::pivot_longer(!c(nuts_id, statistical_unit, year_date),
+                       values_to = "MIS",
+                       names_to = "impact_class") %>% 
+   group_by(year_date, nuts_id) %>%  #important part!!
+   #mutate(MIS = scales::rescale(MIS)) %>% 
+   mutate(MIS = rank(MIS)) %>% 
+   ungroup() %>% 
+   tidyr::pivot_wider(c(nuts_id, statistical_unit, year_date),
+                      names_from = "impact_class", 
+                      values_from = "MIS")
+
+#select years for dim-red
+total_annual_impact_data_transformed <- total_annual_impact_data_transformed #%>% 
+  # mutate(across(agriculture:livestock, 
+   #             ~ scales::rescale(rank(.x))))
+
+
+```
+
+### Hierarchical clustering
+
+```{r}
+data_clustering <- total_annual_impact_data_transformed %>% 
+  ungroup() %>% 
+    dplyr::select(agriculture:fire)
+
+#fviz_nbclust(data_clustering, FUN = hcut, method = "silhouette")
+
+
+# Dissimilarity matrix
+d <- dist(data_clustering, method = "euclidean")
+
+# Ward's method
+hc5 <- hclust(d, method = "ward.D2" )
+
+# Cut tree into 4 groups
+sub_grp <- cutree(hc5, k = 4)
+data_clustering <- data_clustering %>% 
+  dplyr::bind_cols(sub_grp) %>% 
+   dplyr::rename(cluster = ...8) %>% 
+  mutate(cluster = as.factor(cluster)) %>% 
+  dplyr::bind_cols(total_annual_impact_data_transformed %>%  dplyr::select(nuts_id:year_date)) 
+
+
+#plot(hc5, cex = 0.6, labels=FALSE, main = "Dendogram hierarchical clustering \n of clustering on PC1-PC3")
+#rect.hclust(hc5, k = 4, border = 2:5)
+
+
+dendogram <- fviz_dend(
+ hc5,
+     k = 4,
+     horiz = FALSE,
+     rect = TRUE,
+     rect_fill = TRUE,
+     rect_border = "npg",
+     k_colors = "npg",
+     cex = 0.1)
+
+# methods to assess cluster quality -->  ward is best!!!
+#m <- c( "average", "single", "complete", "ward")
+#names(m) <- c( "average", "single", "complete", "ward")
+#ac <- function(x) {
+#  agnes(data_clustering, method = x)$ac
+#}
+#map_dbl(m, ac)
+
+
+```
+
+# Creating DIP with our without PCA
+
+Only use this script when necessary
+
+```{r, eval=FALSE}
+#cluster without PCA
+ clustering_no_pca <- total_annual_impact_data_transformed %>% 
+  ungroup() %>% 
+    dplyr::select(agriculture:fire)
+
+
+
+# Dissimilarity matrix
+d <- dist(clustering_no_pca, method = "euclidean")
+
+# Ward's method
+hc5 <- hclust(d, method = "ward.D2" )
+
+# Cut tree into 4 groups
+sub_grp <- cutree(hc5, k = 4)
+data_clustering_no_pca <- data_clustering %>%
+  dplyr::select(!cluster) %>% 
+  dplyr::bind_cols(sub_grp) %>% 
+   dplyr::rename(cluster = ...14) %>% 
+  mutate(cluster = as.factor(cluster)) %>% 
+    dplyr::bind_cols(total_annual_impact_data_transformed) 
+
+
+
+comparison_df <- data_clustering_no_pca %>% 
+  dplyr::select(cluster) %>% 
+  dplyr::rename(cluster_no_pca = cluster) %>% 
+  dplyr::bind_cols(data_clustering)
+
+
+equal_rows <- sum(comparison_df$cluster == comparison_df$cluster_no_pca)
+
+print(equal_rows/nrow(equal_rows))
+  
+
+#plot(hc5, cex = 0.6, labels=FALSE, main = "Dendogram hierarchical clustering \n of clustering on PC1-PC3")
+#rect.hclust(hc5, k = 4, border = 2:5)
+
+
+dendogram <- fviz_dend(
+ hc5,
+     k = 4,
+     horiz = FALSE,
+     rect = TRUE,
+     rect_fill = TRUE,
+     rect_border = "npg",
+     k_colors = "npg",
+     cex = 0.1)
+dendogram
+
+```
+
+### Summary table of drought impact profiles (i.e. clusters)
+
+```{r}
+library(gtExtras)
+
+
+
+
+create_radar <- function(index, data_clustering){
+
+mtcars_radar <- data_clustering %>% 
+  mutate(cluster = as.factor(cluster)) %>% 
+   group_by(cluster) %>% 
+   summarise(agriculture = mean(agriculture, na.rm = TRUE),
+             livestock = mean(livestock, na.rm = TRUE),
+             forestry = mean(forestry, na.rm = TRUE),
+             social = mean(social, na.rm = TRUE),
+             aquaculture = mean(aquaculture, na.rm = TRUE),
+             waterways = mean(waterways, na.rm = TRUE),
+             fire = mean(fire, na.rm = TRUE)) %>% 
+  dplyr::rename(group  = cluster) %>% 
+  mutate_each(funs(rescale), -group) 
+
+
+color_scale <- case_when(
+  index == 1 ~ c("#E64B35FF", "grey", "grey", "grey"),
+  index == 2 ~ c("grey", "#4DBBD5FF", "grey", "grey"),
+  index == 3 ~ c("grey", "grey", "#00A087FF", "grey"),
+   index == 4 ~ c("grey", "grey", "grey", "#3c5488FF"))
+
+
+ggradar(mtcars_radar,
+        grid.label.size = 0,
+        axis.label.size = 11,
+        plot.extent.x.sf = 1.7,
+
+        group.point.size = 2)+
+  scale_color_manual(values = color_scale)+
+  theme(legend.position = "none",
+        panel.grid = element_blank(),
+        panel.border = element_blank())
+
+}
+
+
+
+list_of_radars <- list(create_radar(1, data_clustering),
+                      create_radar(2, data_clustering),
+                      create_radar(3, data_clustering),
+                      create_radar(4, data_clustering))
+
+
+
+
+create_plot <- function(index, data_clustering){
+
+data_clustering %>% dplyr::filter(cluster == index) %>% 
+    group_by(year_date) %>% count() %>% ggplot(aes(x = as_factor(year_date), y = n))+
+    geom_point()+
+    geom_path(group=1)+
+     theme_minimal()+
+    labs(x = "Year", y= "N")+
+    theme(axis.title.x = element_blank(),
+          axis.title.y = element_text(size = 30),
+          panel.grid.major.x = element_blank(),
+          panel.grid.minor.x =  element_blank(),
+          axis.text.x = element_text(size = 30, angle = 90))+
+    scale_y_continuous(limits = c(0,150))#+
+    #scale_x(breaks = c(2003,2015,2018,2019,2020,2022))
+}
+
+
+
+
+create_plot_spatial <- function(index, data_clustering){
+
+  
+  color_code <- case_when(
+  index == 1 ~ "#E64B35FF",
+  index == 2 ~ "#4DBBD5FF",
+  index == 3 ~ "#00A087FF",
+   index == 4 ~ "#3c5488FF")
+  
+data_clustering %>% dplyr::filter(cluster == index) %>% group_by(nuts_id) %>% count() %>%
+    dplyr::right_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>% 
+    #mutate(n = ifelse(is.na(n),0,n)) %>% 
+    sf::st_as_sf() %>% 
+  ggplot(aes(fill = n))+
+     geom_sf(color = NA)+
+     geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())+
+     theme_void()+
+    theme(legend.position = "none")+
+    scale_fill_continuous(low="white", high=color_code, 
+                       guide="colorbar",na.value="white")
+}
+
+
+
+
+
+
+list_of_plots <- list(create_plot(1, data_clustering),
+                      create_plot(2, data_clustering),
+                      create_plot(3, data_clustering),
+                      create_plot(4, data_clustering))
+
+
+
+list_of_plots_spatial <- list(create_plot_spatial(1, data_clustering),
+                      create_plot_spatial(2, data_clustering),
+                      create_plot_spatial(3, data_clustering),
+                      create_plot_spatial(4, data_clustering))
+
+
+
+
+
+
+#descriptions of impact
+descriptions <- tibble(description = c("agriculture & livestock impacts, \n some aquaculture & waterways",
+                          "forestry, some social",
+                          
+                          "waterways, aquaculture, social",
+                          "fire and social"
+                        ),
+          superclass_som  = as_factor(c(1,2,3,4)))
+
+
+number_features <- data_clustering %>% 
+  dplyr::group_by(cluster) %>% 
+  count() %>% 
+  ungroup()
+
+
+table <- number_features %>% 
+  mutate(ggplot = NA) %>%
+  mutate(ggplot_radar = NA) %>%
+  mutate(ggplot_spatial = NA) %>% 
+  dplyr::rename(ID = cluster,
+         number_observations = n) %>% 
+  #dplyr::left_join(descriptions, by = c("ID" = "superclass_som")) %>% 
+  gt() %>% 
+  text_transform(
+    locations = cells_body(vars(ggplot)),
+    fn = function(x) {
+      map(list_of_plots, ggplot_image, height = px(100))
+    }
+  ) %>% 
+  text_transform(
+    locations = cells_body(vars(ggplot_radar)),
+    fn = function(x) {
+      map(list_of_radars, ggplot_image, height = px(100),
+          aspect_ratio = 3)
+    }
+  ) %>% 
+  text_transform(
+    locations = cells_body(vars(ggplot_spatial)),
+    fn = function(x) {
+      map(list_of_plots_spatial, ggplot_image, height = px(100))
+    }
+  ) %>% 
+   gt_highlight_rows(
+     rows = 1,
+          columns = c("ID"),
+
+     fill = "#E64B35FF",
+     bold_target_only = TRUE
+   ) %>% 
+   gt_highlight_rows(
+     rows = 2,
+          columns = c("ID"),
+
+     fill = "#4DBBD5FF",
+     bold_target_only = TRUE
+   )%>% 
+   gt_highlight_rows(
+     rows = 3,
+          columns = c("ID"),
+
+     fill = "#00A087FF",
+     bold_target_only = TRUE
+   )%>% 
+   gt_highlight_rows(
+     rows = 4,
+     columns = c("ID"),
+     fill = "#3c5488FF",
+     bold_target_only = TRUE
+   ) %>% 
+   cols_width(
+    starts_with("number_observations") ~ px(20)
+    
+    
+  ) %>% 
+    cols_label(
+    number_observations = "N",
+    ggplot_spatial = "Spatial patterns",
+    ggplot = "Temporal trend",
+    ggplot_radar = "Characteristics"
+    
+  ) %>% 
+   gt_add_divider(columns = "number_observations", color = "grey") %>% 
+  gt_add_divider(columns = "ID", color = "grey") %>% 
+  gt_add_divider(columns = "ggplot", color = "grey") %>% 
+  gt_add_divider(columns = "ggplot_radar", color = "grey") %>% 
+  gt_add_divider(columns = "ggplot_spatial", color = "grey") %>% 
+   tab_footnote(
+    footnote = "Map indicates areas with higher prevelance of selected cluster",
+    locations = cells_column_labels(
+      columns = ggplot_spatial
+    )
+  ) %>% 
+   tab_footnote(
+    footnote = "Graph illustrates prevalence of cluster over time",
+    locations = cells_column_labels(
+      columns = ggplot
+    )
+  ) %>% 
+   tab_footnote(
+    footnote = "Graph illustrates prevalence different impact classes compared to
+    other clusters",
+    locations = cells_column_labels(
+      columns = ggplot_radar
+    )
+  )
+
+
+table 
+
+
+```
+
+
+
+```{r}
+
+ data_clustering %>% 
+  dplyr::filter(year_date > 2015) %>% 
+   dplyr::left_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>% 
+   sf::st_as_sf() %>% 
+   ggplot(aes(fill = cluster))+
+   geom_sf(color = NA)+
+   facet_wrap(~year_date, nrow = 1)+
+   theme_void()+
+   ggsci::scale_fill_npg()+
+   geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())
+ 
+```
+
+
+```{r}
+
+plot <-  data_clustering %>% 
+  mutate(cluster = as.factor(cluster)) %>% 
+   dplyr::left_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>% 
+   sf::st_as_sf() %>% 
+   ggplot(aes(fill = cluster))+
+   geom_sf(color = NA)+
+   facet_wrap(~year_date, nrow = 2)+
+   theme_void()+
+   theme(legend.position = "none")+
+   ggsci::scale_fill_npg()+
+   geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())
+```
+
+### Plot number of different DIPs per district
+
+```{r}
+
+barplot_counts <- data_clustering %>% 
+  group_by(nuts_id) %>% 
+  summarise(unique_clusters = n_distinct(cluster)) %>% 
+  ungroup() %>% 
+  group_by(unique_clusters) %>% 
+  count() %>% 
+  ungroup() %>% 
+  ggplot(aes(x = unique_clusters, y = n, fill = as_factor(unique_clusters)))+
+  geom_bar(stat = "identity")+
+  theme_minimal()+
+  ggsci::scale_fill_futurama()+
+  coord_flip()+
+  theme(legend.position = "none",
+        axis.text.y = element_blank())+
+  labs(x = "", y = "Count")
+
+
+map_counts <- data_clustering %>% 
+  group_by(nuts_id) %>% 
+  summarise(unique_clusters = n_distinct(cluster)) %>% 
+  mutate(unique_clusters = as_factor(unique_clusters)) %>% 
+  dplyr::left_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>% 
+  sf::st_as_sf() %>% 
+  ggplot(aes(fill = unique_clusters))+
+  geom_sf(color = NA)+
+  theme_void()+
+  theme(legend.position = "bottom")+
+  ggsci::scale_fill_futurama()+
+  #facet_wrap(~unique_clusters)+
+  #geom_sf_text(data = . %>% dplyr::filter(unique_clusters == 1),
+  #            aes(label= NUTS_NAME), size = 2)+
+  labs(fill = "Number of \n unique clusters")+
+  geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())
+
+map_counts + patchwork::inset_element(barplot_counts, left = 1, right = 1.5, bottom = 0, top = 1)
+```
+
+### Alluvial data
+
+```{r}
+
+
+data_alluvial <- data_clustering %>%
+  dplyr::select(nuts_id, year_date, cluster) %>%
+  dplyr::filter(year_date > 2015) %>% 
+  mutate(year_date = as_factor(year_date)) %>% 
+  dplyr::select(nuts_id, year_date, cluster) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = "year_date", values_from = "cluster") %>% 
+  group_by(`2018`, `2019`, `2020`, `2022`) %>% 
+  count() %>% 
+  ungroup() %>% 
+  mutate_all(~ifelse(is.na(.), "NA", .))
+
+
+transitions_plot <- ggplot(as.data.frame(data_alluvial),
+       aes(y = n,
+           axis1 = `2018`, axis2 = `2019`, axis3 = `2020`, axis4 = `2022`)) +
+  geom_flow(color = "grey50", fill = "white", alpha = .5) +
+  geom_stratum(stat = "stratum", aes(fill = after_stat(stratum)))+
+      geom_text(stat = "stratum", aes(label = after_stat(stratum)))+
+    ggfittext::geom_fit_text(stat = "stratum", width = 1/4, min.size = 3,
+                             aes(label = after_stat(stratum))) +
+    theme_minimal()+
+  ggsci::scale_fill_npg(labels = c("Agriculture\nLivestock", 
+                                   "Forestry", 
+                                   "Social\nAquaculture\nWaterways ", 
+                                   "Social\nFire",
+                                   "No DIP"))+
+  labs(y = "Number of districts")+
+  theme(panel.grid = element_blank(),
+        legend.position = "bottom",
+        axis.text.x = element_text(size = 4))+
+  labs(fill = "DIP")
+
+
+
+
+
+
+
+ transitions_plot
+
+
+
+ggsave(plot = last_plot(),
+       device = "svg",
+       filename = "transitions.svg",
+       width = 12,
+       height = 10,
+       units = "cm")
+
+
+
+
+
+```
+
+```{r}
+#trying to recover the list_of_maps object
+get_year_specific_map <- function(year){
+data_clustering %>%
+dplyr::select(nuts_id, year_date, cluster) %>%
+dplyr::filter(year_date == year) %>%
+dplyr::right_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>%
+dplyr::mutate(cluster  = ifelse(is.na(cluster),"5",cluster)) %>%
+dplyr::mutate(cluster = as.character(cluster)) %>%
+sf::st_as_sf()
+}
+
+
+list_of_maps <- list(get_year_specific_map(2003),
+get_year_specific_map(2015),
+get_year_specific_map(2018),
+get_year_specific_map(2019),
+get_year_specific_map(2020),
+get_year_specific_map(2022))
+comparisons <- expand.grid(a = seq(1,6),
+b = seq(1,6))
+```
+
+```{r, fig.height=4, fig.width=20}
+library(ggdendro)
+library(patchwork)
+
+
+hclust_years_data <- tibble(
+    year_2003 = list_of_maps[[1]]$cluster,
+    year_2015 = list_of_maps[[2]]$cluster,
+    year_2018 = list_of_maps[[3]]$cluster,
+    year_2019 = list_of_maps[[4]]$cluster,
+    year_2020 = list_of_maps[[5]]$cluster,
+    year_2022 = list_of_maps[[6]]$cluster) %>% 
+  t(.)
+
+
+rownames(hclust_years_data) <- c("2003", "2015", "2018", "2019","2020","2022")
+
+dendogram_years <- hclust_years_data %>% 
+  dist() %>% 
+  hclust() %>% 
+ ggdendrogram(., rotate = FALSE, size = 4)
+
+#these things need to be assemled in coreldraw
+ggsave(plot = dendogram_years, filename = "hierarchical_plot/hierarchical_clustering_years.jpg",
+       units = "cm", width = 20, height = 6)
+# 2003
+plot_2003 <- list_of_maps[[1]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2003, filename = "hierarchical_plot/plot_2003.jpg",
+       units = "cm", width = 3.3, height = 6)
+# 2015
+plot_2015 <- list_of_maps[[2]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2015, filename = "hierarchical_plot/plot_2015.jpg",
+       units = "cm", width = 3.3, height = 6)
+
+# 2018
+plot_2018 <- list_of_maps[[3]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2018, filename = "hierarchical_plot/plot_2018.jpg",
+       units = "cm", width = 3.3, height = 6)
+
+# 2019
+plot_2019 <- list_of_maps[[4]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2019, filename = "hierarchical_plot/plot_2019.jpg",
+       units = "cm", width = 3.3, height = 6)
+
+# 2020
+plot_2020 <- list_of_maps[[5]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2020, filename = "hierarchical_plot/plot_2020.jpg",
+       units = "cm", width = 3.3, height = 6)
+
+# 2022
+plot_2022 <- list_of_maps[[6]] %>% 
+  dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
+  ggplot() + 
+  geom_sf(aes(fill = cluster))+
+  theme_void()+
+  theme(legend.position = "none")+
+  ggsci::scale_fill_npg()
+
+ggsave(plot = plot_2022, filename = "hierarchical_plot/plot_2022.jpg",
+       units = "cm", width = 3.3, height = 6)
+
+
+
+
+
+```
+
+### Studying trajectories
+
+The sankey plot indeed revealed a shift away from agricultural impacts. So what happens with these? Let's analyze how the NUTS in the agricultural cluster in 2018 did afterwards. Answer: interestingly everything equally except the 'waterways & aquaculture & social' cluster.
+
+```{r}
+nuts_2018_agricultural_profile <- data_clustering %>% 
+  dplyr::filter(year_date == 2018 & cluster == 1)
+
+counts_cluster_year <-  data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+   tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+   tidyr::pivot_longer(!nuts_id, names_to = "year_date", values_to = "cluster") %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(year_date, cluster) %>% 
+  count() %>% 
+  dplyr::filter(year_date > 2018)
+
+p1 <- data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(`2018`,`2019`,`2020`,`2022`) %>% 
+  count() %>% 
+  arrange(-n) %>% 
+   ungroup() %>% 
+  dplyr::slice_head(n = 10) %>%  
+  #dplyr::filter(n > 10) %>% 
+  tibble::rowid_to_column(var = "trajectory_id") %>% 
+  tidyr::pivot_longer(!c(trajectory_id, n),
+                      names_to = "year", values_to = "cluster") %>% 
+  mutate(trajectory_id = as_factor(trajectory_id)) %>% 
+  ggplot(aes(x = year, y = cluster, group = trajectory_id, size = n, color = trajectory_id))+
+  geom_line(alpha = .2,
+            position = position_dodge(width = 0.2))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(linetype = "dashed"))+
+  #geom_point(data = counts_cluster_year,  inherit.aes = FALSE,
+  #           aes(x = as_factor(year_date), y = cluster, size = n))+
+  geom_text(data = counts_cluster_year,  inherit.aes = FALSE,
+             aes(x = as_factor(year_date), y = cluster, label = n), 
+                        size = 3,
+             nudge_y = .2, nudge_x = .1)+
+  labs(x = "Year", y = "Cluster")+
+  geom_point(aes(x = as_factor(2018), y = as_factor(1)),
+             fill=NA, shape=21, color = "black", size = 14, stroke = 2)
+
+
+
+################
+#cluster 2
+################
+nuts_2018_agricultural_profile <- data_clustering %>% 
+  dplyr::filter(year_date == 2018 & cluster == 2)
+
+#TBD: currently this counts everything and not only the trajectory related counts
+counts_cluster_year <-  data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+   tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+   tidyr::pivot_longer(!nuts_id, names_to = "year_date", values_to = "cluster") %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(year_date, cluster) %>% 
+  count() %>% 
+  dplyr::filter(year_date > 2018)
+
+p2 <- data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(`2018`,`2019`,`2020`,`2022`) %>% 
+  count() %>% 
+  arrange(-n) %>% 
+   ungroup() %>% 
+  dplyr::slice_head(n = 10) %>%  
+  #dplyr::filter(n > 10) %>% 
+  tibble::rowid_to_column(var = "trajectory_id") %>% 
+  tidyr::pivot_longer(!c(trajectory_id, n),
+                      names_to = "year", values_to = "cluster") %>% 
+  mutate(trajectory_id = as_factor(trajectory_id)) %>% 
+  ggplot(aes(x = year, y = cluster, group = trajectory_id, size = n, color = trajectory_id))+
+ geom_line(alpha = .2,
+            position = position_dodge(width = 0.2))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(linetype = "dashed"))+
+  #geom_point(data = counts_cluster_year,  inherit.aes = FALSE,
+  #           aes(x = as_factor(year_date), y = cluster, size = n))+
+  geom_text(data = counts_cluster_year,  inherit.aes = FALSE,
+                        size = 3,
+             aes(x = as_factor(year_date), y = cluster, label = n), 
+             nudge_y = .2, nudge_x = .1)+
+  labs(x = "Year", y = "Cluster")+
+  geom_point(aes(x = as_factor(2018), y = as_factor(2)),
+             fill=NA, shape=21, color = "black", size = 14, stroke = 2)
+
+
+
+
+
+################
+#cluster 3
+################
+nuts_2018_agricultural_profile <- data_clustering %>% 
+  dplyr::filter(year_date == 2018 & cluster == 3)
+
+#TBD: currently this counts everything and not only the trajectory related counts
+counts_cluster_year <-  data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+   tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+   tidyr::pivot_longer(!nuts_id, names_to = "year_date", values_to = "cluster") %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(year_date, cluster) %>% 
+  count() %>% 
+  dplyr::filter(year_date > 2018)
+
+p3 <- data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(`2018`,`2019`,`2020`,`2022`) %>% 
+  count() %>% 
+  arrange(-n) %>% 
+   ungroup() %>% 
+  dplyr::slice_head(n = 10) %>%  
+  #dplyr::filter(n > 10) %>% 
+  tibble::rowid_to_column(var = "trajectory_id") %>% 
+  tidyr::pivot_longer(!c(trajectory_id, n),
+                      names_to = "year", values_to = "cluster") %>% 
+  mutate(trajectory_id = as_factor(trajectory_id)) %>% 
+  ggplot(aes(x = year, y = cluster, group = trajectory_id, size = n, color = trajectory_id))+
+geom_line(alpha = .2,
+            position = position_dodge(width = 0.2))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(linetype = "dashed"))+
+  #geom_point(data = counts_cluster_year,  inherit.aes = FALSE,
+  #           aes(x = as_factor(year_date), y = cluster, size = n))+
+  geom_text(data = counts_cluster_year,  inherit.aes = FALSE,
+                        size = 3,
+             aes(x = as_factor(year_date), y = cluster, label = n), 
+             nudge_y = .2, nudge_x = .1)+
+  labs(x = "Year", y = "Cluster")+
+  geom_point(aes(x = as_factor(2018), y = as_factor(3)),
+             fill=NA, shape=21, color = "black", size = 14, stroke = 2)
+
+
+
+###############
+#cluster 4
+################
+nuts_2018_agricultural_profile <- data_clustering %>% 
+  dplyr::filter(year_date == 2018 & cluster == 4)
+
+#TBD: currently this counts everything and not only the trajectory related counts
+counts_cluster_year <- data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+   tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+   tidyr::pivot_longer(!nuts_id, names_to = "year_date", values_to = "cluster") %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(year_date, cluster) %>% 
+  count() %>% 
+  dplyr::filter(year_date > 2018)
+
+
+
+
+
+p4 <- data_clustering %>% 
+  dplyr::select(nuts_id, cluster, year_date) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = year_date, values_from = cluster) %>% 
+  dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id")) %>% 
+  group_by(`2018`,`2019`,`2020`,`2022`) %>% 
+  count() %>% 
+  arrange(-n) %>% 
+  ungroup() %>% 
+  dplyr::slice_head(n = 10) %>%  
+  tibble::rowid_to_column(var = "trajectory_id") %>% 
+  tidyr::pivot_longer(!c(trajectory_id, n),
+                      names_to = "year", values_to = "cluster") %>% 
+  mutate(trajectory_id = as_factor(trajectory_id)) %>% 
+  ggplot(aes(x = year, y = cluster, group = trajectory_id, size = n, color = trajectory_id))+
+  geom_line(alpha = .2,
+            position = position_dodge(width = 0.2))+
+  theme_minimal()+
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(linetype = "dashed"))+
+  #geom_point(data = counts_cluster_year,  inherit.aes = FALSE,
+  #           aes(x = as_factor(year_date), y = cluster, size = n))+
+  geom_text(data = counts_cluster_year,  inherit.aes = FALSE,
+             aes(x = as_factor(year_date), y = cluster, label = n), 
+            size = 3,
+             nudge_y = .2, nudge_x = .1)+
+  labs(x = "Year", y = "Cluster")+
+  geom_point(aes(x = as_factor(2018), y = as_factor(4)),
+             fill=NA, shape=21, color = "black", size = 14, stroke = 2)
+
+
+
+
+(p1 + p2) / (p3+ p4)
+
+
+
+
+```
+
+Sequence mining
+
+```{r}
+library(arulesSequences)
+
+data_clustering_cspade <- data_clustering %>% 
+  dplyr::filter(year_date > 2015) %>% 
+  dplyr::select(nuts_id, year_date, cluster)# %>% 
+  #dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id"))
+
+
+
+trans_sequence <- data_clustering_cspade %>%
+  mutate(year_date = as.numeric(year_date)) %>% 
+  group_by(nuts_id, year_date) %>%
+  summarize(
+    SIZE = n(),
+    cluster = paste(as.character(cluster), collapse = ';')) %>% 
+  ungroup() %>% 
+  mutate(
+    year_date = case_when(
+      year_date == 2018 ~ (1),
+      year_date == 2019 ~ (2),
+      year_date == 2020 ~ (3),
+      year_date == 2022 ~ (4))) %>% 
+  dplyr::left_join(nuts3 %>% rowid_to_column(var = "sequenceID"), by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::select(sequenceID, year_date, cluster, SIZE) %>% 
+  dplyr::rename(eventID = year_date,
+                items = cluster) %>% 
+  dplyr::select(sequenceID, eventID, SIZE, items)
+  
+
+
+trans_sequence <- data.frame(lapply(trans_sequence, as.factor))
+trans_sequence <- trans_sequence[order(trans_sequence$sequenceID, trans_sequence$eventID),]
+
+# Convert to transaction matrix data type
+write.table(trans_sequence, "mytxtout.txt", sep=";", row.names = FALSE, col.names = FALSE, quote = FALSE)
+trans_matrix <- read_baskets("mytxtout.txt", sep = ";", info = c("sequenceID","eventID","SIZE"))
+
+
+# Get frequent sequences and corresponding support values
+s1 <- cspade(trans_matrix, parameter = list(support = 0.1), control = list(verbose = TRUE))
+s1.df <- as(s1, "data.frame")
+summary(s1)
+
+r1 <- as(ruleInduction(s1, confidence = 0.1, control = list(verbose = TRUE)), "data.frame")
+
+
+
+###bunch of marianas code
+#to see lift
+r1 <- as(ruleInduction(s1, confidence = 0.0, control = list(verbose = FALSE)), "data.frame")
+
+# Separate LHS and RHS rules
+r1$rulecount <- as.character(r1$rule)
+max_col <- max(sapply(strsplit(r1$rulecount,' => '),length))
+r_sep <- separate(data = r1, col = rule, into = paste0("Time",1:max_col), sep = " => ")
+r_sep$Time2 <- substring(r_sep$Time2,3,nchar(r_sep$Time2)-2)
+
+# Strip LHS baskets
+max_time1 <- max(sapply(strsplit(r_sep$Time1,'},'),length))
+r_sep$TimeClean <- substring(r_sep$Time1,3,nchar(r_sep$Time1)-2)
+r_sep$TimeClean <- gsub("\\},\\{", "zzz", r_sep$TimeClean)
+r_sep_items <- separate(data = r_sep, col = TimeClean, into = paste0("Previous_Items",1:max_time1), sep = "zzz")
+
+# Get cleaned temporal rules: time reads sequentially from left to right
+
+r_shift_na <- r_sep_items
+
+for (i in seq(1, nrow(r_shift_na))){
+  for (col in seq(8, (6+max_time1))){
+    if (is.na(r_shift_na[i,col])==TRUE){
+      r_shift_na[i,col] <- r_shift_na[i,col-1]
+      r_shift_na[i,col-1] <- NA  
+    }
+  }
+}
+names(r_shift_na)[2] <- "Predicted_Items"
+
+cols <- c(7:(6+max_time1), 2:5)
+temporal_rules <- r_shift_na[,cols]
+temporal_rules <- temporal_rules[order(-temporal_rules$lift, -temporal_rules$confidence, 
+                                       -temporal_rules$support, temporal_rules$Predicted_Items),]
+
+
+
+temporal_rules <- temporal_rules %>% 
+  dplyr::filter(is.na(Previous_Items1)) %>% 
+  dplyr::select(!Previous_Items1)
+
+temporal_rules %>% 
+  arrange(desc(support)) %>% 
+  mutate(support = round(support,3),
+         confidence = round(confidence,3),
+         lift = round(lift, 3)) %>% 
+  gt() %>% 
+    tab_header(
+    title = md("Sequence Mining - cspade"),
+    subtitle = ""
+  )
+
+
+
+
+
+```
+
+```{r}
+ data_clustering %>% 
+  dplyr::filter(year_date > 2015) %>% 
+  mutate(year_date = as_factor(year_date)) %>% 
+  dplyr::select(nuts_id, year_date, cluster) %>% 
+  group_by(nuts_id) %>% 
+  mutate(lagging_dip = dplyr::lag(cluster)) %>% 
+  ungroup() %>% 
+  dplyr::rename(from = lagging_dip,
+                to  = cluster) %>% 
+  dplyr::select(from, to, nuts_id) %>% 
+
+  dplyr::left_join(temporal_rules  %>% 
+                     arrange(desc(support)) %>% 
+                     tibble::rowid_to_column(var = "sequence_id"),
+                   by = c("from" = "Previous_Items2", 
+                                          "to" = "Predicted_Items")) %>%
+  dplyr::mutate(sequence_name = paste(from, "-->", to)) %>% 
+
+  dplyr::filter(sequence_id < 6) %>% 
+  group_by(nuts_id, sequence_id) %>% 
+  count() %>% 
+  dplyr::mutate(n  = as.factor(n)) %>% 
+  dplyr::left_join(nuts_geo_data, by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::mutate(sequence_id = case_when(
+    sequence_id == 1 ~ "2 --> 2",
+    sequence_id == 2 ~ "1 --> 2",
+    sequence_id == 3 ~ "2 --> 3",
+    sequence_id == 4 ~ "1 --> 1",
+    sequence_id == 5 ~ "2 --> 1")) %>% 
+  sf::st_as_sf() %>% 
+  ggplot()+
+  geom_sf(aes(fill = n), color = NA)+
+     geom_sf(fill = "transparent", color = "gray20", size = .2, 
+            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())+
+  theme_void()+
+  facet_wrap(~sequence_id, nrow = 1)+
+  ggsci::scale_fill_uchicago()+
+  labs(fill = "No. of sequence \n observations")+
+  theme(legend.position = "bottom")
+  
+  
+
+#this figure seems so wrong, look at 1-->1 and 2--> 2 being te same 
+
+
+```
+
+
+### Computing variable ranking
+
+```{r}
+library(varrank)
+
+varrank_computations_binary_aggregated <- function(cluster_selected){
+
+varrank_input <- data_clustering %>% 
+  dplyr::mutate(cluster_1 = ifelse(cluster == cluster_selected, 1, 0)) %>% 
+  dplyr::select(cluster_1, nuts_id) %>% 
+  group_by(nuts_id) %>% 
+  summarise(cluster_obs  = sum(cluster_1, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(cluster_1 = ifelse(cluster_obs > 0, "1", "0")) %>% 
+  dplyr::select(nuts_id, cluster_1) %>% 
+  dplyr::left_join(land_use_varrank, by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::select(!nuts_id) %>% 
+  dplyr::mutate(cluster_1  = as.factor(cluster_1))
+
+
+glm(cluster_1 ~ ., data = varrank_input, family = binomial)
+
+
+}
+
+model_list <- list(varrank_computations_binary_aggregated(1),
+                     varrank_computations_binary_aggregated(2),
+                     varrank_computations_binary_aggregated(3),
+                     varrank_computations_binary_aggregated(4))
+
+stargazer::stargazer(model_list, title = "Logistic Regression Models", type = "latex", font.size = "tiny")
+
+```
+
+```{r}
+
+varrank_sequence_id_computation <- function(sequence_selected){
+
+sequences_data_for_lu_correlation <-  data_clustering %>% 
+  dplyr::filter(year_date > 2015) %>% 
+  mutate(year_date = as_factor(year_date)) %>% 
+  dplyr::select(nuts_id, year_date, cluster) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = "year_date", values_from = "cluster") %>% 
+  ggsankey::make_long(`2018`, `2019`, `2020`, `2022`, value = nuts_id) %>% 
+    dplyr::rename(nuts_id = value) %>% 
+  dplyr::left_join(temporal_rules %>% tibble::rowid_to_column(var = "sequence_id"),
+                   by = c("node" = "Previous_Items2", 
+                                          "next_node" = "Predicted_Items")) %>%
+  dplyr::mutate(sequence_name = paste(node, "-->", next_node)) %>% 
+
+  dplyr::filter(sequence_id < 6)
+
+
+
+
+varrank_sequences_data <- sequences_data_for_lu_correlation %>% 
+  dplyr::select(sequence_id, nuts_id)
+
+varrank_input <- varrank_sequences_data %>% 
+  mutate(sequence_id = ifelse(sequence_id == sequence_selected,
+                              1,0)) %>% 
+  group_by(nuts_id) %>% 
+  summarise(sequence_id_selected = sum(sequence_id, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(sequence_id = ifelse(sequence_id_selected >0, "1","0")) %>% 
+  dplyr::select(sequence_id, nuts_id) %>% 
+  dplyr::left_join(land_use_varrank, by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::select(!nuts_id) %>% 
+  dplyr::mutate(sequence_id  = as.factor(sequence_id))
+
+
+glm(sequence_id ~ ., data = varrank_input, family = binomial)
+  
+  
+
+}
+
+
+model_list <- list(varrank_sequence_id_computation(1),
+                  varrank_sequence_id_computation(2),
+                  varrank_sequence_id_computation(3),
+                  varrank_sequence_id_computation(4),
+                  varrank_sequence_id_computation(5))
+
+
+
+
+stargazer::stargazer(model_list, title = "Logistic Regression Models", type = "text", font.size = "tiny")
+
+```
+
+
+
+
+Measure relationships using Mann-Whitney U test on DIP
+```{r}
+continuous_var_names <- c("Broad-leaved forest", "Coniferous forest", "Discontinuous urban fabric", "Industrial or commercial units and public facilities", "Mixed forest", "Non-irrigated arable land", "Pastures, meadows and other permanent grasslands under agricultural use", "Transitional woodland/shrub", "Water bodies", "Water courses")
+
+compute_matrix_for_cluster <- function(cluster_select){
+
+u_test_data <- data_clustering %>% 
+  dplyr::mutate(cluster_1 = ifelse(cluster == cluster_select, 1, 0)) %>% 
+  dplyr::select(cluster_1, nuts_id) %>% 
+  group_by(nuts_id) %>% 
+  summarise(cluster_obs  = sum(cluster_1, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(cluster_1 = ifelse(cluster_obs > 0, "1", "0")) %>% 
+  dplyr::select(nuts_id, cluster_1) %>% 
+  dplyr::left_join(land_use_varrank, by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::select(!nuts_id) %>% 
+  dplyr::mutate(cluster_1  = as.factor(cluster_1)) %>% 
+  dplyr::rename(cluster = cluster_1)
+
+
+p_matrix <- matrix(nrow = 1, ncol = length(continuous_var_names))
+colnames(p_matrix) <- continuous_var_names
+
+# Iterate over each continuous variable
+for (index in seq_along(continuous_var_names)) {
+  binary <- u_test_data$cluster
+  continuous <- u_test_data[[continuous_var_names[index]]]
+  result <- wilcox.test(continuous ~ binary)
+  p_matrix[1, index] <- result$p.value
+}
+
+p_matrix
+}
+
+p1 <- dplyr::bind_rows(
+compute_matrix_for_cluster(cluster_select = 1) %>% 
+  as_tibble() %>% 
+  mutate(dip = "1"),
+compute_matrix_for_cluster(cluster_select = 2) %>% 
+  as_tibble()%>% 
+  mutate(dip = "2"),
+compute_matrix_for_cluster(cluster_select = 3) %>% 
+  as_tibble()%>% 
+  mutate(dip = "3"),
+compute_matrix_for_cluster(cluster_select = 4) %>% 
+  as_tibble()%>% 
+  mutate(dip = "4")) %>% 
+tidyr::pivot_longer(!dip, values_to = "coefficient", names_to = "variable") %>% 
+  dplyr::mutate(coefficient = round(coefficient,3)) %>% 
+  dplyr::mutate(tile_color = ifelse(coefficient <= 0.05, "Yes","No")) %>% 
+  ggplot(aes(y = variable, x = dip, fill = tile_color, label = coefficient))+
+  geom_tile(color = "gray40")+
+  scale_fill_manual(values = c("white", "yellow"), na.value = "white")+
+  geom_text(size = 3)+
+  theme_minimal()+
+  coord_cartesian()+
+  labs(fill = "p < 0.05", y = "Drought impact profile")
+
+
+```
+
+
+
+Measure relationships using Mann-Whitney U test on sequences
+```{r}
+
+sequences_data_for_lu_correlation <-  data_clustering %>% 
+  dplyr::filter(year_date > 2015) %>% 
+  mutate(year_date = as_factor(year_date)) %>% 
+  dplyr::select(nuts_id, year_date, cluster) %>% 
+  tidyr::pivot_wider(nuts_id, names_from = "year_date", values_from = "cluster") %>% 
+  ggsankey::make_long(`2018`, `2019`, `2020`, `2022`, value = nuts_id) %>% 
+    dplyr::rename(nuts_id = value) %>% 
+  dplyr::left_join(temporal_rules %>% tibble::rowid_to_column(var = "sequence_id"),
+                   by = c("node" = "Previous_Items2", 
+                                          "next_node" = "Predicted_Items")) %>%
+  dplyr::mutate(sequence_name = paste(node, "-->", next_node)) %>% 
+
+  dplyr::filter(sequence_id < 6)
+
+
+compute_matrix_for_cluster_sequences <- function(sequence_selected){
+
+
+  
+
+varrank_sequences_data <- sequences_data_for_lu_correlation %>% 
+  dplyr::select(sequence_id, nuts_id)
+
+u_test_data <- varrank_sequences_data %>% 
+  mutate(sequence_id = ifelse(sequence_id == sequence_selected,
+                              1,0)) %>% 
+  group_by(nuts_id) %>% 
+  summarise(sequence_id_selected = sum(sequence_id, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(sequence_id = ifelse(sequence_id_selected >0, "1","0")) %>% 
+  dplyr::select(sequence_id, nuts_id) %>% 
+  dplyr::left_join(land_use_varrank, by = c("nuts_id" = "NUTS_ID")) %>% 
+  dplyr::select(!nuts_id) %>% 
+  dplyr::mutate(sequence_id  = as.factor(sequence_id))
+  
+  
+  
+
+p_matrix <- matrix(nrow = 1, ncol = length(continuous_var_names))
+colnames(p_matrix) <- continuous_var_names
+
+# Iterate over each continuous variable
+for (index in seq_along(continuous_var_names)) {
+  binary <- u_test_data$sequence_id
+  continuous <- u_test_data[[continuous_var_names[index]]]
+  result <- wilcox.test(continuous ~ binary)
+  p_matrix[1, index] <- result$p.value
+}
+
+p_matrix
+}
+
+
+
+
+p2 <- dplyr::bind_rows(
+compute_matrix_for_cluster_sequences(sequence_selected = 1) %>% 
+  as_tibble() %>% 
+  mutate(sequence_id = "1"),
+compute_matrix_for_cluster_sequences(sequence_selected = 2) %>% 
+  as_tibble() %>% 
+  mutate(sequence_id = "2"),
+compute_matrix_for_cluster_sequences(sequence_selected = 3) %>% 
+  as_tibble() %>% 
+  mutate(sequence_id = "3"),
+compute_matrix_for_cluster_sequences(sequence_selected = 4) %>% 
+  as_tibble() %>% 
+  mutate(sequence_id = "4"),
+compute_matrix_for_cluster_sequences(sequence_selected = 5) %>% 
+  as_tibble() %>% 
+  mutate(sequence_id = "5")) %>% 
+tidyr::pivot_longer(!sequence_id, values_to = "coefficient", names_to = "variable") %>% 
+  dplyr::mutate(coefficient = round(coefficient,3)) %>% 
+  dplyr::mutate(tile_color = ifelse(coefficient <= 0.05, "Yes","No")) %>% 
+  ggplot(aes(y = variable, x = sequence_id, fill = tile_color, label = coefficient))+
+  geom_tile(color = "gray40")+
+  scale_fill_manual(values = c("white", "yellow"), na.value = "white")+
+  geom_text(size = 3)+
+  theme_minimal()+
+  coord_cartesian()+
+  labs(fill = "p < 0.05", y = "Sequences")
+
+
+
+
+
+
+```
+
+
+
