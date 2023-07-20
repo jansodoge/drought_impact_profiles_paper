@@ -5,13 +5,6 @@ format: html
 editor: visual
 ---
 
-Current situation: 
-* We have no clear cluster structures, it's rather a point cloud and we're forcing some clusters in to simplify our analysis. Can we do this, and how do we reason this? 
---> 'clustering serves as a means to achieve this goal. The clusters identified may represent different types of drought impacts or response patterns, even if they are not perfectly distinct.'...'the silhouette coefficient is low, the identified clusters could still be meaningful and informative based on expert knowledge.'...' Even if the clusters are not well-separated, they might still provide insights into the data, and the patterns identified could be relevant for understanding drought impacts.'...'still being transparent about this issue'
-
-
-
-
 ### Loading data etc. for analysis
 
 ```{r setup, include=FALSE}
@@ -26,12 +19,12 @@ library(ggradar)
 library(gt)
 library(aweSOM)
 library(ggalluvial)
+library(gtExtras)
 library(ggfittext)
 library(readr)
 library(biscale)
 library(tidyverse)  
 library(cluster)    
-library(factoextra) 
 library(dendextend) 
 library(readxl)
 library(GGally)
@@ -48,7 +41,7 @@ nuts3 <- nuts_geo_data %>%
   dplyr::filter(CNTR_CODE == "DE")
 
 
-
+#preparing land-cover data
 intersections_sf_areas_1 <- read_csv("data/intersections_sf_areas_2.csv")
 intersections_sf_areas_2 <- read_csv("data/intersections_sf_areas_3.csv")
 intersections_sf_areas_3 <- read_csv("data/intersections_sf_areas_4.csv")
@@ -131,7 +124,7 @@ land_use <- land_use %>%
 
 ```
 
-Load impact dataset, use nuts-3 level (districts) for analysis
+Load drought impact dataset based on Sodoge et al. (2023)
 
 ```{r, warning=FALSE, message=FALSE}
 load("impacts_dataset_export_validation.RData")
@@ -151,7 +144,7 @@ total_annual_impact_data <- impacts_dataset %>%
 
 ### Dataset descriptive: spatial and temporal distribution of each impact class
 
-```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=15, fig.cap='Figure ...: Spatial distribution of drought impact types'}
+```{r, warning=FALSE, message=FALSE, fig.height=5, fig.width=15}
 visualize_impacts_across <- impacts_dataset %>% 
   dplyr::filter(statistical_unit  == "nuts3") %>% 
   group_by(type_of_class, nuts_id) %>% 
@@ -228,7 +221,6 @@ ggsave(plot = last_plot(),
 
 
 ```
-
 
 ### Temporal distribution of impacts, reasoning the binning with annual values
 
@@ -453,8 +445,7 @@ total_annual_impact_data_transformed <- total_annual_impact_data %>%
 total_annual_impact_data_transformed <- total_annual_impact_data_transformed %>% 
   dplyr::filter(year_date %in% c(2018, 2019,2020,2003, 2015,2022))
 
-total_annual_impact_data_transformed <- total_annual_impact_data_transformed 
-#re-scale w/ respect to annual max and min
+
  total_annual_impact_data_transformed <- total_annual_impact_data_transformed %>% 
    tidyr::pivot_longer(!c(nuts_id, statistical_unit, year_date),
                        values_to = "MIS",
@@ -479,6 +470,7 @@ data_clustering <- total_annual_impact_data_transformed %>%
 ```
 
 
+Plot changes in data distribution before and after the data transformation
 ```{r, fig.height=7, fig.width=7}
 
 #pre transformation
@@ -489,9 +481,6 @@ a <- total_annual_impact_data %>%
   tidyr::pivot_longer(!c(nuts_id, year_date), names_to = "type", values_to = "impacts") %>% 
   dplyr::rename('before transformation' = impacts)
   
-
-
-
 #post transformation
 b <- total_annual_impact_data_transformed %>% 
     ungroup() %>% 
@@ -516,30 +505,18 @@ dplyr::left_join(a,b, by = c("nuts_id" = "nuts_id", "year_date" = "year_date",
   scale_x_continuous(breaks = c(0,.5,1), limits = c(NA,1,1))
 ```
 
-
-
 ### Hierarchical clustering
 
 ```{r}
-
-#fviz_nbclust(data_clustering, FUN = hcut, method = "silhouette")
-
-
-# Dissimilarity matrix
 d <- dist(data_clustering, method = "euclidean")
 
-# Ward's method
 hc5 <- hclust(d, method = "ward.D" )
-
-# Cut tree into 4 groups
 sub_grp <- cutree(hc5, k = 4)
 data_clustering <- data_clustering %>% 
   dplyr::bind_cols(sub_grp) %>% 
    dplyr::rename(cluster = ...8) %>% 
   mutate(cluster = as.factor(cluster)) %>% 
   dplyr::bind_cols(total_annual_impact_data_transformed %>%  dplyr::select(nuts_id:year_date)) 
-
-
 
 
 dendogram <- fviz_dend(
@@ -554,47 +531,13 @@ dendogram <- fviz_dend(
  
  dendogram
 
-
-
-
-
 ```
-
-```{r}
-s=NULL
-for(i in 2:10){
-   k=cutree(hclust(dist(data_clustering),method="ward.D"),i)
-   s[i]=summary(silhouette(k,dist(data_clustering)))$si.summary[3]
-}
-s
-```
-
-
-
-```{r}
-#fviz_nbclust(data_clustering, FUN = hcut, method = "silhouette")
-
-pca_result <- data_clustering %>%
-  scale() %>%
-  prcomp()
-
-
-pca_result$x %>% 
-  as_tibble() %>% 
-  dplyr::bind_cols(as_tibble(sub_grp)) %>% 
-ggplot(aes(x = PC1, y = PC2, color = as_factor(value)))+
-  geom_point()
-```
-
-
-
 
 
 
 ### Summary table of drought impact profiles (i.e. clusters)
 
 ```{r}
-library(gtExtras)
 
 
 
@@ -815,28 +758,12 @@ table
 
 
 
-```{r}
-
- data_clustering %>% 
-   dplyr::left_join(nuts3, by = c("nuts_id" = "NUTS_ID")) %>% 
-   sf::st_as_sf() %>% 
-   ggplot(aes(fill = cluster))+
-   geom_sf(color = NA)+
-   facet_wrap(~year_date, nrow = 1)+
-   theme_void()+
-   ggsci::scale_fill_npg()+
-   geom_sf(fill = "transparent", color = "gray20", size = .2, 
-            data = nuts1 %>%   group_by(CNTR_CODE) %>% summarise())
- 
-```
-
-
-
 ### Plot number of different DIPs per district
 
 ```{r}
 
 barplot_counts <- data_clustering %>% 
+  dplyr::filter(year_date %in% c(2018,2019,2020,2022)) %>% 
   group_by(nuts_id) %>% 
   summarise(unique_clusters = n_distinct(cluster)) %>% 
   ungroup() %>% 
@@ -969,19 +896,15 @@ hclust_years_data <- tibble(
     year_2019 = list_of_maps[[4]]$cluster,
     year_2020 = list_of_maps[[5]]$cluster,
     year_2022 = list_of_maps[[6]]$cluster) %>% 
-  t(.)
-
+  mutate_all(as.numeric) %>% 
+  t(.) 
 
 rownames(hclust_years_data) <- c("2003", "2015", "2018", "2019","2020","2022")
+hclust_years_data <- as.data.frame(hclust_years_data)
 
-dendogram_years <- hclust_years_data %>% 
-  dist() %>% 
-  hclust() %>% 
- ggdendrogram(., rotate = FALSE, size = 4)
 
-#these things need to be assemled in coreldraw
-ggsave(plot = dendogram_years, filename = "hierarchical_plot/hierarchical_clustering_years.jpg",
-       units = "cm", width = 20, height = 6)
+
+
 # 2003
 plot_2003 <- list_of_maps[[1]] %>% 
   dplyr::mutate(cluster = ifelse(cluster == "5",NA, cluster)) %>% 
@@ -991,7 +914,7 @@ plot_2003 <- list_of_maps[[1]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2003, filename = "hierarchical_plot/plot_2003.jpg",
+ggsave(plot = plot_2003, filename = "research_figures/hierarchical_plot/plot_2003.jpg",
        units = "cm", width = 3.3, height = 6)
 # 2015
 plot_2015 <- list_of_maps[[2]] %>% 
@@ -1002,7 +925,7 @@ plot_2015 <- list_of_maps[[2]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2015, filename = "hierarchical_plot/plot_2015.jpg",
+ggsave(plot = plot_2015, filename = "research_figures/hierarchical_plot/plot_2015.jpg",
        units = "cm", width = 3.3, height = 6)
 
 # 2018
@@ -1014,7 +937,7 @@ plot_2018 <- list_of_maps[[3]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2018, filename = "hierarchical_plot/plot_2018.jpg",
+ggsave(plot = plot_2018, filename = "research_figures/hierarchical_plot/plot_2018.jpg",
        units = "cm", width = 3.3, height = 6)
 
 # 2019
@@ -1026,7 +949,7 @@ plot_2019 <- list_of_maps[[4]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2019, filename = "hierarchical_plot/plot_2019.jpg",
+ggsave(plot = plot_2019, filename = "research_figures/hierarchical_plot/plot_2019.jpg",
        units = "cm", width = 3.3, height = 6)
 
 # 2020
@@ -1038,7 +961,7 @@ plot_2020 <- list_of_maps[[5]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2020, filename = "hierarchical_plot/plot_2020.jpg",
+ggsave(plot = plot_2020, filename = "research_figures/hierarchical_plot/plot_2020.jpg",
        units = "cm", width = 3.3, height = 6)
 
 # 2022
@@ -1050,13 +973,59 @@ plot_2022 <- list_of_maps[[6]] %>%
   theme(legend.position = "none")+
   ggsci::scale_fill_npg()
 
-ggsave(plot = plot_2022, filename = "hierarchical_plot/plot_2022.jpg",
+ggsave(plot = plot_2022, filename = "research_figures/hierarchical_plot/plot_2022.jpg",
        units = "cm", width = 3.3, height = 6)
 
 
 
+calculate_similarity <- function(vec1, vec2) {
+  sum(vec1 == vec2)
+}
 
 
+similarity_matrix_data <- tibble(
+    year_2003 = list_of_maps[[1]]$cluster,
+    year_2015 = list_of_maps[[2]]$cluster,
+    year_2018 = list_of_maps[[3]]$cluster,
+    year_2019 = list_of_maps[[4]]$cluster,
+    year_2020 = list_of_maps[[5]]$cluster,
+    year_2022 = list_of_maps[[6]]$cluster) %>% 
+  mutate_all(as.numeric)
+
+num_vars <- ncol(similarity_matrix_data)
+similarity_matrix <- matrix(0, nrow = num_vars, ncol = num_vars)
+
+for (i in 1:num_vars) {
+  for (j in 1:num_vars) {
+    similarity_matrix[i, j] <- calculate_similarity(similarity_matrix_data[, i], similarity_matrix_data[, j])
+  }
+}
+diag(similarity_matrix) <- NA
+colnames(similarity_matrix) <- c("2003", "2015", "2018", "2019", "2020", "2022")
+rownames(similarity_matrix) <- c("2003", "2015", "2018", "2019", "2020", "2022")
+
+df_heatmap <- as.data.frame(as.table(similarity_matrix))
+
+names(df_heatmap) <- c("Variable1", "Variable2", "Similarity")
+
+
+
+ ggplot(df_heatmap, aes(Variable1, Variable2, fill = Similarity)) +
+  geom_tile(color = "white") +
+  labs(title = "Similarity Heatmap",
+       x = "Variables",
+       y = "Variables",
+       fill = "Similarity") +
+  theme_minimal() +
+  ggsci::scale_fill_material(palette = "orange")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    coord_fixed()
+
+
+
+#sm impies just counting similarity wich is good since we do the same in the matrx which we then later combine to a single figure
+nomclust::nomclust(hclust_years_data, measure = "sm", method  = "complete", eval = FALSE) %>% 
+dend.plot(.)
 ```
 
 ### Studying trajectories
@@ -1414,11 +1383,7 @@ temporal_rules %>%
 
 ```
 
-
 ### Computing relationship to land-use
-
-
-
 
 ```{r}
 continuous_var_names <- c("Broad-leaved forest", "Coniferous forest", "Discontinuous urban fabric", "Industrial or commercial units and public facilities", "Mixed forest", "Non-irrigated arable land", "Pastures, meadows and other permanent grasslands under agricultural use", "Transitional woodland/shrub", "Water bodies", "Water courses")
@@ -1480,9 +1445,8 @@ tidyr::pivot_longer(!dip, values_to = "coefficient", names_to = "variable") %>%
 
 ```
 
-
-
 Measure relationships using Mann-Whitney U test on sequences
+
 ```{r}
 
 sequences_data_for_lu_correlation <-  data_clustering %>% 
@@ -1568,4 +1532,3 @@ tidyr::pivot_longer(!sequence_id, values_to = "coefficient", names_to = "variabl
 
 p1
 ```
-
