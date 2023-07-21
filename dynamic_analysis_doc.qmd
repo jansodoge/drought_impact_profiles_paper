@@ -15,6 +15,7 @@ library(patchwork)
 library(RColorBrewer)
 library(tmap)
 library(scales)
+library(nomclust)
 library(ggradar)
 library(gt)
 library(aweSOM)
@@ -803,6 +804,10 @@ map_counts + patchwork::inset_element(barplot_counts, left = 1, right = 1.5, bot
 
 ### Alluvial data
 
+
+
+
+
 ```{r}
 
 
@@ -821,7 +826,7 @@ data_alluvial <- data_clustering %>%
 transitions_plot <- ggplot(as.data.frame(data_alluvial),
        aes(y = n,
            axis1 = `2018`, axis2 = `2019`, axis3 = `2020`, axis4 = `2022`)) +
-  geom_flow(color = "grey50", fill = "white", alpha = .5) +
+  geom_flow(color = "grey50", fill = "grey50", alpha = .5) +
   geom_stratum(stat = "stratum", aes(fill = after_stat(stratum)))+
       geom_text(stat = "stratum", aes(label = after_stat(stratum)))+
     ggfittext::geom_fit_text(stat = "stratum", width = 1/4, min.size = 3,
@@ -832,21 +837,14 @@ transitions_plot <- ggplot(as.data.frame(data_alluvial),
                                    "Social\nAquaculture\nWaterways ", 
                                    "Social\nFire",
                                    "No DIP"))+
-  labs(y = "Number of districts")+
+  labs(y = "Number of observations")+
   theme(panel.grid = element_blank(),
         legend.position = "bottom",
         axis.text.x = element_text(size = 4))+
   labs(fill = "DIP")
 
 
-
-
-
-
-
- transitions_plot
-
-
+transitions_plot
 
 ggsave(plot = last_plot(),
        device = "svg",
@@ -854,11 +852,6 @@ ggsave(plot = last_plot(),
        width = 12,
        height = 10,
        units = "cm")
-
-
-
-
-
 ```
 
 ```{r}
@@ -1022,8 +1015,8 @@ names(df_heatmap) <- c("Variable1", "Variable2", "Similarity")
     coord_fixed()
 
 
+ 
 
-#sm impies just counting similarity wich is good since we do the same in the matrx which we then later combine to a single figure
 nomclust::nomclust(hclust_years_data, measure = "sm", method  = "complete", eval = FALSE) %>% 
 dend.plot(.)
 ```
@@ -1247,8 +1240,7 @@ library(arulesSequences)
 
 data_clustering_cspade <- data_clustering %>% 
   dplyr::filter(year_date > 2015) %>% 
-  dplyr::select(nuts_id, year_date, cluster)# %>% 
-  #dplyr::semi_join(nuts_2018_agricultural_profile, by = c("nuts_id" = "nuts_id"))
+  dplyr::select(nuts_id, year_date, cluster)
 
 
 
@@ -1276,6 +1268,7 @@ trans_sequence <- data_clustering_cspade %>%
 trans_sequence <- data.frame(lapply(trans_sequence, as.factor))
 trans_sequence <- trans_sequence[order(trans_sequence$sequenceID, trans_sequence$eventID),]
 
+
 # Convert to transaction matrix data type
 write.table(trans_sequence, "mytxtout.txt", sep=";", row.names = FALSE, col.names = FALSE, quote = FALSE)
 trans_matrix <- read_baskets("mytxtout.txt", sep = ";", info = c("sequenceID","eventID","SIZE"))
@@ -1285,10 +1278,6 @@ trans_matrix <- read_baskets("mytxtout.txt", sep = ";", info = c("sequenceID","e
 s1 <- cspade(trans_matrix, parameter = list(support = 0.1), control = list(verbose = TRUE))
 s1.df <- as(s1, "data.frame")
 summary(s1)
-
-r1 <- as(ruleInduction(s1, confidence = 0.1, control = list(verbose = TRUE)), "data.frame")
-
-
 
 r1 <- as(ruleInduction(s1, confidence = 0.0, control = list(verbose = FALSE)), "data.frame")
 
@@ -1321,8 +1310,7 @@ temporal_rules <- temporal_rules[order(-temporal_rules$lift, -temporal_rules$con
                                        -temporal_rules$support, temporal_rules$Predicted_Items),]
 
 temporal_rules <- temporal_rules %>% 
-  dplyr::filter(is.na(Previous_Items1)) %>% 
-  dplyr::select(!Previous_Items1)
+  dplyr::filter(!is.na(Previous_Items1))
 
 temporal_rules %>% 
   arrange(desc(support)) %>% 
@@ -1457,7 +1445,7 @@ sequences_data_for_lu_correlation <-  data_clustering %>%
   ggsankey::make_long(`2018`, `2019`, `2020`, `2022`, value = nuts_id) %>% 
     dplyr::rename(nuts_id = value) %>% 
   dplyr::left_join(temporal_rules %>% tibble::rowid_to_column(var = "sequence_id"),
-                   by = c("node" = "Previous_Items2", 
+                   by = c("node" = "Previous_Items1", 
                                           "next_node" = "Predicted_Items")) %>%
   dplyr::mutate(sequence_name = paste(node, "-->", next_node)) %>% 
 
@@ -1530,5 +1518,5 @@ tidyr::pivot_longer(!sequence_id, values_to = "coefficient", names_to = "variabl
   labs(fill = "p < 0.05", y = "Sequences")
 
 
-p1
+p2
 ```
