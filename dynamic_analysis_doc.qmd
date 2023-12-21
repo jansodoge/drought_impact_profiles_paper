@@ -214,8 +214,8 @@ spatial_map + inset_element(temporal, 0,0,1,.2)
 
 
 ggsave(plot = last_plot(),
-       device = "svg",
-       filename = "data_descriptive_figure.svg",
+       device = "eps",
+       filename = "data_descriptive_figure.eps",
        width = 70,
        height = 27,
        units = "cm")
@@ -759,6 +759,27 @@ table
 
 
 
+
+### Technical table summarising DIP for supplementary material
+ for each variable, the minimum height corresponds to the minimum of that variable over the whole dataset, the maximum height to the maximum of the variable on the whole dataset.
+
+```{r}
+data_clustering %>% 
+  mutate(cluster = as.factor(cluster)) %>% 
+   group_by(cluster) %>% 
+   summarise(agriculture = mean(agriculture, na.rm = TRUE),
+             livestock = mean(livestock, na.rm = TRUE),
+             forestry = mean(forestry, na.rm = TRUE),
+             social = mean(social, na.rm = TRUE),
+             aquaculture = mean(aquaculture, na.rm = TRUE),
+             waterways = mean(waterways, na.rm = TRUE),
+             fire = mean(fire, na.rm = TRUE)) %>% 
+  dplyr::rename(group  = cluster) 
+```
+
+
+
+
 ### Plot number of different DIPs per district
 
 ```{r}
@@ -802,6 +823,19 @@ map_counts <- data_clustering %>%
 map_counts + patchwork::inset_element(barplot_counts, left = 1, right = 1.5, bottom = 0, top = 1)
 ```
 
+
+```{r}
+data_clustering %>% 
+  dplyr::select(year_date, nuts_id, cluster) %>% 
+  dplyr::filter(year_date %in% c(2018,2019,2020,2022)) %>% 
+  pull(nuts_id) %>% 
+  unique(.) %>% 
+  length(.)
+```
+
+
+
+
 ### Alluvial data
 
 
@@ -829,6 +863,7 @@ transitions_plot <- ggplot(as.data.frame(data_alluvial),
   geom_flow(color = "grey50", fill = "grey50", alpha = .5) +
   geom_stratum(stat = "stratum", aes(fill = after_stat(stratum)))+
       geom_text(stat = "stratum", aes(label = after_stat(stratum)))+
+  
     ggfittext::geom_fit_text(stat = "stratum", width = 1/4, min.size = 3,
                              aes(label = after_stat(stratum))) +
     theme_minimal()+
@@ -1003,13 +1038,14 @@ names(df_heatmap) <- c("Variable1", "Variable2", "Similarity")
 
 
 
- ggplot(df_heatmap, aes(Variable1, Variable2, fill = Similarity)) +
+ ggplot(df_heatmap, aes(Variable1, Variable2, fill = Similarity, label = Similarity)) +
   geom_tile(color = "white") +
   labs(title = "Similarity Heatmap",
        x = "Variables",
        y = "Variables",
        fill = "Similarity") +
   theme_minimal() +
+   geom_text()+
   ggsci::scale_fill_material(palette = "orange")+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
     coord_fixed()
@@ -1020,6 +1056,42 @@ names(df_heatmap) <- c("Variable1", "Variable2", "Similarity")
 nomclust::nomclust(hclust_years_data, measure = "sm", method  = "complete", eval = FALSE) %>% 
 dend.plot(.)
 ```
+
+
+
+
+
+### Calculate impact diversity
+
+
+```{r}
+library(vegan)
+data_clustering %>% 
+  dplyr::filter(year_date == 2019) %>% 
+  drop_na(cluster) %>% 
+  group_by(cluster) %>% 
+  count() %>% 
+  pull(n) 
+```
+2022:   1.32
+2020:   1.37
+2019:   1.38
+2018:   1.24   
+2015:   1.20
+2003:   1.18
+
+```{r}
+data_alluvial_test <- data_alluvial
+colnames(data_alluvial_test) <- c("y_2018", "y_2019", "y_2020", "y_2022", "n")
+
+data_alluvial_test %>% 
+  dplyr::filter(y_2018 == 2) %>% 
+  dplyr::filter(y_2019 == 3) %>% 
+  summarise(nuts = sum(n))
+```
+
+
+
 
 ### Studying trajectories
 
@@ -1233,6 +1305,29 @@ p4 <- data_clustering %>%
 
 ```
 
+
+
+
+```{r}
+tmp <-  data_clustering %>%
+  dplyr::select(nuts_id, year_date, cluster) %>%
+  dplyr::filter(year_date > 2015) %>% 
+  mutate(year_date = as_factor(year_date)) %>% 
+  dplyr::select(nuts_id, year_date, cluster)
+
+
+expand_grid(nuts_id = unique(data_clustering$nuts_id), 
+            year_date = as_factor(c(2018,2019,2020,2022))) %>% 
+  dplyr::left_join(tmp, by = c("nuts_id" = "nuts_id", "year_date" = "year_date")) %>% 
+  dplyr::mutate(cluster = ifelse(is.na(cluster),5,cluster)) %>% 
+  dplyr::mutate(prior_cluster = lag(cluster)) %>% 
+  dplyr::select(cluster, prior_cluster) %>% 
+  drop_na(prior_cluster) %>% 
+  mutate(identical = ifelse(cluster == prior_cluster, "Identical", "Not Identical")) %>%
+  count(identical)
+  
+```
+
 Sequence mining
 
 ```{r}
@@ -1366,10 +1461,22 @@ temporal_rules %>%
   theme(legend.position = "bottom")
   
   
-
-
-
 ```
+
+
+
+```{r}
+data_clustering %>% 
+  mutate(cluster  = ifelse(cluster == 3,1,0)) %>% 
+  dplyr::group_by(nuts_id) %>% 
+  summarise(cluster_present = sum(cluster, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(cluster_present) %>% 
+  count()
+```
+
+
+
 
 ### Computing relationship to land-use
 
@@ -1399,7 +1506,18 @@ colnames(p_matrix) <- continuous_var_names
 for (index in seq_along(continuous_var_names)) {
   binary <- u_test_data$cluster
   continuous <- u_test_data[[continuous_var_names[index]]]
-  result <- wilcox.test(continuous ~ binary)
+  
+  zeros <- tibble(binary = binary,
+         continuous = continuous) %>% 
+    dplyr::filter(binary == 0) %>% 
+    pull(continuous)
+  
+   ones <- tibble(binary = binary,
+         continuous = continuous) %>% 
+    dplyr::filter(binary == 1) %>% 
+    pull(continuous)
+  
+  result <- wilcox.test(x = ones, y = zeros, alternative = "greater")
   p_matrix[1, index] <- result$p.value
 }
 
@@ -1430,6 +1548,8 @@ tidyr::pivot_longer(!dip, values_to = "coefficient", names_to = "variable") %>%
   coord_cartesian()+
   labs(fill = "p < 0.05", y = "Drought impact profile")
 
+
+p1
 
 ```
 
@@ -1482,8 +1602,22 @@ colnames(p_matrix) <- continuous_var_names
 for (index in seq_along(continuous_var_names)) {
   binary <- u_test_data$sequence_id
   continuous <- u_test_data[[continuous_var_names[index]]]
-  result <- wilcox.test(continuous ~ binary)
-  p_matrix[1, index] <- result$p.value
+  
+  
+  
+  zeros <- tibble(binary = binary,
+         continuous = continuous) %>% 
+    dplyr::filter(binary == 0) %>% 
+    pull(continuous)
+  
+   ones <- tibble(binary = binary,
+         continuous = continuous) %>% 
+    dplyr::filter(binary == 1) %>% 
+    pull(continuous)
+  
+  result <- wilcox.test(x = ones, y = zeros, alternative = "greater")
+  
+    p_matrix[1, index] <- result$p.value
 }
 
 p_matrix
