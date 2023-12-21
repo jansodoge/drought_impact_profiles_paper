@@ -1,8 +1,6 @@
-# cluster-analysis-impact-profiles
+# Text-mining uncovers the unique dynamics of socio-economic impacts during multi-year drought
 
-
-This repository holds the code for the analysis of multi-year drought periods conducted for the research in my ongoing research project titled: 'Unravelling dynamic patterns of socioeconomic impacts of drought during multi-year drought periods'.
-
-The main analysis is conducted in the document main_analysis.qmd which is reproducible following a .qmd file. Required data is provided within the data folder. Thereby, the analysis can be replicated and followed-up.
-
+This repository holds the code for the analysis of multi-year drought periods conducted for the research in my ongoing research project titled: 'Text-mining uncovers the unique dynamics of socio-economic impacts during multi-year drought'.
+The dataset is stored in the file impacts_dataset_export_validation.Rdata
+The code for the analysis is stored in dynamic_analysis_doc.qmd as a reproducible markdown document
 
